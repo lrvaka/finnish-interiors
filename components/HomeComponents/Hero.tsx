@@ -90,9 +90,7 @@ const Hero = () => {
                 className=" gap-10 lg:gap-0 bg-slate-50 flex-1 flex flex-col py-9 px-12 lg:py-10 lg:px-14 "
               >
                 <div className="flex gap-4 flex-1">
-                  <div className=" h-16 w-16 p-3 bg-theme-200 text-white flex justify-center items-center ">
-                    <e.icon />
-                  </div>
+                  <e.icon className=" h-16 w-16 p-3 bg-theme-200 text-white " />
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl font-bold">{e.name}</h3>
                     <div className=" text-gray-400">{e.detail}</div>

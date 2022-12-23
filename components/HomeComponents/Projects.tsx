@@ -86,7 +86,6 @@ const Projects = () => {
             </div>
           </div>
           <Swiper
-            modules={[Navigation]}
             slidesPerView="auto"
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
