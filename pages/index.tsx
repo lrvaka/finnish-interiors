@@ -5,6 +5,7 @@ import Navbar from "../components/ui/Navbar";
 import Services from "../components/HomeComponents/Services";
 import CTA from "../components/HomeComponents/CTA";
 import AboutUs from "../components/HomeComponents/AboutsUs";
+import WhyUs from "../components/HomeComponents/WhyUs";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <AboutUs />
       <Services />
       <CTA />
+      <WhyUs />
     </>
   );
 }

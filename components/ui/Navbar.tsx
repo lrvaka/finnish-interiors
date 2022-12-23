@@ -6,13 +6,13 @@ const Navbar = () => {
   return (
     <header className=" bg-white">
       <div className="flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
-        <div className="max-w-[175px]">
+        <div className="max-w-[120px] lg:max-w-[175px]">
           <Image
             src={logo}
             alt="finnish interiors - leading interior contractors"
           />
         </div>
-        <nav>
+        <nav className="hidden lg:block ">
           <ul className="flex gap-12 items-center justify-center h-full font-light text-xl">
             <li>
               <Link href="/">Home</Link>
