@@ -34,7 +34,7 @@ const features = [
 
 export default function Services() {
   return (
-    <div className="bg-white py-10 ">
+    <div className="bg-white mb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="sm:text-center">
           <div className="text-lg font-semibold text-theme-200">

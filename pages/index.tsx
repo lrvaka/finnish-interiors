@@ -4,6 +4,7 @@ import Projects from "../components/HomeComponents/Projects";
 import Navbar from "../components/ui/Navbar";
 import Services from "../components/HomeComponents/Services";
 import CTA from "../components/HomeComponents/CTA";
+import AboutUs from "../components/HomeComponents/AboutsUs";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Projects />
+      <AboutUs />
       <Services />
       <CTA />
     </>

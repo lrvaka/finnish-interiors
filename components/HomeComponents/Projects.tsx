@@ -45,7 +45,7 @@ const Projects = () => {
   return (
     <div className="h-[800px] relative bg-theme-100 my-32">
       <div className="z-10 relative flex flex-col max-w-screen-2xl mx-auto overflow-hidden h-full">
-        <div className="absolute opacity-50 -translate-y-[50%] right-0 -translate-x-1/3 lg:-translate-y-[50%] lg:-translate-x-1/4  max-w-sm  ">
+        <div className="absolute opacity-50 -translate-y-[50%] right-0 -translate-x-2/3 lg:-translate-y-[50%] lg:-translate-x-1/4  max-w-sm  ">
           <Image
             src={pattern}
             alt="beautiful background image of finnish interiors"

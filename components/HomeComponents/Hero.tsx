@@ -55,8 +55,8 @@ const Hero = () => {
 
           <div className="mt-40 lg:mt-52 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md">
             <h1 className="text-white text-3xl lg:text-5xl font-bold ">
-              Transform Your Space with Expert Interior Contracting Services in
-              New York
+              Transform Your Space with NYC&apos;s Expert Interior Contracting
+              Services
             </h1>
             <p className=" text-slate-300 leading-normal mt-5 lg:text-xl lg:max-w-screen-md">
               Enhance your interior spaces with our expert contracting services,

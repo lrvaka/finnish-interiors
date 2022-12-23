@@ -4,7 +4,7 @@ import pattern from "../../public/images/pattern.png";
 
 const CTA = () => {
   return (
-    <div className="h-[320px] relative my-20 bg-theme-200">
+    <div className="h-[320px] relative my-32 bg-theme-200">
       <div className="z-10 relative flex flex-col max-w-screen-2xl mx-auto overflow-hidden h-full">
         <div className="absolute opacity-25 -translate-y-[50%] -translate-x-1/3 lg:translate-y-0 lg:-translate-x-1/4 lg:-rotate-90  max-w-sm  ">
           <Image
