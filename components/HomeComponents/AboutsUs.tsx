@@ -7,7 +7,7 @@ const AboutUs = () => {
     <div className="relative my-32 ">
       <div className="z-10 relative flex flex-col max-w-screen-2xl mx-auto h-full">
         <div className="relative z-10 px-4 lg:px-6  h-full flex gap-20 flex-col lg:flex-row">
-          <div className="self-center">
+          <div className="self-center max-w-prose">
             <div className="text-lg font-semibold text-theme-200">About us</div>
             <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
               Expert interior contractors <br /> offering a flawless finish
@@ -26,8 +26,8 @@ const AboutUs = () => {
               more about how we can help transform your space.
             </p>
           </div>
-          <div className="relative lg:w-[5000px] h-[500px] overflow-visible">
-            <div className="absolute z-10 w-[80%] h-full right-3">
+          <div className="relative lg:w-[5000px] h-[500px] lg:h-[700px] overflow-visible">
+            <div className="absolute z-10 w-[80%] lg:w-[85%] h-full right-3">
               <Image
                 className="object-cover"
                 fill
