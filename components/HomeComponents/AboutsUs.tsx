@@ -26,7 +26,7 @@ const AboutUs = () => {
               more about how we can help transform your space.
             </p>
           </div>
-          <div className="relative lg:w-[5000px] h-[500px] lg:h-[700px] overflow-visible">
+          <div className="relative lg:w-[750px] h-[500px] lg:h-[700px] overflow-visible">
             <div className="absolute z-10 w-[80%] lg:w-[85%] h-full right-3">
               <Image
                 className="object-cover"

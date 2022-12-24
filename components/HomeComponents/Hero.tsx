@@ -58,7 +58,7 @@ const Hero = () => {
               Transform Your Space with NYC&apos;s Expert Interior Contracting
               Services
             </h1>
-            <p className=" text-slate-300 leading-normal mt-5 lg:text-xl lg:max-w-screen-md">
+            <p className=" text-slate-300 leading-normal mt-5 lg:text-xl ">
               Enhance your interior spaces with our expert contracting services,
               including specializations in general carpentry, framing, and
               drywall.
