@@ -1,7 +1,11 @@
 import Image from "next/image";
 import heroBg from "../../public/images/hero-bg.png";
 import pattern from "../../public/images/pattern.png";
-import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import {
+  PhoneIcon,
+  EnvelopeIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
 
 const contact = [
   {
@@ -21,11 +25,11 @@ const contact = [
     border: true,
   },
   {
-    name: "Call us",
-    detail: "(323) 238-0682",
-    linkTitle: "Make us a call",
+    name: "Send us mail",
+    detail: "941 McLean Ave, Suite 328 Yonkers, NY 10704",
+    linkTitle: "View on Google Maps",
     link: "tel:(323)238-0682",
-    icon: PhoneIcon,
+    icon: MapPinIcon,
     border: false,
   },
 ];
@@ -93,7 +97,7 @@ const Hero = () => {
                   <e.icon className=" h-16 w-16 p-3 bg-theme-200 text-white " />
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl font-bold">{e.name}</h3>
-                    <div className=" text-gray-400">{e.detail}</div>
+                    <div className=" text-gray-400 max-w-[200px] sm:text-sm xl:text-base">{e.detail}</div>
                   </div>
                 </div>
                 <a href={e.link} className="text-center underline text-lg">
