@@ -50,7 +50,7 @@ const WhyUs = () => {
               {whyUsList.map((e, i) => {
                 return (
                   <div className="flex gap-4 items-center" key={i + e.title}>
-                    <CheckIcon className="w-6 h-6 p-1 bg-theme-200 text-white" />
+                    <CheckIcon className="w-6 h-6 p-1 bg-theme-100 text-theme-200" />
                     <p className="text-lg font-semibold">{e.title}</p>
                   </div>
                 );

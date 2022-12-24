@@ -25,6 +25,9 @@ const AboutUs = () => {
               resources to make your vision a reality. Contact us today to learn
               more about how we can help transform your space.
             </p>
+            <button className=" mt-10 bg-theme-200 border-theme-200 border-2 py-4 px-7 h-fit font-semibold text-theme-100 lg:text-lg">
+              Get a quote
+            </button>
           </div>
           <div className="relative lg:w-[750px] h-[500px] lg:h-[700px] overflow-visible">
             <div className="absolute z-10 w-[80%] lg:w-[85%] h-full right-3">

@@ -6,6 +6,7 @@ import Services from "../components/HomeComponents/Services";
 import CTA from "../components/HomeComponents/CTA";
 import AboutUs from "../components/HomeComponents/AboutsUs";
 import WhyUs from "../components/HomeComponents/WhyUs";
+import Footer from "../components/ui/Footer";
 
 export default function Home() {
   return (
@@ -17,12 +18,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <Hero />
-      <Projects />
-      <AboutUs />
-      <Services />
-      <CTA />
-      <WhyUs />
+      <main>
+        <Hero />
+        <Projects />
+        <AboutUs />
+        <Services />
+        <CTA />
+        <WhyUs />
+      </main>
+      <Footer />
     </>
   );
 }

@@ -28,7 +28,7 @@ const contact = [
     name: "Send us mail",
     detail: "941 McLean Ave, Suite 328 Yonkers, NY 10704",
     linkTitle: "View on Google Maps",
-    link: "tel:(323)238-0682",
+    link: "https://goo.gl/maps/6FU1YEJEjmVKSaTr8",
     icon: MapPinIcon,
     border: false,
   },
@@ -97,7 +97,9 @@ const Hero = () => {
                   <e.icon className=" h-16 w-16 p-3 bg-theme-200 text-white " />
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl font-bold">{e.name}</h3>
-                    <div className=" text-gray-400 max-w-[200px] sm:text-sm xl:text-base">{e.detail}</div>
+                    <div className=" text-gray-400 max-w-[200px] sm:text-sm xl:text-base">
+                      {e.detail}
+                    </div>
                   </div>
                 </div>
                 <a href={e.link} className="text-center underline text-lg">
