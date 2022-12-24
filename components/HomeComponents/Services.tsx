@@ -5,30 +5,35 @@ import {
   ScaleIcon,
 } from "@heroicons/react/24/outline";
 
+import { FcFrame } from "react-icons/fc";
+import { IoHammerOutline } from "react-icons/io5";
+import { FaHardHat } from "react-icons/fa";
+import { BiCog } from "react-icons/bi";
+
 const features = [
   {
     name: "General carpentry",
     description:
       "Installing trim, molding, and other woodwork; building custom cabinets, shelving, and other storage solutions; and repairing or replacing damaged woodwork.",
-    icon: GlobeAltIcon,
+    icon: IoHammerOutline,
   },
   {
     name: "Framing",
     description:
       "Constructing the framework for new interior spaces, such as walls and ceilings, as well as repairing or replacing damaged framing.",
-    icon: ScaleIcon,
+    icon: FcFrame,
   },
   {
     name: "Drywall installation and repair",
     description:
       "Installing new drywall, repairing damaged drywall, and finishing drywall surfaces with tape, joint compound, and texture.",
-    icon: BoltIcon,
+    icon: FaHardHat,
   },
   {
     name: "Project management",
     description:
       "Managing budgets and schedules to ensure that projects are completed on time and within budget, as well as obtaining necessary permits and ensuring that projects are completed in compliance with local building codes and regulations.",
-    icon: DevicePhoneMobileIcon,
+    icon: BiCog,
   },
 ];
 
