@@ -42,7 +42,7 @@ const Hero = () => {
   return (
     <>
       <div className="h-[700px] lg:h-[800px] relative">
-        <div className="z-10 relative flex flex-col max-w-screen-2xl mx-auto overflow-hidden h-full">
+        <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
           <div className="absolute opacity-50 -translate-y-[50%] -translate-x-1/3 lg:-translate-y-[50%] lg:-translate-x-1/4  max-w-sm  ">
             <Image
               src={pattern}
@@ -58,11 +58,11 @@ const Hero = () => {
           </div>
 
           <div className="mt-40 lg:mt-52 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md">
-            <h1 className="text-white text-3xl lg:text-5xl font-bold ">
+            <h1 className="text-white text-3xl lg:text-5xl font-bold leading-normal lg:leading-tight">
               Transform Your Space with NYC&apos;s Expert Interior Contracting
               Services
             </h1>
-            <p className=" text-slate-300 leading-normal mt-5 lg:text-xl ">
+            <p className=" text-slate-300 leading-normal mt-5 lg:text-xl lg:leading-normal">
               Enhance your interior spaces with our expert contracting services,
               including specializations in general carpentry, framing, and
               drywall.
@@ -85,7 +85,7 @@ const Hero = () => {
           alt="beautiful background image of finnish interiors"
         />
       </div>
-      <div className="relative z-10 -mt-28 max-w-screen-2xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-52">
+      <div className="relative z-10 -mt-28 max-w-screen-xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-52">
         {contact.map((e, i) => {
           return (
             <>

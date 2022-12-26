@@ -18,7 +18,7 @@ const whyUsList = [
 const WhyUs = () => {
   return (
     <div className="relative my-32 ">
-      <div className="z-10 relative flex flex-col max-w-screen-2xl mx-auto h-full">
+      <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto h-full">
         <div className="relative z-10 px-4 lg:px-6  h-full flex gap-20 flex-col lg:flex-row">
           <div className="relative lg:w-[750px] h-[500px] lg:h-[700px] overflow-visible">
             <div className="absolute z-10 w-[80%] lg:w-[85%] h-full left-3">

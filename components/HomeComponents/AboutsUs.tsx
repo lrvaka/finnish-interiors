@@ -5,7 +5,7 @@ import backdrop from "../../public/images/about-us/backdrop.png";
 const AboutUs = () => {
   return (
     <div className="relative my-32 ">
-      <div className="z-10 relative flex flex-col max-w-screen-2xl mx-auto h-full">
+      <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto h-full">
         <div className="relative z-10 px-4 lg:px-6  h-full flex gap-20 flex-col lg:flex-row">
           <div className="self-center max-w-prose">
             <div className="text-lg font-semibold text-theme-200">About us</div>

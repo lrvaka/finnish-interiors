@@ -39,7 +39,7 @@ const Footer = () => {
   return (
     <footer className="bg-theme-200">
       {" "}
-      <div className="relative z-10 max-w-screen-2xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-52">
+      <div className="relative z-10 max-w-screen-xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-52">
         {contact.map((e, i) => {
           return (
             <>
@@ -51,7 +51,7 @@ const Footer = () => {
                   <e.icon className=" h-16 w-16 p-3 bg-theme-100 text-theme-200 " />
                   <div className="flex flex-col gap-2">
                     <h3 className="text-2xl font-bold text-white">{e.name}</h3>
-                    <div className=" text-gray-400 max-w-[200px] sm:text-sm xl:text-base">
+                    <div className=" text-gray-300 max-w-[200px] sm:text-sm xl:text-base">
                       {e.detail}
                     </div>
                   </div>
