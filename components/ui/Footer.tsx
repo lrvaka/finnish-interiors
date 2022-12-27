@@ -129,7 +129,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-center py-10 border-t-[1px] border-t-theme-100/50 text-xs lg:text-sm">
+      <div className="text-center py-10 border-t-[1px] border-t-theme-100/50 text-xs lg:text-sm px-2">
         <span>© 2022 Finnish Interiors Contracting LLC. |</span>
         <a className="underline" href="https://blockhead.digital/" target="_blank" rel="noreferrer">
           &nbsp;Website by Blockhead Digital
