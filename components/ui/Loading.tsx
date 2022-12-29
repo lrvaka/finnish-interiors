@@ -18,38 +18,28 @@ const Loading = ({ ...props }) => {
       let containerWidth = gsap.getProperty("#container", "width");
 
       gsap.set("#yellow-bar", {
-        visibility: "hidden",
-        opacity: 0,
         scaleX: 0,
         transformOrigin: "right",
       });
+
       gsap.set("#yellow-bar-1", {
-        visibility: "hidden",
-        opacity: 0,
-        drawSVG: "0% 0%",
         scaleX: 0,
+      });
+
+      gsap.set("#svg", {
+        autoAlpha: 1,
       });
 
       tl.current = gsap
         .timeline()
-        .fromTo(
-          "#yellow-bar",
-          {
-            visibility: "visible",
-            opacity: 1,
-          },
-          {
-            scaleX: 1,
-            duration: 1,
-            ease: "power4.inOut",
-          }
-        )
-        .fromTo(
+        .to("#yellow-bar", {
+          scaleX: 1,
+          duration: 1,
+          ease: "power4.inOut",
+        })
+        .to(
           "#yellow-bar-1",
-          {
-            visibility: "visible",
-            opacity: 1,
-          },
+
           {
             scaleX: 1,
             duration: 1,
@@ -84,9 +74,9 @@ const Loading = ({ ...props }) => {
         className="fixed z-50  w-screen h-screen top-0 left-0 flex items-center justify-center overflow-hidden bg-white"
       >
         <svg
-          className="max-w-40 max-h-40"
+          className="max-w-40 max-h-40 invisible"
           xmlns="http://www.w3.org/2000/svg"
-          id="Layer_2"
+          id="svg"
           viewBox="0 0 1095.57 506.72"
         >
           <defs>
