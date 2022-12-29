@@ -6,7 +6,7 @@ import GsapContext from "../../store/gsap-context";
 const Loading = ({ ...props }) => {
   const logo = useRef<SVGSVGElement>(null);
   const container = useRef<HTMLDivElement | null>(null);
-  const tl = useRef<GSAPTimeline>();
+  const tl = useRef<GSAPTimeline>(gsap.timeline());
   const { mainTimeline } = useContext(GsapContext);
 
   useEffect(() => {
@@ -30,8 +30,7 @@ const Loading = ({ ...props }) => {
         scaleX: 0,
       });
 
-      tl.current = gsap
-        .timeline()
+      tl.current
         .fromTo(
           "#yellow-bar",
           {
