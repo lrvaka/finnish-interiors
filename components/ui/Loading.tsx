@@ -17,16 +17,23 @@ const Loading = ({ ...props }) => {
       let logoWidth = gsap.getProperty("#logo", "width");
       let containerWidth = gsap.getProperty("#container", "width");
 
+      gsap.set("#svg", {
+        autoAlpha: 1,
+      });
+
       gsap.set("#yellow-bar", {
         scaleX: 0,
         transformOrigin: "right",
+        autoAlpha: 1,
       });
 
       gsap.set("#yellow-bar-1", {
         scaleX: 0,
+        autoAlpha: 1,
       });
 
-      gsap.set("#svg", {
+      gsap.set("path:not(#yellow-bar-1, #yellow-bar)", {
+        scaleY: 0,
         autoAlpha: 1,
       });
 
@@ -39,7 +46,6 @@ const Loading = ({ ...props }) => {
         })
         .to(
           "#yellow-bar-1",
-
           {
             scaleX: 1,
             duration: 1,
@@ -47,20 +53,11 @@ const Loading = ({ ...props }) => {
           },
           "-=1"
         )
-        .fromTo(
-          "path:not(#yellow-bar-1, #yellow-bar)",
-          {
-            visibility: "visible",
-            opacity: 0,
-            scaleY: 0,
-          },
-          {
-            scaleY: 1,
-            opacity: 1,
-            duration: 1,
-            ease: "power4.inOut",
-          }
-        )
+        .to("path:not(#yellow-bar-1, #yellow-bar)", {
+          scaleY: 1,
+          duration: 1,
+          ease: "power4.inOut",
+        })
         .to("#backdrop", { y: "-100%", duration: 0.75, ease: "power4.in" });
     }, container); // <- IMPORTANT! Scopes selector text
 
@@ -74,7 +71,7 @@ const Loading = ({ ...props }) => {
         className="fixed z-50  w-screen h-screen top-0 left-0 flex items-center justify-center overflow-hidden bg-white"
       >
         <svg
-          className="max-w-40 max-h-40 invisible"
+          className="w-[350px] invisible"
           xmlns="http://www.w3.org/2000/svg"
           id="svg"
           viewBox="0 0 1095.57 506.72"
