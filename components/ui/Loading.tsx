@@ -6,7 +6,7 @@ import GsapContext from "../../store/gsap-context";
 const Loading = ({ ...props }) => {
   const logo = useRef<SVGSVGElement>(null);
   const container = useRef<HTMLDivElement | null>(null);
-  const tl = useRef<GSAPTimeline>(gsap.timeline());
+  const tl = useRef<GSAPTimeline>();
   const { mainTimeline } = useContext(GsapContext);
 
   useEffect(() => {
@@ -30,7 +30,8 @@ const Loading = ({ ...props }) => {
         scaleX: 0,
       });
 
-      tl.current
+      tl.current = gsap
+        .timeline()
         .fromTo(
           "#yellow-bar",
           {
@@ -71,7 +72,6 @@ const Loading = ({ ...props }) => {
           }
         )
         .to("#backdrop", { y: "-100%", duration: 0.75, ease: "power4.in" });
-      mainTimeline?.current.add(tl.current);
     }, container); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
