@@ -24,12 +24,10 @@ const Loading = ({ ...props }) => {
       gsap.set("#yellow-bar", {
         scaleX: 0,
         transformOrigin: "right",
-        autoAlpha: 1,
       });
 
       gsap.set("#yellow-bar-1", {
         scaleX: 0,
-        autoAlpha: 1,
       });
 
       gsap.set("path:not(#yellow-bar-1, #yellow-bar)", {
