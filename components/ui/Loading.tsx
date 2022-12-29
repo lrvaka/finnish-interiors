@@ -31,7 +31,7 @@ const Loading = ({ ...props }) => {
       });
 
       gsap.set("path:not(#yellow-bar-1, #yellow-bar)", {
-        scaleY: 0,
+        opacity: 0,
       });
 
       tl.current = gsap
@@ -51,7 +51,7 @@ const Loading = ({ ...props }) => {
           "-=1"
         )
         .to("path:not(#yellow-bar-1, #yellow-bar)", {
-          scaleY: 1,
+          opacity: 1,
           duration: 1,
           ease: "power4.inOut",
         })
