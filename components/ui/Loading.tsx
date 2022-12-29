@@ -30,7 +30,8 @@ const Loading = ({ ...props }) => {
         scaleX: 0,
       });
 
-      mainTimeline?.current
+      tl.current = gsap
+        .timeline()
         .fromTo(
           "#yellow-bar",
           {
@@ -71,6 +72,7 @@ const Loading = ({ ...props }) => {
           }
         )
         .to("#backdrop", { y: "-100%", duration: 0.75, ease: "power4.in" });
+      mainTimeline?.current.add(tl.current);
     }, container); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
