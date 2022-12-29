@@ -1,11 +1,13 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import gsap from "gsap";
 import * as React from "react";
+import GsapContext from "../../store/gsap-context";
 
 const Loading = ({ ...props }) => {
   const logo = useRef<SVGSVGElement>(null);
   const container = useRef<HTMLDivElement | null>(null);
   const tl = useRef<GSAPTimeline>();
+  const { mainTimeline } = useContext(GsapContext);
 
   useEffect(() => {
     // Note that ref.current may be null. This is expected, because you may
@@ -28,8 +30,7 @@ const Loading = ({ ...props }) => {
         scaleX: 0,
       });
 
-      tl.current = gsap
-        .timeline()
+      mainTimeline?.current
         .fromTo(
           "#yellow-bar",
           {

@@ -2,16 +2,14 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Loading from "../components/ui/Loading";
 import { Inter } from "@next/font/google";
-
-import { useEffect } from "react";
+import GsapContext from "../store/gsap-context";
+import { useRef } from "react";
+import gsap from "gsap";
 
 const inter = Inter({ subsets: ["latin"] });
 
-if (typeof window !== "undefined") {
-
-}
-
 export default function App({ Component, pageProps }: AppProps) {
+  const mainTimeline = useRef<GSAPTimeline>(gsap.timeline());
 
   return (
     <>
@@ -22,8 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <Loading />
-      <Component {...pageProps} />
+      <GsapContext.Provider value={{ mainTimeline }}>
+        <Loading />
+        <Component {...pageProps} />
+      </GsapContext.Provider>
     </>
   );
 }
