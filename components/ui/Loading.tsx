@@ -71,7 +71,7 @@ const Loading = ({ ...props }) => {
         className="fixed z-50  w-screen h-screen top-0 left-0 flex items-center justify-center overflow-hidden bg-white"
       >
         <svg
-          className="w-[350px] invisible"
+          className="w-[200px] md:w-[300px] lg:w-[350px] invisible"
           xmlns="http://www.w3.org/2000/svg"
           id="svg"
           viewBox="0 0 1095.57 506.72"
