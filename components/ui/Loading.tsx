@@ -32,7 +32,6 @@ const Loading = ({ ...props }) => {
 
       gsap.set("path:not(#yellow-bar-1, #yellow-bar)", {
         scaleY: 0,
-        autoAlpha: 1,
       });
 
       tl.current = gsap
