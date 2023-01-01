@@ -4,7 +4,7 @@ import logo from "../../public/images/logo.png";
 
 const Navbar = () => {
   return (
-    <header className=" bg-white">
+    <header className=" bg-white relative z-10">
       <div className="flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
         <div className="max-w-[120px] lg:max-w-[175px]">
           <Image

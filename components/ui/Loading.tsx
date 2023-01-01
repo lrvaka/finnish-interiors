@@ -3,20 +3,24 @@ import gsap from "gsap";
 import * as React from "react";
 import GsapContext from "../../store/gsap-context";
 
-const Loading = ({ ...props }) => {
-  const logo = useRef<SVGSVGElement>(null);
+type CallbackType = (animation: GSAPTimeline, index: number) => void;
+
+const Loading = ({
+  addAnimation,
+  ...props
+}: {
+  addAnimation: CallbackType;
+}) => {
+ 
   const container = useRef<HTMLDivElement | null>(null);
-  const tl = useRef<GSAPTimeline>();
-  const { mainTimeline } = useContext(GsapContext);
 
   useEffect(() => {
     // Note that ref.current may be null. This is expected, because you may
     // conditionally render the ref-ed element, or you may forgot to assign it
 
-    let ctx = gsap.context(() => {
-      let logoWidth = gsap.getProperty("#logo", "width");
-      let containerWidth = gsap.getProperty("#container", "width");
+    let animation = gsap.timeline();
 
+    let ctx = gsap.context(() => {
       gsap.set("#svg", {
         autoAlpha: 1,
       });
@@ -34,7 +38,7 @@ const Loading = ({ ...props }) => {
         opacity: 0,
       });
 
-      tl.current = gsap
+      animation = gsap
         .timeline()
         .to("#yellow-bar", {
           scaleX: 1,
@@ -58,8 +62,11 @@ const Loading = ({ ...props }) => {
         .to("#backdrop", { y: "-100%", duration: 0.75, ease: "power4.in" });
     }, container); // <- IMPORTANT! Scopes selector text
 
+
+    addAnimation(animation, 0);
+
     return () => ctx.revert(); // cleanup
-  }, []); // <- empty dependency Array so it doesn't re-run on every render
+  }, [addAnimation]); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
     <div ref={container}>

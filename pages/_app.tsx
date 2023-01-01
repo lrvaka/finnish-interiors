@@ -2,15 +2,17 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Loading from "../components/ui/Loading";
 import { Inter } from "@next/font/google";
-import GsapContext from "../store/gsap-context";
-import { useRef } from "react";
-import gsap from "gsap";
+import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
+import gsap from "gsap/dist/gsap";
+import { useRouter } from "next/router";
+import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
+import { SplitText } from "gsap/dist/SplitText";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
-  const mainTimeline = useRef<GSAPTimeline>(gsap.timeline());
-
   return (
     <>
       <style jsx global>
@@ -20,10 +22,8 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-      <GsapContext.Provider value={{ mainTimeline }}>
-        <Loading />
-        <Component {...pageProps} />
-      </GsapContext.Provider>
+
+      <Component {...pageProps} />
     </>
   );
 }
