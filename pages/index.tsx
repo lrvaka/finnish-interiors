@@ -11,6 +11,7 @@ import Loading from "../components/ui/Loading";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useState, useCallback, useRef, useEffect } from "react";
 import gsap from "gsap";
+import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
 
 type CallbackType = (animation: GSAPTimeline, index: number | string) => void;
 
@@ -19,7 +20,7 @@ export default function Home() {
   const [tl, setTl] = useState<GSAPTimeline>();
   // pass a callback to child elements, this will add animations to the timeline
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
