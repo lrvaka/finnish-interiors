@@ -1,9 +1,5 @@
-import {
-  BoltIcon,
-  DevicePhoneMobileIcon,
-  GlobeAltIcon,
-  ScaleIcon,
-} from "@heroicons/react/24/outline";
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
 
 import { FcFrame } from "react-icons/fc";
 import { IoHammerOutline } from "react-icons/io5";
@@ -38,10 +34,41 @@ const features = [
 ];
 
 export default function Services() {
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set("#header > *", {
+        y: -10,
+        opacity: 0,
+      });
+
+      gsap.set("#items > *", {
+        y: -10,
+        opacity: 0,
+      });
+
+      gsap.to("#header > *, #items > *", {
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top bottom", // when the top of the trigger hits the top of the viewport
+        },
+        stagger: 0.2,
+        y: 0,
+        opacity: 1,
+        ease: "power4.easeOut",
+      });
+    }, container); // <- IMPORTANT! Scopes selector text
+
+    return () => {
+      ctx.revert();
+    }; // cleanup
+  }, []); // <- empty dependency Array so it doesn't re-run on every render
+
   return (
-    <div className="bg-white mb-32">
+    <div ref={container} className="bg-white mb-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="sm:text-center">
+        <div id="header" className="sm:text-center">
           <div className="text-lg font-semibold text-theme-200">
             Our services
           </div>
@@ -51,7 +78,10 @@ export default function Services() {
         </div>
 
         <div className="mt-20 max-w-lg sm:mx-auto md:max-w-none">
-          <div className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16">
+          <div
+            id="items"
+            className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16"
+          >
             {features.map((feature) => (
               <div
                 key={feature.name}

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useContext } from "react";
 import Image from "next/image";
 import heroBg from "../../public/images/hero-bg.png";
 import pattern from "../../public/images/pattern.png";
@@ -6,6 +7,9 @@ import {
   EnvelopeIcon,
   MapPinIcon,
 } from "@heroicons/react/24/outline";
+import gsap from "gsap";
+
+type CallbackType = (animation: GSAPTimeline, index: number | string) => void;
 
 const contact = [
   {
@@ -35,13 +39,82 @@ const contact = [
 ];
 
 const Border = () => {
-  return <div className=" min-h-[1px] lg:min-w-[1px] bg-slate-300"></div>;
+  return (
+    <div id="border" className=" min-h-[1px] lg:min-w-[1px] bg-slate-300"></div>
+  );
 };
 
-const Hero = () => {
+const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
+  const container = useRef<HTMLDivElement | null>(null);
+  const contactSection = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    // Note that ref.current may be null. This is expected, because you may
+    // conditionally render the ref-ed element, or you may forgot to assign it
+
+    let animation = gsap.timeline();
+
+    let ctx = gsap.context(() => {
+      gsap.set("#background-img", {
+        scale: 1.5,
+        opacity: 0.5,
+      });
+
+      gsap.set("#info-section > *", {
+        y: -10,
+        opacity: 0,
+      });
+
+      animation = gsap
+        .timeline()
+        .to("#background-img", {
+          scale: 1,
+          opacity: 1,
+          duration: 5,
+          ease: "power4.easeOut",
+        })
+        .to(
+          "#info-section > *",
+          {
+            stagger: 0.1,
+            y: 0,
+            opacity: 1,
+            ease: "power4.easeOut",
+          },
+          "-=4"
+        );
+    }, container); // <- IMPORTANT! Scopes selector text
+
+    let ctx1 = gsap.context(() => {
+      gsap.set(contactSection.current, {
+        y: -10,
+        opacity: 0.5,
+      });
+
+      animation.add(
+        gsap.to(contactSection.current, {
+          y: 0,
+          opacity: 1,
+          ease: "power4.easeOut",
+        }),
+        "-=4.25"
+      );
+    }, contactSection); // <- IMPORTANT! Scopes selector text
+
+    addAnimation(animation, "-=0.75");
+
+    return () => {
+      ctx.revert();
+      ctx1.revert();
+    }; // cleanup
+  }, [addAnimation]); // <- empty dependency Array so it doesn't re-run on every render
+
   return (
     <>
-      <div className="h-[700px] lg:h-[800px] relative">
+      <div
+        ref={container}
+        className="h-[700px] lg:h-[800px] relative overflow-hidden"
+      >
         <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
           <div className="absolute opacity-50 -translate-y-[50%] -translate-x-1/3 lg:-translate-y-[50%] lg:-translate-x-1/4  max-w-sm  ">
             <Image
@@ -57,7 +130,10 @@ const Hero = () => {
             />
           </div>
 
-          <div className="mt-40 lg:mt-52 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20">
+          <div
+            id="info-section"
+            className="mt-40 lg:mt-52 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
+          >
             <h1 className="text-white text-3xl lg:text-5xl font-bold">
               Transform Your Space with NYC&apos;s Expert Interior Contracting
               Services
@@ -78,18 +154,25 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <Image
-          src={heroBg}
-          className="object-cover"
-          fill
-          alt="beautiful background image of finnish interiors"
-        />
+        <div>
+          <Image
+            id="background-img"
+            src={heroBg}
+            className="object-cover"
+            fill
+            alt="beautiful background image of finnish interiors"
+          />
+        </div>
       </div>
-      <div className="relative z-10 -mt-28 max-w-screen-xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-52">
+      <div
+        ref={contactSection}
+        className="relative z-10 -mt-28 max-w-screen-xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-52"
+      >
         {contact.map((e, i) => {
           return (
             <>
               <div
+                id="contact-info"
                 key={i + "contact-info"}
                 className=" gap-10 lg:gap-0 bg-slate-50 flex-1 flex flex-col py-9 px-12 lg:py-10 lg:px-14 "
               >

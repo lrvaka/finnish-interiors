@@ -5,16 +5,19 @@ import jenFishImg from "../../public/images/projects/Michilli - Jennifer Fisher 
 import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci at Fuller Building/AM-05_04.jpg";
 import mulberryImg from "../../public/images/projects/Michilli - mulberryengland on Wooster Street/STORE_GALLERY_00.webp";
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import { Swiper as SwiperType, Navigation } from "swiper";
+import gsap from "gsap";
 
 // Import Swiper styles
 import "swiper/css";
 import { SwiperModule } from "swiper/types";
 
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
+
+type CallbackType = (animation: GSAPTimeline, index: number | string) => void;
 
 const projectList = [
   {
@@ -39,11 +42,41 @@ const projectList = [
   },
 ];
 
-const Projects = () => {
+const Projects = ({
+  addAnimation,
+  ...props
+}: {
+  addAnimation: CallbackType;
+}) => {
   const swiperRef = useRef<SwiperType | null>(null);
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set("#inner > *", {
+        y: -10,
+        opacity: 0,
+      });
+
+      gsap.to("#inner > *", {
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top bottom", // when the top of the trigger hits the top of the viewport
+        },
+        stagger: 0.2,
+        y: 0,
+        opacity: 1,
+        ease: "power4.easeOut",
+      });
+    }, container); // <- IMPORTANT! Scopes selector text
+
+    return () => {
+      ctx.revert();
+    }; // cleanup
+  }, [addAnimation]); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div className="h-[800px] relative bg-theme-100 my-32">
+    <div ref={container} className="h-[800px] relative bg-theme-100 my-32">
       <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
         <div className="absolute opacity-50 -translate-y-[50%] right-0 -translate-x-2/3 lg:-translate-y-[50%] lg:-translate-x-1/4  max-w-sm  ">
           <Image
@@ -59,7 +92,7 @@ const Projects = () => {
           />
         </div>
 
-        <div className="relative z-10 py-10 px-4 lg:px-6">
+        <div id="inner" className="relative z-10 py-10 px-4 lg:px-6">
           <div className="mb-5 lg:mb-16 flex justify-between flex-col lg:flex-row">
             <div>
               <div className="text-lg font-semibold text-theme-200">
