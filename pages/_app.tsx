@@ -13,6 +13,9 @@ import { useEffect } from "react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  }, []);
   return (
     <>
       <style jsx global>
