@@ -12,6 +12,10 @@ import { useEffect } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
+if (typeof window !== "undefined") {
+  window.history.scrollRestoration = "manual";
+}
+
 export default function App({ Component, pageProps }: AppProps) {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
