@@ -1,6 +1,6 @@
 import Image from "next/image";
-import img from "../../public/images/why-us/img.webp";
-import backdrop from "../../public/images/why-us/backdrop.png";
+import img from "../../public/images/home/why-us/img.webp";
+import backdrop from "../../public/images/home/why-us/backdrop.png";
 import { CheckIcon } from "@heroicons/react/24/outline";
 
 import { useRef, useEffect } from "react";

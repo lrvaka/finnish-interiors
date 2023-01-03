@@ -1,6 +1,6 @@
 import Image from "next/image";
-import img from "../../public/images/about-us/img.jpg";
-import backdrop from "../../public/images/about-us/backdrop.png";
+import img from "../../public/images/home/about-us/img.jpg";
+import backdrop from "../../public/images/home/about-us/backdrop.png";
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
