@@ -2,14 +2,12 @@ import Head from "next/head";
 import Navbar from "../components/ui/Navbar";
 import Footer from "../components/ui/Footer";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Header from "../components/AboutComponents/Header";
+import Header from "../components/ServicesComponents/Header";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
-import Stats from "../components/AboutComponents/Stats";
-import Info from "../components/AboutComponents/Info";
-import Values from "../components/AboutComponents/Values";
+import ServicesItems from "../components/ServicesComponents/ServicesItems";
 
-export default function About() {
+export default function Services() {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
   }, []);
@@ -25,9 +23,7 @@ export default function About() {
       <Navbar />
       <main>
         <Header />
-        <Stats />
-        <Info />
-        <Values />
+        <ServicesItems />
       </main>
       <Footer />
     </>
