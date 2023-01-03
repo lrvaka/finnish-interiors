@@ -9,7 +9,13 @@ import WhyUs from "../components/HomeComponents/WhyUs";
 import Footer from "../components/ui/Footer";
 import Loading from "../components/ui/Loading";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useState, useCallback, useRef, useEffect } from "react";
+import {
+  useState,
+  useCallback,
+  useRef,
+  useEffect,
+  SetStateAction,
+} from "react";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
 

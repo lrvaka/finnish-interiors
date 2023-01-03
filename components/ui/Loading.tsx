@@ -1,18 +1,19 @@
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext, SetStateAction } from "react";
 import gsap from "gsap";
 import * as React from "react";
-import GsapContext from "../../store/gsap-context";
+import InitialLoadContext from "../../store/initialLoad-context";
 
 type CallbackType = (animation: GSAPTimeline, index: number) => void;
 
 const Loading = ({
   addAnimation,
+
   ...props
 }: {
   addAnimation: CallbackType;
 }) => {
- 
   const container = useRef<HTMLDivElement | null>(null);
+  const { setFirstLoad } = useContext(InitialLoadContext);
 
   useEffect(() => {
     // Note that ref.current may be null. This is expected, because you may
@@ -59,9 +60,16 @@ const Loading = ({
           duration: 1,
           ease: "power4.inOut",
         })
-        .to("#backdrop", { y: "-100%", duration: 0.75, ease: "power4.in" });
+        .to("#backdrop", {
+          y: "-100%",
+          duration: 0.75,
+          ease: "power4.in",
+          //When animation is complete -> make sure it doesn't run again
+          onComplete: () => {
+            setFirstLoad(true);
+          },
+        });
     }, container); // <- IMPORTANT! Scopes selector text
-
 
     addAnimation(animation, 0);
 
