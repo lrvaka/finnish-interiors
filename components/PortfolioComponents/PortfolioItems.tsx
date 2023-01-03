@@ -1,5 +1,9 @@
 import { useRef, useEffect } from "react";
 import carpentryImg from "../../public/images/home/about-us/img.jpg";
+import helloTendImg from "../../public/images/projects/HelloTend/mask-studio.webp";
+import jenFishImg from "../../public/images/projects/Michilli - Jennifer Fisher SoHo/96be.jpg";
+import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci at Fuller Building/AM-05_04.jpg";
+import mulberryImg from "../../public/images/projects/Michilli - mulberryengland on Wooster Street/STORE_GALLERY_00.webp";
 import Image from "next/image";
 import gsap from "gsap";
 
@@ -8,35 +12,27 @@ import { IoHammerOutline } from "react-icons/io5";
 import { FaHardHat } from "react-icons/fa";
 import { BiCog } from "react-icons/bi";
 
-const features = [
+const projectList = [
   {
-    name: "General carpentry",
-    img: carpentryImg,
-    description:
-      "Installing trim, molding, and other woodwork; building custom cabinets, shelving, and other storage solutions; and repairing or replacing damaged woodwork.",
-    icon: IoHammerOutline,
+    name: "HelloTend",
+    location: "Williamsburg, Brooklyn",
+    img: helloTendImg,
     first: true,
   },
   {
-    name: "Framing",
-    img: carpentryImg,
-    description:
-      "Constructing the framework for new interior spaces, such as walls and ceilings, as well as repairing or replacing damaged framing.",
-    icon: FcFrame,
+    name: "Jennifer Fisher",
+    location: "Soho, Manhattan",
+    img: jenFishImg,
   },
   {
-    name: "Drywall installation and repair",
-    img: carpentryImg,
-    description:
-      "Installing new drywall, repairing damaged drywall, and finishing drywall surfaces with tape, joint compound, and texture.",
-    icon: FaHardHat,
+    name: "Stefano Ricci",
+    location: "Madison Ave, New York",
+    img: stefRicciImg,
   },
   {
-    name: "Project management",
-    img: carpentryImg,
-    description:
-      "Managing budgets and schedules to ensure that projects are completed on time and within budget, as well as obtaining necessary permits and ensuring that projects are completed in compliance with local building codes and regulations.",
-    icon: BiCog,
+    name: "Mulberry England",
+    location: "Wooster St, New York",
+    img: mulberryImg,
     last: true,
   },
 ];
@@ -48,7 +44,7 @@ const firstClass =
 const lastClass =
   "relative flex flex-col gap-6 border border-slate-200 lg:mt-20 border-b-theme-100  border-b-[5px] h-max";
 
-export default function ServicesItems() {
+export default function PortfolioItems() {
   const container = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -88,35 +84,28 @@ export default function ServicesItems() {
             id="items"
             className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16"
           >
-            {features.map((feature) => (
+            {projectList.map((item) => (
               <div
-                key={feature.name}
+                key={item.name}
                 className={
-                  feature.first
-                    ? firstClass
-                    : feature.last
-                    ? lastClass
-                    : regularClass
+                  item.first ? firstClass : item.last ? lastClass : regularClass
                 }
               >
                 <div id="main-img" className="relative w-full  z-10  h-[400px]">
                   <Image
                     className="object-cover"
                     fill
-                    src={feature.img}
+                    src={item.img}
                     alt={"beautiful picture of about us"}
                   />
                 </div>
-                <div className="p-10">
-                  <div className="flex h-20 w-20 items-center justify-center bg-theme-200 text-white sm:shrink-0 -mt-28 relative z-10 mb-5">
-                    <feature.icon className="h-16 w-16" aria-hidden="true" />
-                  </div>
+                <div className="p-10 pt-5">
                   <div className="sm:min-w-0 sm:flex-1">
                     <h2 className="text-2xl font-semibold leading-8 text-gray-900">
-                      {feature.name}
+                      {item.name}
                     </h2>
                     <p className="mt-2 text-base leading-7 text-gray-600">
-                      {feature.description}
+                      {item.location}
                     </p>
                   </div>
                 </div>
