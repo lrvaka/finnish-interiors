@@ -2,7 +2,8 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 import Image from "next/image";
 import missionImg from "../../public/images/about/mission.jpeg";
-import ourStory from "../../public/images/about/our-story.jpeg";
+// import ourStory from "../../public/images/about/our-story.jpeg";
+import ourStory from "../../public/images/projects/HelloTend/studio-exports_0013_2020_03_03_Tend_Williamsburg0682.webp";
 import yellowBackdrop from "../../public/images/home/about-us/backdrop.png";
 import blueBackdrop from "../../public/images/home/why-us/backdrop.png";
 
@@ -11,18 +12,19 @@ const Info = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-   
-
-      gsap.from("#main-img > *, #main-img1 > *, #text-section > *, #text-section1 > *", {
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top bottom", // when the top of the trigger hits the top of the viewport
-        },
-        stagger: 0.2,
-        y: -10,
-        opacity: 0,
-        ease: "power4.easeOut",
-      });
+      gsap.from(
+        "#main-img > *, #main-img1 > *, #text-section > *, #text-section1 > *",
+        {
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top bottom", // when the top of the trigger hits the top of the viewport
+          },
+          stagger: 0.2,
+          y: -10,
+          opacity: 0,
+          ease: "power4.easeOut",
+        }
+      );
     }, container); // <- IMPORTANT! Scopes selector text
 
     return () => {

@@ -8,7 +8,8 @@ import { useRouter } from "next/router";
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
 import { SplitText } from "gsap/dist/SplitText";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
+import InitialLoadContext from "../store/initialLoad-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +20,6 @@ if (typeof window !== "undefined") {
 export default function App({ Component, pageProps }: AppProps) {
   const [firstLoad, setFirstLoad] = useState(false);
 
-  useIsomorphicLayoutEffect(() => {
-    setTimeout(() => {
-      setFirstLoad(true);
-    }, 5000);
-  }, []);
   return (
     <>
       <style jsx global>
@@ -33,8 +29,14 @@ export default function App({ Component, pageProps }: AppProps) {
           }
         `}
       </style>
-
-      <Component {...pageProps} firstLoad={firstLoad} />
+      <InitialLoadContext.Provider
+        value={{
+          firstLoad,
+          setFirstLoad,
+        }}
+      >
+        <Component {...pageProps} firstLoad={firstLoad} />
+      </InitialLoadContext.Provider>
     </>
   );
 }
