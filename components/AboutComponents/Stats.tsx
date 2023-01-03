@@ -45,11 +45,11 @@ const Stats = () => {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="h-[320px] relative my-32">
-      <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
+    <div ref={container} className="h-[320px] relative mt-32 mb-16 lg:mt-32 lg:mb-5">
+      <div className="z-10 relative flex flex-col max-w-screen-lg mx-auto overflow-hidden h-full">
         <div
           id="inner"
-          className="relative z-10 px-4 lg:px-6 h-full flex flex-col sm:flex-row justify-between lg:justify-between items-center"
+          className="relative z-10 px-4 lg:px-6 h-full flex flex-col sm:flex-row justify-around lg:justify-between items-center"
         >
           {stats.map((e, i) => {
             return (
@@ -58,7 +58,7 @@ const Stats = () => {
                   {e.number}
                   <span className=" text-theme-200">+</span>
                 </div>
-                <div className=" text-slate-400 text-xl lg:text-2xl">
+                <div className=" text-slate-400 text-lg lg:text-xl">
                   {e.desc}
                 </div>
               </div>

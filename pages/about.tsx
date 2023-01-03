@@ -6,6 +6,8 @@ import Header from "../components/AboutComponents/Header";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
 import Stats from "../components/AboutComponents/Stats";
+import Info from "../components/AboutComponents/Info";
+import Values from "../components/AboutComponents/Values";
 
 export default function Home() {
   useIsomorphicLayoutEffect(() => {
@@ -24,6 +26,8 @@ export default function Home() {
       <main>
         <Header />
         <Stats />
+        <Info />
+        <Values />
       </main>
       <Footer />
     </>
