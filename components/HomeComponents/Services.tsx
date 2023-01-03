@@ -66,7 +66,7 @@ export default function Services() {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="bg-white mb-32">
+    <div ref={container} className="bg-white my-40 lg:my-60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div id="header" className="sm:text-center">
           <div className="text-lg font-semibold text-theme-200">
