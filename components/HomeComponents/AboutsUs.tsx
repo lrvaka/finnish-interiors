@@ -37,7 +37,7 @@ const AboutUs = () => {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="relative my-32 ">
+    <div ref={container} className="relative my-40 lg:my-60 ">
       <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto h-full">
         <div className="relative z-10 px-4 lg:px-6  h-full flex gap-20 flex-col lg:flex-row">
           <div id="text-section" className="self-center max-w-prose">

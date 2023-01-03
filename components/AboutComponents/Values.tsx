@@ -177,7 +177,7 @@ const Values = () => {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="relative my-40 lg:my-80 overflow-visible">
+    <div ref={container} className="relative my-40 lg:my-60 overflow-visible">
       <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-visible h-full">
         <div
           id="inner"

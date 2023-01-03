@@ -33,7 +33,7 @@ const CTA = () => {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="h-[320px] relative my-32 bg-theme-200">
+    <div ref={container} className="h-[320px] relative my-40 lg:my-60 bg-theme-200">
       <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
         <div className="absolute opacity-25 -translate-y-[50%] -translate-x-1/3 lg:translate-y-0 lg:-translate-x-1/4 lg:-rotate-90  max-w-sm  ">
           <Image
