@@ -47,7 +47,7 @@ const Hero = () => {
             className=" mt-32 lg:mt-40 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
           >
             <h1 className="text-black text-3xl lg:text-5xl font-bold">
-              Experience and Expertise in Interior Contracting
+             About us
             </h1>
             <p className=" text-slate-400 leading-normal mt-5 lg:text-xl ">
               Enhance your interior spaces with our expert contracting services,
