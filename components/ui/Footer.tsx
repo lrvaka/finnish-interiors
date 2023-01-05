@@ -40,14 +40,17 @@ const socialMedia = [
   {
     name: "LinkedIn",
     icon: FaLinkedin,
+    link: "https://www.linkedin.com/company/finnish-interiors/",
   },
   {
     name: "Instagram",
     icon: FaInstagram,
+    link: "https://www.instagram.com/finnishinteriors/",
   },
   {
     name: "Facebook",
     icon: FaFacebook,
+    link: "https://www.facebook.com/people/Finnish-Interiors/100088846917140/",
   },
 ];
 
@@ -103,12 +106,13 @@ const Footer = () => {
             <div className="flex gap-3 mt-5">
               {socialMedia.map((e, i) => {
                 return (
-                  <div
+                  <a
+                    href={e.link}
                     className="bg-theme-100 text-theme-200 p-2"
                     key={e.name + i}
                   >
                     <e.icon className="w-5 h-5" />
-                  </div>
+                  </a>
                 );
               })}
             </div>
@@ -131,7 +135,12 @@ const Footer = () => {
       </div>
       <div className="text-center py-10 border-t-[1px] border-t-theme-100/50 text-xs lg:text-sm px-2">
         <span>© 2022 Finnish Interiors Contracting LLC. |</span>
-        <a className="underline" href="https://blockhead.digital/" target="_blank" rel="noreferrer">
+        <a
+          className="underline"
+          href="https://blockhead.digital/"
+          target="_blank"
+          rel="noreferrer"
+        >
           &nbsp;Website by Blockhead Digital
         </a>
       </div>

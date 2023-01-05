@@ -45,7 +45,7 @@ const Stats = () => {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="h-[320px] relative mt-32 mb-16 lg:mt-32 lg:mb-5">
+    <div ref={container} className="h-[320px] relative my-16 lg:mt-32 lg:mb-5">
       <div className="z-10 relative flex flex-col max-w-screen-lg mx-auto overflow-hidden h-full">
         <div
           id="inner"
