@@ -47,12 +47,12 @@ const Hero = () => {
             className="text-center mx-auto mt-20 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
           >
             <h1 className="text-black text-3xl lg:text-5xl font-bold">
-             About us
+              About us
             </h1>
             <p className=" text-slate-400 leading-normal mt-2 lg:mt-5 lg:text-xl ">
-              Enhance your interior spaces with our expert contracting services,
-              including specializations in general carpentry, framing, and
-              drywall.
+              Get to know us: Our team is made up of talented and passionate
+              individuals who are committed to delivering the best products and
+              services to our clients.
             </p>
 
             <div className="flex gap-5 mt-7 lg:mt-10 justify-center">

@@ -56,14 +56,17 @@ const Info = () => {
                 Our mission
               </div>
               <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
-                Our goal is to deliver high quality work at an affordable price
+                Provide exceptional service to our clients
               </h2>
               <p className="mt-5 text-base text-gray-600 lg:leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-                mattis porttitor amet, adipiscing mauris. Ornare egestas
-                faucibus convallis feugiat. Ut dictum ut commodo consequat
-                aenean at. Interdum in adipiscing urna natoque. Convallis
-                suscipit est semper viverra sed vitae morbi diam.
+                At our Finnish Interiors, our mission is to provide the highest
+                level of service to our clients. We are dedicated to delivering
+                exceptional results and building long-lasting relationships with
+                each and every one of our customers. Our team of skilled
+                professionals is committed to exceeding expectations and going
+                above and beyond to ensure complete satisfaction. We take pride
+                in our work and strive to be the best in the industry. Thank you
+                for considering us for your interior contracting needs.
               </p>
             </div>
           </div>
@@ -73,14 +76,17 @@ const Info = () => {
                 Our story
               </div>
               <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
-                Our goal is to deliver high quality work at an affordable price
+                What makes us who we are & why we are
               </h2>
               <p className="mt-5 text-base text-gray-600 lg:leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet
-                mattis porttitor amet, adipiscing mauris. Ornare egestas
-                faucibus convallis feugiat. Ut dictum ut commodo consequat
-                aenean at. Interdum in adipiscing urna natoque. Convallis
-                suscipit est semper viverra sed vitae morbi diam.
+                Our company has a rich history dating back several years. From
+                the very beginning, we have been dedicated to providing the
+                highest level of service to our clients and delivering
+                exceptional results. We have grown and evolved over the years,
+                constantly striving to improve and stay at the forefront of the
+                interior contracting industry. Today, we are proud to be
+                recognized as a trusted and reliable choice for all of your
+                interior contracting needs.
               </p>
             </div>
             <div

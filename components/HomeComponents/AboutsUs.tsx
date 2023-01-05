@@ -52,11 +52,8 @@ const AboutUs = () => {
               and expertise to handle any project, big or small, and ensure that
               the final result is flawless. We pride ourselves on delivering
               exceptional workmanship and attention to detail, and we strive to
-              exceed our clients&apos; expectations on every project. Whether
-              you are looking to renovate a single room or undertake a
-              full-scale home or business remodel, we have the skills and
-              resources to make your vision a reality. Contact us today to learn
-              more about how we can help transform your space.
+              exceed our clients&apos; expectations on every project. Contact us
+              today to learn more about how we can help transform your space.
             </p>
             <button className=" mt-10 bg-theme-200 border-theme-200 border-2 py-4 px-7 h-fit font-semibold text-theme-100 lg:text-lg">
               Get a quote

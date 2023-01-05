@@ -38,9 +38,9 @@ const Hero = () => {
               Our portfolio
             </h1>
             <p className=" text-slate-400 leading-normal mt-2 lg:mt-5 lg:text-xl ">
-              Enhance your interior spaces with our expert contracting services,
-              including specializations in general carpentry, framing, and
-              drywall.
+              See our work in action: Our portfolio showcases a selection of our
+              past projects, highlighting the range of services we offer and the
+              high-quality workmanship we deliver.
             </p>
           </div>
         </div>
