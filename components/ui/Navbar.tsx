@@ -1,38 +1,188 @@
 import Link from "next/link";
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
+import { useEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
+
+const socialMedia = [
+  {
+    name: "LinkedIn",
+    icon: FaLinkedin,
+  },
+  {
+    name: "Instagram",
+    icon: FaInstagram,
+  },
+  {
+    name: "Facebook",
+    icon: FaFacebook,
+  },
+];
+
+const MobileNav = () => {
+  const [show, setShow] = useState(false);
+  const container = useRef<HTMLDivElement | null>(null);
+  const ctx = useRef<any | null>(null);
+  const rightX = useRef<any | null>(null);
+  const leftX = useRef<any | null>(null);
+  const button = useRef<any | null>(null);
+
+  useEffect(() => {
+    ctx.current = gsap.context(() => {}, container); // nothing initially (we'll add() to the context when endX changes)
+    return () => ctx.current.revert();
+  }, [ctx]);
+
+  // run when `endX` changes
+  useEffect(() => {
+    if (show) {
+      ctx.current.add(() => {
+        gsap.to(container.current, {
+          y: 0,
+          autoAlpha: 1,
+          duration: 0.75,
+          ease: "power4.in",
+        });
+
+        gsap.to(leftX.current, {
+          rotate: 45,
+          transformOrigin: "center",
+          duration: 0.75,
+          y: 3.75,
+          ease: "power4.in",
+        });
+
+        gsap.to(rightX.current, {
+          rotate: -45,
+          duration: 0.75,
+          y: -3.75,
+          transformOrigin: "center",
+          ease: "power4.in",
+        });
+      });
+    } else {
+      ctx.current.add(() => {
+        gsap.to(container.current, {
+          y: "-100%",
+          autoAlpha: 0,
+
+          duration: 0.75,
+          ease: "power4.in",
+        });
+
+        gsap.to(leftX.current, {
+          rotate: 0,
+          y: 0,
+          duration: 0.75,
+          ease: "power4.in",
+        });
+
+        gsap.to(rightX.current, {
+          rotate: 0,
+          y: 0,
+          duration: 0.75,
+          ease: "power4.in",
+        });
+      });
+    }
+  }, [show]);
+
+  return (
+    <>
+      <button
+        ref={button}
+        onClick={() => setShow(!show)}
+        className="relative z-50 md:hidden ml-3 bg-theme-100 border-theme-100 border-2 py-3 px-2 lg:py-4 lg:px-7 h-fit font-semibold text-theme-200 lg:text-lg"
+      >
+        <svg
+          stroke="currentColor"
+          fill="none"
+          strokeWidth="2"
+          className=" overflow-visible"
+          viewBox="0 0 24 24"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <desc></desc>
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <line ref={leftX} x1="4" y1="8" x2="20" y2="8"></line>
+          <line ref={rightX} x1="4" y1="16" x2="20" y2="16"></line>
+        </svg>
+      </button>
+      <div
+        ref={container}
+        className="md:hidden flex px-5 text-2xl justify-center text-center items-center  invisible -translate-y-full fixed z-40  w-screen h-screen top-0 left-0 overflow-hidden bg-theme-200 text-white"
+      >
+        <ul className="flex flex-col gap-5">
+          <li>Home</li>
+          <li>About</li>
+          <li>Services</li>
+          <li>Portfolio</li>
+          <li>
+            {" "}
+            <div className="flex gap-3 mt-5 justify-center">
+              {socialMedia.map((e, i) => {
+                return (
+                  <div
+                    className="bg-theme-100 text-theme-200 p-2"
+                    key={e.name + i}
+                  >
+                    <e.icon className="w-5 h-5" />
+                  </div>
+                );
+              })}
+            </div>
+          </li>
+          <li>
+            <button className="mt-5 bg-theme-100 border-theme-100 border-2 py-3 px-2 h-fit font-semibold text-theme-200">
+              Get a quote
+            </button>
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
 
 const Navbar = () => {
   return (
-    <header className=" bg-white relative z-10">
-      <div className="flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
-        <div className="max-w-[120px] lg:max-w-[175px]">
-          <Image
-            src={logo}
-            alt="finnish interiors - leading interior contractors"
-          />
+    <>
+      <header className=" bg-white fixed z-20 w-full">
+        <div className="flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
+          <div className="max-w-[120px] lg:max-w-[175px]">
+            <Image
+              src={logo}
+              alt="finnish interiors - leading interior contractors"
+            />
+          </div>
+          <nav className="hidden md:block ">
+            <ul className="flex gap-12 items-center justify-center h-full font-light text-xl">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
+              <li>
+                <Link href="/services">Services</Link>
+              </li>
+              <li>
+                <Link href="/portfolio">Portfolio</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="flex items-center">
+            <button className=" bg-theme-100 border-theme-100 border-2 py-3 px-2 lg:py-4 lg:px-7 h-fit font-semibold text-theme-200 lg:text-lg">
+              Get a quote
+            </button>
+            <MobileNav />
+          </div>
         </div>
-        <nav className="hidden lg:block ">
-          <ul className="flex gap-12 items-center justify-center h-full font-light text-xl">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/services">Services</Link>
-            </li>
-            <li>
-              <Link href="/portfolio">Portfolio</Link>
-            </li>
-          </ul>
-        </nav>
-        <button className="bg-theme-100 border-theme-100 border-2 py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg">
-          Get a quote
-        </button>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

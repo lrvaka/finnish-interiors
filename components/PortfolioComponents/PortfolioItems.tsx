@@ -104,9 +104,7 @@ export default function PortfolioItems() {
                     <h2 className="text-2xl font-semibold leading-8 text-gray-900">
                       {item.name}
                     </h2>
-                    <p className="mt-2 text-base leading-7 text-gray-600">
-                      {item.location}
-                    </p>
+                    <p className="text-base  text-slate-500">{item.location}</p>
                   </div>
                 </div>
               </div>
