@@ -40,7 +40,7 @@ const Hero = () => {
 
   return (
     <div ref={container}>
-      <div className="h-[400px] lg:h-[600px] relative overflow-hidden">
+      <div className="h-[400px] lg:h-[500px] relative overflow-hidden">
         <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
           <div
             id="info-section"

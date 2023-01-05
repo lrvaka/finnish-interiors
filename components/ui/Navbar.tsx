@@ -159,7 +159,7 @@ const Navbar = () => {
   return (
     <>
       <header className=" bg-white fixed z-20 w-full">
-        <div className="flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
+        <div className="border-b border-gray-300 flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
           <div className="max-w-[120px] lg:max-w-[175px]">
             <Image
               src={logo}
