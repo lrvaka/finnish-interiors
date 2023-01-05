@@ -4,6 +4,7 @@ import logo from "../../public/images/logo.png";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
+import NextLink from "next/link";
 
 const socialMedia = [
   {
@@ -117,12 +118,19 @@ const MobileNav = () => {
         className="md:hidden flex px-5 text-2xl justify-center text-center items-center  invisible -translate-y-full fixed z-40  w-screen h-screen top-0 left-0 overflow-hidden bg-theme-200 text-white"
       >
         <ul className="flex flex-col gap-5">
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Portfolio</li>
+          <li onClick={() => setShow(false)}>
+            <Link href="/">Home</Link>
+          </li>
+          <li onClick={() => setShow(false)}>
+            <Link href="/about">About</Link>
+          </li>
+          <li onClick={() => setShow(false)}>
+            <Link href="/services">Services</Link>
+          </li>
+          <li onClick={() => setShow(false)}>
+            <Link href="/portfolio">Portfolio</Link>
+          </li>
           <li>
-            {" "}
             <div className="flex gap-3 mt-5 justify-center">
               {socialMedia.map((e, i) => {
                 return (

@@ -40,22 +40,22 @@ const Hero = () => {
 
   return (
     <div ref={container}>
-      <div className="h-[600px] lg:h-[600px] relative overflow-hidden">
+      <div className="h-[400px] lg:h-[600px] relative overflow-hidden">
         <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
           <div
             id="info-section"
-            className=" mt-32 lg:mt-40 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
+            className="text-center mx-auto mt-20 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
           >
             <h1 className="text-black text-3xl lg:text-5xl font-bold">
              About us
             </h1>
-            <p className=" text-slate-400 leading-normal mt-5 lg:text-xl ">
+            <p className=" text-slate-400 leading-normal mt-2 lg:mt-5 lg:text-xl ">
               Enhance your interior spaces with our expert contracting services,
               including specializations in general carpentry, framing, and
               drywall.
             </p>
 
-            <div className="flex gap-5 mt-10">
+            <div className="flex gap-5 mt-7 lg:mt-10 justify-center">
               <button className="bg-theme-100 border-theme-100 border-2 py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg">
                 Get a quote
               </button>
