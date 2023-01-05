@@ -10,14 +10,17 @@ const socialMedia = [
   {
     name: "LinkedIn",
     icon: FaLinkedin,
+    link: "https://www.linkedin.com/company/finnish-interiors/",
   },
   {
     name: "Instagram",
     icon: FaInstagram,
+    link: "https://www.instagram.com/finnishinteriors/",
   },
   {
     name: "Facebook",
     icon: FaFacebook,
+    link: "https://www.facebook.com/people/Finnish-Interiors/100088846917140/",
   },
 ];
 
@@ -134,12 +137,13 @@ const MobileNav = () => {
             <div className="flex gap-3 mt-5 justify-center">
               {socialMedia.map((e, i) => {
                 return (
-                  <div
+                  <a
+                    href={e.link}
                     className="bg-theme-100 text-theme-200 p-2"
                     key={e.name + i}
                   >
                     <e.icon className="w-5 h-5" />
-                  </div>
+                  </a>
                 );
               })}
             </div>
