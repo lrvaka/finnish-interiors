@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import carpentryImg from "../../public/images/home/about-us/img.jpg";
+import projectListImages from "../../helpers/projectImages";
 import helloTendImg from "../../public/images/projects/HelloTend/mask-studio.webp";
 import jenFishImg from "../../public/images/projects/Michilli - Jennifer Fisher SoHo/96be.jpg";
 import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci at Fuller Building/AM-05_04.jpg";
@@ -7,31 +7,32 @@ import mulberryImg from "../../public/images/projects/Michilli - mulberryengland
 import Image from "next/image";
 import gsap from "gsap";
 
-import { FcFrame } from "react-icons/fc";
-import { IoHammerOutline } from "react-icons/io5";
-import { FaHardHat } from "react-icons/fa";
-import { BiCog } from "react-icons/bi";
+import Modal from "../ui/Modal";
 
 const projectList = [
   {
     name: "HelloTend",
     location: "Williamsburg, Brooklyn",
+    projectList: projectListImages.helloTend,
     img: helloTendImg,
     first: true,
   },
   {
     name: "Jennifer Fisher",
     location: "Soho, Manhattan",
+    projectList: projectListImages.jenniferFisher,
     img: jenFishImg,
   },
   {
     name: "Stefano Ricci",
     location: "Madison Ave, New York",
+    projectList: projectListImages.stefanoRicci,
     img: stefRicciImg,
   },
   {
     name: "Mulberry England",
     location: "Wooster St, New York",
+    projectList: projectListImages.mulberryEngland,
     img: mulberryImg,
     last: true,
   },
@@ -85,8 +86,11 @@ export default function PortfolioItems() {
             className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16"
           >
             {projectList.map((item) => (
-              <div
+              <Modal
+                projectImages={item.projectList}
                 key={item.name}
+                name={item.name}
+                location={item.location}
                 className={
                   item.first ? firstClass : item.last ? lastClass : regularClass
                 }
@@ -107,7 +111,7 @@ export default function PortfolioItems() {
                     <p className="text-base  text-slate-500">{item.location}</p>
                   </div>
                 </div>
-              </div>
+              </Modal>
             ))}
           </div>
         </div>

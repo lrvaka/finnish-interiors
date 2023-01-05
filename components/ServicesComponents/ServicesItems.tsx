@@ -1,6 +1,10 @@
 import { useRef, useEffect } from "react";
 import carpentryImg from "../../public/images/home/about-us/img.jpg";
+import framingImg from "../../public/images/services/framing.jpeg";
+import drywallImg from "../../public/images/services/drywall.jpeg";
+import projectImg from "../../public/images/services/project-manage.jpeg";
 import Image from "next/image";
+import NextLink from "next/link";
 import gsap from "gsap";
 
 import { FcFrame } from "react-icons/fc";
@@ -19,21 +23,21 @@ const features = [
   },
   {
     name: "Framing",
-    img: carpentryImg,
+    img: framingImg,
     description:
       "Constructing the framework for new interior spaces, such as walls and ceilings, as well as repairing or replacing damaged framing.",
     icon: FcFrame,
   },
   {
     name: "Drywall installation and repair",
-    img: carpentryImg,
+    img: drywallImg,
     description:
       "Installing new drywall, repairing damaged drywall, and finishing drywall surfaces with tape, joint compound, and texture.",
     icon: FaHardHat,
   },
   {
     name: "Project management",
-    img: carpentryImg,
+    img: projectImg,
     description:
       "Managing budgets and schedules to ensure that projects are completed on time and within budget, as well as obtaining necessary permits and ensuring that projects are completed in compliance with local building codes and regulations.",
     icon: BiCog,
@@ -42,14 +46,50 @@ const features = [
 ];
 
 const regularClass =
-  "relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max";
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max";
 const firstClass =
-  "relative flex flex-col gap-6 border border-slate-200 lg:-mt-20 border-b-theme-100  border-b-[5px] h-max";
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:-mt-20 border-b-theme-100  border-b-[5px] h-max";
 const lastClass =
-  "relative flex flex-col gap-6 border border-slate-200 lg:mt-20 border-b-theme-100  border-b-[5px] h-max";
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:mt-20 border-b-theme-100  border-b-[5px] h-max";
 
 export default function ServicesItems() {
   const container = useRef<HTMLDivElement | null>(null);
+
+  const onEnter = ({ currentTarget }: { currentTarget: any }) => {
+    gsap.context(() => {
+      gsap.to("#inner-img", {
+        scale: 1.05,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to(currentTarget, {
+        y: 10,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to("#heading", {
+        color: "#00406A",
+      });
+    }, currentTarget); // <- IMPORTANT! Scopes selector text
+  };
+
+  const onLeave = ({ currentTarget }: { currentTarget: any }) => {
+    gsap.context(() => {
+      gsap.to("#inner-img", {
+        scale: 1,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to(currentTarget, {
+        y: 0,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to("#heading", {
+        color: "#000000",
+      });
+    }, currentTarget); // <- IMPORTANT! Scopes selector text
+  };
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -89,7 +129,10 @@ export default function ServicesItems() {
             className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16"
           >
             {features.map((feature) => (
-              <div
+              <NextLink
+                href="/"
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
                 key={feature.name}
                 className={
                   feature.first
@@ -99,8 +142,12 @@ export default function ServicesItems() {
                     : regularClass
                 }
               >
-                <div id="main-img" className="relative w-full  z-10  h-[400px]">
+                <div
+                  id="main-img"
+                  className="relative w-full  z-10  h-[400px] overflow-hidden"
+                >
                   <Image
+                    id="inner-img"
                     className="object-cover"
                     fill
                     src={feature.img}
@@ -112,15 +159,21 @@ export default function ServicesItems() {
                     <feature.icon className="h-16 w-16" aria-hidden="true" />
                   </div>
                   <div className="sm:min-w-0 sm:flex-1">
-                    <h2 className="text-2xl font-semibold leading-8 text-gray-900">
+                    <h2
+                      id="heading"
+                      className="text-2xl font-semibold leading-8 text-gray-900"
+                    >
                       {feature.name}
                     </h2>
                     <p className="mt-2 text-base leading-7 text-gray-600">
                       {feature.description}
                     </p>
+                    <div className="mt-5 text-theme-200 font-semibold text-lg underline">
+                      Get service
+                    </div>
                   </div>
                 </div>
-              </div>
+              </NextLink>
             ))}
           </div>
         </div>
