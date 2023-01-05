@@ -77,7 +77,7 @@ export default function PortfolioItems() {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="bg-white my-40 lg:my-60">
+    <div ref={container} className="bg-white my-28 lg:my-60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mt-20 max-w-lg sm:mx-auto md:max-w-none">
           <div
