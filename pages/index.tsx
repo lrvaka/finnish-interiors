@@ -9,13 +9,8 @@ import WhyUs from "../components/HomeComponents/WhyUs";
 import Footer from "../components/ui/Footer";
 import Loading from "../components/ui/Loading";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import {
-  useState,
-  useCallback,
-  useRef,
-  useEffect,
-  SetStateAction,
-} from "react";
+import { useState, useCallback, useContext } from "react";
+import InitialLoadContext from "../store/initialLoad-context";
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
 
@@ -51,8 +46,8 @@ export default function Home({ firstLoad }: { firstLoad: boolean }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <main>
+
+      <main className="pt-[95px] lg:pt-[121px]">
         <Hero addAnimation={addAnimation} />
         <Projects addAnimation={addAnimation} />
         <AboutUs />

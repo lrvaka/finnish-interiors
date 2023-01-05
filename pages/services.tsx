@@ -20,8 +20,8 @@ export default function Services() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar />
-      <main>
+ 
+      <main className="pt-[95px] lg:pt-[121px]">
         <Header />
         <ServicesItems />
       </main>

@@ -10,6 +10,7 @@ import { SplitText } from "gsap/dist/SplitText";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useState, createContext } from "react";
 import InitialLoadContext from "../store/initialLoad-context";
+import Navbar from "../components/ui/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
           setFirstLoad,
         }}
       >
+        <Navbar />
         <Component {...pageProps} firstLoad={firstLoad} />
       </InitialLoadContext.Provider>
     </>
