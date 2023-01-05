@@ -38,9 +38,8 @@ const Hero = () => {
               Our services
             </h1>
             <p className=" text-slate-400 leading-normal mt-2 lg:mt-5 lg:text-xl ">
-              Enhance your interior spaces with our expert contracting services,
-              including specializations in general carpentry, framing, and
-              drywall.
+              Discover our range of services: Our team of skilled professionals
+              offer general carpentry, framing, and drywall services.
             </p>
           </div>
         </div>

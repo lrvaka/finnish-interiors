@@ -8,6 +8,7 @@ const valueList = [
   {
     name: "Quality",
     first: true,
+    desc: "At the heart of everything we do is a commitment to delivering the highest level of quality in all of our products and services.",
     icon: (props: any) => (
       <svg
         {...props}
@@ -33,6 +34,7 @@ const valueList = [
   },
   {
     name: "Commitment",
+    desc: "We are dedicated to providing a consistently high level of service to all of our clients, and are committed to building long-lasting relationships.",
     icon: (props: any) => (
       <svg
         {...props}
@@ -60,6 +62,7 @@ const valueList = [
   },
   {
     name: "Team work",
+    desc: "We believe that by working together as a team, we can achieve more and provide an even higher level of service to our clients.",
     icon: (props: any) => (
       <svg
         {...props}
@@ -87,6 +90,7 @@ const valueList = [
   },
   {
     name: "Innovation",
+    desc: "We are constantly looking for ways to improve and evolve, and encourage our team to think creatively and bring new ideas to the table.",
     icon: (props: any) => (
       <svg
         {...props}
@@ -116,6 +120,7 @@ const valueList = [
   {
     name: "Leadership",
     last: true,
+    desc: "We strive to be leaders in our industry, setting the bar high for ourselves and others through our commitment to excellence and innovation.",
     icon: (props: any) => (
       <svg
         {...props}
@@ -204,10 +209,7 @@ const Values = () => {
                   <h3 className="text-black text-xl lg:text-2xl font-bold leading-tight mt-5">
                     {e.name}
                   </h3>
-                  <p className="text-center mt-2 text-gray-700">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec
-                    ut viverra eros euismod. Vestibulum, diam suspendiss.
-                  </p>
+                  <p className="text-center mt-2 text-gray-700">{e.desc}</p>
                 </div>
               </div>
             );
