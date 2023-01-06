@@ -39,14 +39,50 @@ const projectList = [
 ];
 
 const regularClass =
-  "relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max";
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max";
 const firstClass =
-  "relative flex flex-col gap-6 border border-slate-200 lg:-mt-20 border-b-theme-100  border-b-[5px] h-max";
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:-mt-20 border-b-theme-100  border-b-[5px] h-max";
 const lastClass =
-  "relative flex flex-col gap-6 border border-slate-200 lg:mt-20 border-b-theme-100  border-b-[5px] h-max";
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:mt-20 border-b-theme-100  border-b-[5px] h-max";
 
 export default function PortfolioItems() {
   const container = useRef<HTMLDivElement | null>(null);
+
+  const onEnter = ({ currentTarget }: { currentTarget: any }) => {
+    gsap.context(() => {
+      gsap.to("#inner-img", {
+        scale: 1.05,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to(currentTarget, {
+        y: 10,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to("#heading", {
+        color: "#00406A",
+      });
+    }, currentTarget); // <- IMPORTANT! Scopes selector text
+  };
+
+  const onLeave = ({ currentTarget }: { currentTarget: any }) => {
+    gsap.context(() => {
+      gsap.to("#inner-img", {
+        scale: 1,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to(currentTarget, {
+        y: 0,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to("#heading", {
+        color: "#000000",
+      });
+    }, currentTarget); // <- IMPORTANT! Scopes selector text
+  };
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -87,6 +123,8 @@ export default function PortfolioItems() {
           >
             {projectList.map((item) => (
               <Modal
+                onMouseEnter={onEnter}
+                onMouseLeave={onLeave}
                 projectImages={item.projectList}
                 key={item.name}
                 name={item.name}
@@ -95,8 +133,12 @@ export default function PortfolioItems() {
                   item.first ? firstClass : item.last ? lastClass : regularClass
                 }
               >
-                <div id="main-img" className="relative w-full  z-10  h-[400px]">
+                <div
+                  id="main-img"
+                  className="relative w-full  z-10  h-[400px] overflow-hidden"
+                >
                   <Image
+                    id="inner-img"
                     className="object-cover"
                     fill
                     src={item.img}
@@ -105,7 +147,10 @@ export default function PortfolioItems() {
                 </div>
                 <div className="p-10 pt-5">
                   <div className="sm:min-w-0 sm:flex-1">
-                    <h2 className="text-2xl font-semibold leading-8 text-gray-900">
+                    <h2
+                      id="heading"
+                      className="text-2xl font-semibold leading-8 text-gray-900"
+                    >
                       {item.name}
                     </h2>
                     <p className="text-base  text-slate-500">{item.location}</p>

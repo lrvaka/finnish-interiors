@@ -4,6 +4,8 @@ import helloTendImg from "../../public/images/projects/HelloTend/mask-studio.web
 import jenFishImg from "../../public/images/projects/Michilli - Jennifer Fisher SoHo/96be.jpg";
 import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci at Fuller Building/AM-05_04.jpg";
 import mulberryImg from "../../public/images/projects/Michilli - mulberryengland on Wooster Street/STORE_GALLERY_00.webp";
+import projectListImages from "../../helpers/projectImages";
+import Modal from "../ui/Modal";
 
 import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -23,21 +25,25 @@ const projectList = [
   {
     name: "HelloTend",
     location: "Williamsburg, Brooklyn",
+    projectList: projectListImages.helloTend,
     img: helloTendImg,
   },
   {
     name: "Jennifer Fisher",
     location: "Soho, Manhattan",
+    projectList: projectListImages.jenniferFisher,
     img: jenFishImg,
   },
   {
     name: "Stefano Ricci",
     location: "Madison Ave, New York",
+    projectList: projectListImages.stefanoRicci,
     img: stefRicciImg,
   },
   {
     name: "Mulberry England",
     location: "Wooster St, New York",
+    projectList: projectListImages.mulberryEngland,
     img: mulberryImg,
   },
 ];
@@ -50,6 +56,32 @@ const Projects = ({
 }) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const container = useRef<HTMLDivElement | null>(null);
+
+  const onEnter = ({ currentTarget }: { currentTarget: any }) => {
+    gsap.context(() => {
+      gsap.to("#inner-img", {
+        scale: 1.05,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to("#heading", {
+        color: "#00406A",
+      });
+    }, currentTarget); // <- IMPORTANT! Scopes selector text
+  };
+
+  const onLeave = ({ currentTarget }: { currentTarget: any }) => {
+    gsap.context(() => {
+      gsap.to("#inner-img", {
+        scale: 1,
+        ease: "power4.easeOut",
+      });
+
+      gsap.to("#heading", {
+        color: "#000000",
+      });
+    }, currentTarget); // <- IMPORTANT! Scopes selector text
+  };
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -76,7 +108,10 @@ const Projects = ({
   }, [addAnimation]); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className="h-[800px] relative bg-theme-100 my-40 lg:my-60">
+    <div
+      ref={container}
+      className="h-[800px] relative bg-theme-100 my-40 lg:my-60"
+    >
       <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
         <div className="absolute opacity-50 -translate-y-[50%] right-0 -translate-x-2/3 lg:-translate-y-[50%] lg:-translate-x-1/4  max-w-sm  ">
           <Image
@@ -142,18 +177,31 @@ const Projects = ({
             {projectList.map((e, i) => {
               return (
                 <SwiperSlide key={"project-item " + i} className="bg-white">
-                  <div className="relative w-full h-[75%]">
-                    <Image
-                      className="object-cover"
-                      fill
-                      src={e.img}
-                      alt={"beautiful picture of " + e.name}
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="text-2xl">{e.name}</h3>
-                    <p className="text-slate-500">{e.location}</p>
-                  </div>
+                  <Modal
+                    onMouseEnter={onEnter}
+                    onMouseLeave={onLeave}
+                    projectImages={e.projectList}
+                    key={e.name}
+                    name={e.name}
+                    location={e.location}
+                    className="h-full cursor-pointer"
+                  >
+                    <div className="relative w-full h-[75%] overflow-hidden">
+                      <Image
+                        id="inner-img"
+                        className="object-cover"
+                        fill
+                        src={e.img}
+                        alt={"beautiful picture of " + e.name}
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 id="heading" className="text-2xl">
+                        {e.name}
+                      </h3>
+                      <p className="text-slate-500">{e.location}</p>
+                    </div>
+                  </Modal>
                 </SwiperSlide>
               );
             })}
