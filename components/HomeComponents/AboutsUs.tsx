@@ -45,7 +45,7 @@ const AboutUs = () => {
             <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
               Expert interior contractors <br /> offering a flawless finish
             </h2>
-            <p className="mt-5 text-base text-gray-600 lg:leading-relaxed">
+            <p className="mt-5 text-lg text-gray-600 ">
               At our interior contracting company, we specialize in providing
               high-quality services in the areas of general carpentry, framing,
               and drywall. Our team of experienced professionals has the skills

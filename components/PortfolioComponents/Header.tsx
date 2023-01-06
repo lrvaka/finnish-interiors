@@ -37,7 +37,7 @@ const Hero = () => {
             <h1 className="text-black text-3xl lg:text-5xl font-bold">
               Our portfolio
             </h1>
-            <p className=" text-slate-500 leading-normal mt-2 lg:mt-5 lg:text-xl ">
+            <p className=" text-slate-500 text-lg leading-normal mt-2 lg:mt-5 lg:text-xl ">
               See our work in action: Our portfolio showcases a selection of our
               past projects, highlighting the range of services we offer and the
               high-quality workmanship we deliver.
