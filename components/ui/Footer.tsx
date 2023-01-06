@@ -7,6 +7,7 @@ import {
 import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 import Image from "next/image";
+import NextLink from "next/link";
 import logo from "../../public/images/logo-white.png";
 
 const contact = [
@@ -124,10 +125,18 @@ const Footer = () => {
             </div>
 
             <ul className="text-lg flex flex-col gap-2 mt-2">
-              <li>Home</li>
-              <li>About</li>
-              <li>Services</li>
-              <li>Portfolio</li>
+              <li>
+                <NextLink href="/">Home</NextLink>
+              </li>
+              <li>
+                <NextLink href="/about">About</NextLink>
+              </li>
+              <li>
+                <NextLink href="/services">Services</NextLink>
+              </li>
+              <li>
+                <NextLink href="/portfolio">Portfolio</NextLink>
+              </li>
               <li>Privacy Policy</li>
             </ul>
           </div>
