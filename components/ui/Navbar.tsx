@@ -52,14 +52,14 @@ const MobileNav = () => {
           rotate: 45,
           transformOrigin: "center",
           duration: 0.75,
-          y: 3.75,
+          y: 4,
           ease: "power4.in",
         });
 
         gsap.to(rightX.current, {
           rotate: -45,
           duration: 0.75,
-          y: -3.75,
+          y: -4,
           transformOrigin: "center",
           ease: "power4.in",
         });

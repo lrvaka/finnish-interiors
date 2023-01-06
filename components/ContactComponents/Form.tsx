@@ -71,7 +71,7 @@ export default function Form() {
                     name="first-name"
                     id="first-name"
                     autoComplete="given-name"
-                    className="block w-full  border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full  border-gray-300 shadow-sm focus:border-theme-100 focus:ring-theme-200 sm:text-sm"
                   />
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function Form() {
                     name="last-name"
                     id="last-name"
                     autoComplete="family-name"
-                    className="block w-full  border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full  border-gray-300 shadow-sm focus:border-theme-100 focus:ring-theme-200 sm:text-sm"
                   />
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function Form() {
                     name="email"
                     type="email"
                     autoComplete="email"
-                    className="block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full border-gray-300 shadow-sm focus:border-theme-100 focus:ring-theme-200 sm:text-sm"
                   />
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function Form() {
                     name="company"
                     id="company"
                     autoComplete="organization"
-                    className="block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full border-gray-300 shadow-sm focus:border-theme-100 focus:ring-theme-200 sm:text-sm"
                   />
                 </div>
               </div>
@@ -158,7 +158,7 @@ export default function Form() {
                     id="phone"
                     autoComplete="tel"
                     aria-describedby="phone-description"
-                    className="block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full border-gray-300 shadow-sm focus:border-theme-100 focus:ring-theme-200 sm:text-sm"
                   />
                 </div>
               </div>
@@ -183,7 +183,7 @@ export default function Form() {
                     name="how-can-we-help"
                     aria-describedby="how-can-we-help-description"
                     rows={4}
-                    className="block w-full  border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full  border-gray-300 shadow-sm focus:border-theme-100 focus:ring-theme-200 sm:text-sm"
                     defaultValue={""}
                   />
                 </div>
