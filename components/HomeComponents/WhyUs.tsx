@@ -11,7 +11,7 @@ const whyUsList = [
     title: "Over 25 years of experience",
   },
   {
-    title: "200+ projects completed",
+    title: "300+ projects completed",
   },
   {
     title: "Exceptional work quality",

@@ -22,7 +22,7 @@ const contact = [
   {
     name: "Email us",
     detail: "info@constructor.com",
-    linkTitle: "Send us a email",
+    linkTitle: "Send us an email",
     link: "mailto:info@constructor.com",
     icon: EnvelopeIcon,
     border: true,
@@ -85,7 +85,7 @@ const Footer = () => {
                   </div>
                   <a
                     href={e.link}
-                    className="text-center underline text-lg text-white"
+                    className="hover:text-theme-100 transition-all text-center underline text-lg text-white"
                   >
                     {e.linkTitle}
                   </a>

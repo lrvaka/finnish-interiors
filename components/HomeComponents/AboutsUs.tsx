@@ -44,7 +44,7 @@ const AboutUs = () => {
           <div id="text-section" className="self-center max-w-prose">
             <div className="text-lg font-semibold text-theme-200">About us</div>
             <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
-              Expert interior contractors <br /> offering a flawless finish
+              New York City&apos;s expert interior contractors
             </h2>
             <p className="mt-5 text-lg text-gray-600  mb-10">
               At our interior contracting company, we specialize in providing
