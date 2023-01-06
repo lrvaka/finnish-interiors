@@ -48,8 +48,8 @@ export default function Form() {
             </h2>
             <p className="mt-4 text-lg text-gray-500 sm:mt-3">
               We&apos;d love to hear from you! Send us a message using the form
-              opposite, or email us. We&apos;d love to hear from you! Send us a
-              message using the form opposite, or email us.
+              opposite, or email us about your project and a some information
+              about yourself!
             </p>
             <form
               id="form-items"

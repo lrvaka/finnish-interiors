@@ -33,7 +33,7 @@ const Info = () => {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} className=" relative bg-gray-100 py-16 lg:py-32">
+    <div ref={container} id="info" className=" relative bg-gray-100 py-16 lg:py-32">
       <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto h-full">
         <div className="relative z-10 px-4 lg:px-6 h-full flex gap-32 lg:gap-10 flex-col lg:flex-row">
           <div className="flex flex-col-reverse lg:flex-col gap-20  lg:flex-[1] ">
