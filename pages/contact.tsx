@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Navbar from "../components/ui/Navbar";
+import Form from "../components/ContactComponents/Form";
 import Footer from "../components/ui/Footer";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Header from "../components/ContactComponents/Header";
@@ -21,7 +21,7 @@ export default function Contact() {
       </Head>
 
       <main className="pt-[95px] lg:pt-[121px]">
-        <Header />
+        <Form />
       </main>
       <Footer />
     </>

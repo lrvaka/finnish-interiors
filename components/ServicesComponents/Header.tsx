@@ -37,7 +37,7 @@ const Hero = () => {
             <h1 className="text-black text-3xl lg:text-5xl font-bold">
               Our services
             </h1>
-            <p className=" text-slate-400 leading-normal mt-2 lg:mt-5 lg:text-xl ">
+            <p className=" text-slate-500 leading-normal mt-2 lg:mt-5 lg:text-xl ">
               Discover our range of services: Our team of skilled professionals
               offer general carpentry, framing, and drywall services.
             </p>

@@ -49,7 +49,7 @@ const Hero = () => {
             <h1 className="text-black text-3xl lg:text-5xl font-bold">
               About us
             </h1>
-            <p className=" text-slate-400 leading-normal mt-2 lg:mt-5 lg:text-xl ">
+            <p className=" text-slate-500 leading-normal mt-2 lg:mt-5 lg:text-xl ">
               Get to know us: Our team is made up of talented and passionate
               individuals who are committed to delivering the best products and
               services to our clients.
