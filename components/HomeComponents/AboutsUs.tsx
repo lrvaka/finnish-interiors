@@ -2,6 +2,7 @@ import Image from "next/image";
 import img from "../../public/images/home/about-us/img.jpg";
 import backdrop from "../../public/images/home/about-us/backdrop.png";
 import { useRef, useEffect } from "react";
+import NextLink from "next/link";
 import gsap from "gsap";
 
 const AboutUs = () => {
@@ -45,7 +46,7 @@ const AboutUs = () => {
             <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
               Expert interior contractors <br /> offering a flawless finish
             </h2>
-            <p className="mt-5 text-lg text-gray-600 ">
+            <p className="mt-5 text-lg text-gray-600  mb-10">
               At our interior contracting company, we specialize in providing
               high-quality services in the areas of general carpentry, framing,
               and drywall. Our team of experienced professionals has the skills
@@ -55,9 +56,12 @@ const AboutUs = () => {
               exceed our clients&apos; expectations on every project. Contact us
               today to learn more about how we can help transform your space.
             </p>
-            <button className=" mt-10 bg-theme-200 border-theme-200 border-2 py-4 px-7 h-fit font-semibold text-theme-100 lg:text-lg">
+            <NextLink
+              href="/contact"
+              className=" bg-theme-200 border-theme-200 border-2 py-4 px-7 h-fit font-semibold text-theme-100 lg:text-lg"
+            >
               Get a quote
-            </button>
+            </NextLink>
           </div>
           <div className="relative lg:w-[750px] h-[500px] lg:h-[700px] overflow-visible">
             <div

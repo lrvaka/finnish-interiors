@@ -1,6 +1,7 @@
 import Image from "next/image";
 import heroBg from "../../public/images/hero-bg.png";
 import pattern from "../../public/images/pattern.png";
+import NextLink from 'next/link'
 
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
@@ -59,9 +60,9 @@ const CTA = () => {
           </h2>
 
           <div className="flex gap-5 mt-10">
-            <button className="bg-theme-100 border-theme-100 border-2 py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg">
+            <NextLink href="/contact" className="bg-theme-100 border-theme-100 border-2 py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg">
               Get a quote
-            </button>
+            </NextLink>
           </div>
         </div>
       </div>
