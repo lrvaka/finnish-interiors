@@ -82,7 +82,7 @@ const WhyUs = () => {
               <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
                 We lead with experience and quality
               </h2>
-              <p className="mt-5 text-base text-gray-600 lg:leading-relaxed">
+              <p className="mt-5 text-lg text-gray-600 lg:leading-relaxed">
                 Expert interior contractors for top-quality work and customer
                 satisfaction. Our team has the skills and experience to handle
                 any project, big or small.

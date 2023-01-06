@@ -58,7 +58,7 @@ const Info = () => {
               <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
                 Provide exceptional service to our clients
               </h2>
-              <p className="mt-5 text-base text-gray-600 lg:leading-relaxed">
+              <p className="mt-5 text-lg text-gray-600 lg:leading-relaxed">
                 At our Finnish Interiors, our mission is to provide the highest
                 level of service to our clients. We are dedicated to delivering
                 exceptional results and building long-lasting relationships with
@@ -78,7 +78,7 @@ const Info = () => {
               <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
                 What makes us who we are & why we are
               </h2>
-              <p className="mt-5 text-base text-gray-600 lg:leading-relaxed">
+              <p className="mt-5 text-lg text-gray-600 lg:leading-relaxed">
                 Our company has a rich history dating back several years. From
                 the very beginning, we have been dedicated to providing the
                 highest level of service to our clients and delivering
