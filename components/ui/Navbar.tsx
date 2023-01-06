@@ -148,7 +148,7 @@ const MobileNav = () => {
               })}
             </div>
           </li>
-          <li>
+          <li onClick={() => setShow(false)}>
             <NextLink
               href="/contact"
               className="mt-5 bg-theme-100 border-theme-100 border-2 py-3 px-2 h-fit font-semibold text-theme-200"
@@ -167,12 +167,12 @@ const Navbar = () => {
     <>
       <header className=" bg-white fixed z-20 w-full">
         <div className="border-b border-gray-300 flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
-          <div className="max-w-[120px] lg:max-w-[175px]">
+          <NextLink href="/" className="max-w-[120px] lg:max-w-[175px]">
             <Image
               src={logo}
               alt="finnish interiors - leading interior contractors"
             />
-          </div>
+          </NextLink>
           <nav className="hidden md:block ">
             <ul className="flex gap-12 items-center justify-center h-full font-light text-xl">
               <li>
