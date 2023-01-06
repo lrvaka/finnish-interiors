@@ -45,7 +45,7 @@ const MobileNav = () => {
           y: 0,
           autoAlpha: 1,
           duration: 0.75,
-          ease: "power4.in",
+          ease: "power4.inOut",
         });
 
         gsap.to(leftX.current, {
@@ -53,7 +53,7 @@ const MobileNav = () => {
           transformOrigin: "center",
           duration: 0.75,
           y: 4,
-          ease: "power4.in",
+          ease: "power4.inOut",
         });
 
         gsap.to(rightX.current, {
@@ -61,31 +61,31 @@ const MobileNav = () => {
           duration: 0.75,
           y: -4,
           transformOrigin: "center",
-          ease: "power4.in",
+          ease: "power4.inOut",
         });
       });
     } else {
       ctx.current.add(() => {
         gsap.to(container.current, {
-          y: "-100%",
+          y: "-25%",
           autoAlpha: 0,
 
           duration: 0.75,
-          ease: "power4.in",
+          ease: "power4.inOut",
         });
 
         gsap.to(leftX.current, {
           rotate: 0,
           y: 0,
           duration: 0.75,
-          ease: "power4.in",
+          ease: "power4.inOut",
         });
 
         gsap.to(rightX.current, {
           rotate: 0,
           y: 0,
           duration: 0.75,
-          ease: "power4.in",
+          ease: "power4.inOut",
         });
       });
     }
