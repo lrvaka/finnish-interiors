@@ -33,11 +33,11 @@ function Modal({
   return (
     <>
       <Dialog
-        className=" shadow-2xl z-50 p-1 pb-5 md:p-5 w-[98vw] h-[92vh] md:h-[90vh] md:w-[90vw] 2xl:h-[80vh] 2xl:w-[80vw] fixed bg-theme-200 border rounded-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        className=" shadow-2xl z-50 p-1 pb-5 md:p-5 w-[98vw] h-[85vh] md:h-[90vh] md:w-[90vw] 2xl:h-[80vh] 2xl:w-[80vw] fixed bg-theme-200 border rounded-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         open={isOpen}
         onClose={() => setIsOpen(false)}
       >
-        <Dialog.Panel className="h-full relative">
+        <Dialog.Panel className="h-full relative flex flex-col">
           <Swiper
             slidesPerView="auto"
             onBeforeInit={(swiper) => {
@@ -52,7 +52,7 @@ function Modal({
                 spaceBetween: 20,
               },
             }}
-            className="h-[75%]"
+            className="h-[75%] w-full"
           >
             {projectImages.map((e, i) => {
               return (
@@ -69,7 +69,7 @@ function Modal({
               );
             })}
           </Swiper>
-          <div className="text-white flex flex-col justify-center text-center mt-2 h-[25%]">
+          <div className="text-white flex flex-col justify-center text-center mt-2 flex-1">
             <div className="relative z-10 text-teal-900 flex gap-2 self-center ">
               <button
                 className="text-3xl p-2 bg-theme-100"
@@ -90,14 +90,26 @@ function Modal({
             <Dialog.Description className="text-lg lg:text-2xl">
               {location}
             </Dialog.Description>
-
-            <button
-              className="p-1 bg-slate-200 text-black lg:p-2 w-max h-max self-center mt-2 lg:mt-10"
-              onClick={() => setIsOpen(false)}
-            >
-              Close
-            </button>
           </div>
+          <button
+            className="p-1 bg-red-300 text-black lg:p-2 w-max h-max self-center absolute top-0 left-0 z-20"
+            onClick={() => setIsOpen(false)}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </Dialog.Panel>
       </Dialog>
       <div
