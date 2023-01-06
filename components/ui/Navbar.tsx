@@ -149,9 +149,12 @@ const MobileNav = () => {
             </div>
           </li>
           <li>
-            <button className="mt-5 bg-theme-100 border-theme-100 border-2 py-3 px-2 h-fit font-semibold text-theme-200">
+            <NextLink
+              href="/contact"
+              className="mt-5 bg-theme-100 border-theme-100 border-2 py-3 px-2 h-fit font-semibold text-theme-200"
+            >
               Get a quote
-            </button>
+            </NextLink>
           </li>
         </ul>
       </div>
@@ -187,9 +190,12 @@ const Navbar = () => {
             </ul>
           </nav>
           <div className="flex items-center">
-            <button className=" bg-theme-100 border-theme-100 border-2 py-3 px-2 lg:py-4 lg:px-7 h-fit font-semibold text-theme-200 lg:text-lg">
+            <NextLink
+              href="/contact"
+              className=" bg-theme-100 border-theme-100 border-2 py-3 px-2 lg:py-4 lg:px-7 h-fit font-semibold text-theme-200 lg:text-lg"
+            >
               Get a quote
-            </button>
+            </NextLink>
             <MobileNav />
           </div>
         </div>

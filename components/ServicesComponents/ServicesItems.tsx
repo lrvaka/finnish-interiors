@@ -130,7 +130,7 @@ export default function ServicesItems() {
           >
             {features.map((feature) => (
               <NextLink
-                href="/"
+                href="/contact"
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
                 key={feature.name}

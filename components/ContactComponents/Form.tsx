@@ -1,12 +1,39 @@
 import Image from "next/image";
+import { useRef, useEffect } from "react";
 import formImg from "../../public/images/contact/form-img.jpeg";
+import gsap from "gsap";
 
 export default function Form() {
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.from("#inner-img", {
+        scale: 1.1,
+        opacity: 0.5,
+        duration: 5,
+        ease: "power4.easeOut",
+      });
+
+      gsap.from("#items > *, #form-items > *", {
+        stagger: 0.2,
+        y: -10,
+        opacity: 0,
+        ease: "power4.easeOut",
+      });
+    }, container); // <- IMPORTANT! Scopes selector text
+
+    return () => {
+      ctx.revert();
+    }; // cleanup
+  }, []); // <- empty dependency Array so it doesn't re-run on every render
+
   return (
-    <div className="relative bg-white">
+    <div ref={container} className="relative bg-white">
       <div className="lg:absolute lg:inset-0">
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <div className="overflow-hidden lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
           <Image
+            id="inner-img"
             className="h-56 w-full object-cover lg:absolute lg:h-full"
             src={formImg}
             alt=""
@@ -15,7 +42,7 @@ export default function Form() {
       </div>
       <div className="relative py-16 px-6 sm:py-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32">
         <div className="lg:pr-8">
-          <div className="mx-auto max-w-md sm:max-w-lg lg:mx-0">
+          <div id="items" className="mx-auto max-w-md sm:max-w-lg lg:mx-0">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Let&apos;s work together
             </h2>
@@ -25,6 +52,7 @@ export default function Form() {
               message using the form opposite, or email us.
             </p>
             <form
+              id="form-items"
               action="#"
               method="POST"
               className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
@@ -130,7 +158,7 @@ export default function Form() {
                     id="phone"
                     autoComplete="tel"
                     aria-describedby="phone-description"
-                    className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    className="block w-full border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
                   />
                 </div>
               </div>
