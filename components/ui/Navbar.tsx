@@ -41,12 +41,24 @@ const MobileNav = () => {
   useEffect(() => {
     if (show) {
       ctx.current.add(() => {
-        gsap.to(container.current, {
-          y: 0,
-          autoAlpha: 1,
-          duration: 0.75,
-          ease: "power4.inOut",
-        });
+        gsap
+          .timeline()
+          .to(container.current, {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.75,
+            ease: "power4.inOut",
+          })
+          .to(
+            "#list-items > *",
+            {
+              y: 0,
+              autoAlpha: 1,
+              stagger: 0.05,
+              ease: "power4.inOut",
+            },
+            "-=0.5"
+          );
 
         gsap.to(leftX.current, {
           rotate: 45,
@@ -66,13 +78,25 @@ const MobileNav = () => {
       });
     } else {
       ctx.current.add(() => {
-        gsap.to(container.current, {
-          y: "-25%",
-          autoAlpha: 0,
+        gsap
+          .timeline()
+          .to(container.current, {
+            y: "-25%",
+            autoAlpha: 0,
 
-          duration: 0.75,
-          ease: "power4.inOut",
-        });
+            duration: 0.75,
+            ease: "power4.inOut",
+          })
+          .to(
+            "#list-items > *",
+            {
+              y: -10,
+              autoAlpha: 0,
+              stagger: 0.05,
+              ease: "power4.inOut",
+            },
+            "-=1"
+          );
 
         gsap.to(leftX.current, {
           rotate: 0,
@@ -120,7 +144,7 @@ const MobileNav = () => {
         ref={container}
         className="md:hidden flex px-5 text-2xl justify-center text-center items-center  invisible -translate-y-full fixed z-40  w-screen h-screen top-0 left-0 overflow-hidden bg-theme-200 text-white"
       >
-        <ul className="flex flex-col gap-5">
+        <ul id="list-items" className="flex flex-col gap-5">
           <li onClick={() => setShow(false)}>
             <Link href="/">Home</Link>
           </li>

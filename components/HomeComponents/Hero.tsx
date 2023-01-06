@@ -24,7 +24,7 @@ const contact = [
   {
     name: "Email us",
     detail: "info@constructor.com",
-    linkTitle: "Send us a email",
+    linkTitle: "Send us an email",
     link: "mailto:info@constructor.com",
     icon: EnvelopeIcon,
     border: true,
@@ -137,7 +137,7 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
           >
             <h1 className="text-white text-3xl lg:text-5xl font-bold">
               Transform Your Space with NYC&apos;s Expert Interior Contracting
-              Services
+              Company
             </h1>
             <p className=" text-slate-300 text-lg leading-normal mt-5 lg:text-xl ">
               Enhance your interior spaces with our expert contracting services,
@@ -192,7 +192,7 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
                     </div>
                   </div>
                 </div>
-                <a href={e.link} className="text-center underline text-lg">
+                <a href={e.link} className="hover:text-theme-100 transition-all text-center underline text-lg">
                   {e.linkTitle}
                 </a>
               </div>

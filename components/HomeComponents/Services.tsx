@@ -68,12 +68,12 @@ export default function Services() {
   return (
     <div ref={container} className="bg-white my-40 lg:my-60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div id="header" className="sm:text-center">
+        <div id="header" className="sm:text-center max-w-lg mx-auto">
           <div className="text-lg font-semibold text-theme-200">
             Our services
           </div>
           <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
-            We cover the interior contracting essentials
+            We cover a wide array of interior contracting services
           </h2>
         </div>
 
