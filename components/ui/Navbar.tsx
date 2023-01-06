@@ -133,8 +133,8 @@ const MobileNav = () => {
           <li onClick={() => setShow(false)}>
             <Link href="/portfolio">Portfolio</Link>
           </li>
-          <li>
-            <div className="flex gap-3 mt-5 justify-center">
+          <li className=" mt-2">
+            <div className="flex gap-3 justify-center">
               {socialMedia.map((e, i) => {
                 return (
                   <a
@@ -148,7 +148,7 @@ const MobileNav = () => {
               })}
             </div>
           </li>
-          <li onClick={() => setShow(false)}>
+          <li className="mt-5" onClick={() => setShow(false)}>
             <NextLink
               href="/contact"
               className="mt-5 bg-theme-100 border-theme-100 border-2 py-3 px-2 h-fit font-semibold text-theme-200"

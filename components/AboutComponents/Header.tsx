@@ -3,6 +3,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import img from "../../public/images/about/about-us.jpeg";
 import backdrop from "../../public/images/about/backdrop.png";
+import NextLink from "next/link";
 
 const Hero = () => {
   const container = useRef<HTMLDivElement | null>(null);
@@ -56,12 +57,18 @@ const Hero = () => {
             </p>
 
             <div className="flex gap-5 mt-7 lg:mt-10 justify-center">
-              <button className="bg-theme-100 border-theme-100 border-2 py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg">
+              <NextLink
+                href="/contact"
+                className="bg-theme-100 border-theme-100 border-2 py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg"
+              >
                 Get a quote
-              </button>
-              <button className=" border-theme-100 border-2   py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg">
+              </NextLink>
+              <a
+                href="#info"
+                className=" border-theme-100 border-2   py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg"
+              >
                 Learn more
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -70,7 +77,7 @@ const Hero = () => {
         id="header-img"
         className="relative h-[300px] lg:h-[700px] overflow-visible "
       >
-        <div className="absolute z-10 px-4 lg:px-6 w-[90%] lg:w-[900px] h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute z-10 px-4 lg:px-6 w-[90%] lg:w-[900px] 2xl:w-[1200px] h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Image
             className="object-cover"
             sizes="100vw"
