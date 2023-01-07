@@ -186,7 +186,7 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
                 <div className="flex gap-4 flex-1">
                   <e.icon className=" h-16 w-16 p-3 bg-theme-200 text-white " />
                   <div className="flex flex-col gap-2">
-                    <h3 className="text-2xl font-bold">{e.name}</h3>
+                    <h2 className="text-2xl font-bold">{e.name}</h2>
                     <div className=" text-gray-400 max-w-[200px] sm:text-sm xl:text-base">
                       {e.detail}
                     </div>
