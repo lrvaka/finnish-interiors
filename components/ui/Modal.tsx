@@ -72,12 +72,14 @@ function Modal({
           <div className="text-white flex flex-col justify-center text-center mt-2 flex-1">
             <div className="relative z-10 text-teal-900 flex gap-2 self-center ">
               <button
+                aria-label="Left button"
                 className="text-3xl p-2 bg-theme-100"
                 onClick={() => swiperRef.current?.slidePrev()}
               >
                 <ChevronLeftIcon className="text-black h-5 w-5 lg:w-8 lg:h-8" />
               </button>
               <button
+                aria-label="Right button"
                 className="text-3xl p-2 bg-theme-100"
                 onClick={() => swiperRef.current?.slideNext()}
               >
