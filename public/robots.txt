@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.finnishinteriors.com
+
+# Sitemaps
+Sitemap: https://www.finnishinteriors.com/sitemap.xml

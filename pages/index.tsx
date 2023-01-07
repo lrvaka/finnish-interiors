@@ -1,7 +1,6 @@
 import Head from "../helpers/Head";
 import Hero from "../components/HomeComponents/Hero";
 import Projects from "../components/HomeComponents/Projects";
-
 import Services from "../components/HomeComponents/Services";
 import CTA from "../components/HomeComponents/CTA";
 import AboutUs from "../components/HomeComponents/AboutsUs";
