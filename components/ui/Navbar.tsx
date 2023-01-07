@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 import NextLink from "next/link";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 
 const socialMedia = [
   {
@@ -25,20 +26,20 @@ const socialMedia = [
 ];
 
 const MobileNav = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<boolean | undefined>();
   const container = useRef<HTMLDivElement | null>(null);
   const ctx = useRef<any | null>(null);
   const rightX = useRef<any | null>(null);
   const leftX = useRef<any | null>(null);
   const button = useRef<any | null>(null);
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     ctx.current = gsap.context(() => {}, container); // nothing initially (we'll add() to the context when endX changes)
     return () => ctx.current.revert();
   }, [ctx]);
 
   // run when `endX` changes
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (show) {
       ctx.current.add(() => {
         gsap
@@ -49,16 +50,12 @@ const MobileNav = () => {
             duration: 0.75,
             ease: "power4.inOut",
           })
-          .to(
-            "#list-items > *",
-            {
-              y: 0,
-              autoAlpha: 1,
-              stagger: 0.05,
-              ease: "power4.inOut",
-            },
-            "-=0.5"
-          );
+          .to("#nav-items > *", {
+            y: 0,
+            autoAlpha: 1,
+            stagger: 0.025,
+            ease: "power4.inOut",
+          }, "-=0.4");
 
         gsap.to(leftX.current, {
           rotate: 45,
@@ -76,27 +73,22 @@ const MobileNav = () => {
           ease: "power4.inOut",
         });
       });
-    } else {
+    } else if (show === false) {
       ctx.current.add(() => {
         gsap
           .timeline()
           .to(container.current, {
             y: "-25%",
             autoAlpha: 0,
-
             duration: 0.75,
             ease: "power4.inOut",
           })
-          .to(
-            "#list-items > *",
-            {
-              y: -10,
-              autoAlpha: 0,
-              stagger: 0.05,
-              ease: "power4.inOut",
-            },
-            "-=1"
-          );
+          .to("#nav-items > *", {
+            y: -10,
+            autoAlpha: 0,
+            stagger: 0.01,
+            ease: "power4.inOut",
+          });
 
         gsap.to(leftX.current, {
           rotate: 0,
@@ -142,9 +134,9 @@ const MobileNav = () => {
       </button>
       <div
         ref={container}
-        className="md:hidden flex px-5 text-2xl justify-center text-center items-center  invisible -translate-y-full fixed z-40  w-screen h-screen top-0 left-0 overflow-hidden bg-theme-200 text-white"
+        className="md:hidden flex px-5 text-2xl justify-center text-center items-center  invisible -translate-y-full fixed z-40  w-screen h-screen top-0 left-0 overflow-hidden bg-theme-200 text-white "
       >
-        <ul id="list-items" className="flex flex-col gap-5">
+        <ul id="nav-items" className="flex flex-col gap-5">
           <li onClick={() => setShow(false)}>
             <Link href="/">Home</Link>
           </li>
