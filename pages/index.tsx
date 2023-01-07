@@ -1,7 +1,7 @@
-import Head from "next/head";
+import Head from "../helpers/Head";
 import Hero from "../components/HomeComponents/Hero";
 import Projects from "../components/HomeComponents/Projects";
-import Navbar from "../components/ui/Navbar";
+
 import Services from "../components/HomeComponents/Services";
 import CTA from "../components/HomeComponents/CTA";
 import AboutUs from "../components/HomeComponents/AboutsUs";
@@ -10,11 +10,22 @@ import Footer from "../components/ui/Footer";
 import Loading from "../components/ui/Loading";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useState, useCallback, useContext } from "react";
-import InitialLoadContext from "../store/initialLoad-context";
+
 import gsap from "gsap";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
 
 type CallbackType = (animation: GSAPTimeline, index: number | string) => void;
+
+const meta = {
+  title:
+    "Finnish Interiors: New York City's Premier Interior Contracting Company",
+  description:
+    "Looking for professional and reliable interior contracting services in New York City? Look no further than Finnish Interiors. Our team of experienced contractors is dedicated to providing top-quality workmanship and attention to detail on every project. Contact us today for a consultation.",
+  url: "https://www.finnishinteriors.com",
+  twitter: "https://twitter.com/finnishinteriors",
+  imageUrl: "https://www.finnishinteriors.com/twitter.jpeg",
+  imageAlt: "Finnish Interiors",
+};
 
 export default function Home({ firstLoad }: { firstLoad: boolean }) {
   // define a timeline
@@ -40,18 +51,7 @@ export default function Home({ firstLoad }: { firstLoad: boolean }) {
   return (
     <>
       {!firstLoad ? <Loading addAnimation={addAnimation} /> : null}
-      <Head>
-        <title>
-          Finnish Interiors: New York City&apos;s Premier Interior Contracting
-          Company
-        </title>
-        <meta
-          name="description"
-          content="Looking for professional and reliable interior contracting services in New York City? Look no further than Finnish Interiors. Our team of experienced contractors is dedicated to providing top-quality workmanship and attention to detail on every project. Contact us today for a consultation."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head heading={meta} />
 
       <main className="pt-[95px] lg:pt-[121px]">
         <Hero addAnimation={addAnimation} />

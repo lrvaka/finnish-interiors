@@ -169,7 +169,7 @@ export default function ServicesItems() {
                       {feature.description}
                     </p>
                     <div className="mt-5 text-theme-200 font-semibold text-lg underline">
-                      Get service
+                     Learn more
                     </div>
                   </div>
                 </div>

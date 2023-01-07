@@ -47,14 +47,15 @@ const AboutUs = () => {
               New York City&apos;s expert interior contractors
             </h2>
             <p className="mt-5 text-lg text-gray-600  mb-10">
-              At our interior contracting company, we specialize in providing
-              high-quality services in the areas of general carpentry, framing,
-              and drywall. Our team of experienced professionals has the skills
-              and expertise to handle any project, big or small, and ensure that
-              the final result is flawless. We pride ourselves on delivering
-              exceptional workmanship and attention to detail, and we strive to
-              exceed our clients&apos; expectations on every project. Contact us
-              today to learn more about how we can help transform your space.
+              At Finnish Interiors, we specialize in providing high-quality
+              services in the areas of general carpentry, framing, and drywall
+              in the New York City Metropolitan area. Our team of experienced
+              professionals has the skills and expertise to handle any project,
+              big or small, and ensure that the final result is flawless. We
+              pride ourselves on delivering exceptional workmanship and
+              attention to detail, and we strive to exceed our clients&apos;
+              expectations on every project. Contact us today to learn more
+              about how we can help transform your space.
             </p>
             <NextLink
               href="/contact"
