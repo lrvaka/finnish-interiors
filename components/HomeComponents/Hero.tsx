@@ -136,13 +136,13 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
             className="mt-40 lg:mt-52 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
           >
             <h1 className="text-white text-3xl lg:text-5xl font-bold">
-              Transform Your Space with NYC&apos;s Expert Interior Contracting
-              Company
+              Finnish Interiors: New York City&apos;s Premier Interior
+              Contracting Company
             </h1>
             <p className=" text-slate-300 text-lg leading-normal mt-5 lg:text-xl ">
-              Enhance your interior spaces with our expert contracting services,
-              including specializations in general carpentry, framing, and
-              drywall.
+              Enhance your New York City interior spaces with our expert
+              contracting services, including specializations in general
+              carpentry, framing, and drywall.
             </p>
 
             <div className="flex gap-5 mt-10">
@@ -192,7 +192,10 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
                     </div>
                   </div>
                 </div>
-                <a href={e.link} className="hover:text-theme-100 transition-all text-center underline text-lg">
+                <a
+                  href={e.link}
+                  className="hover:text-theme-100 transition-all text-center underline text-lg"
+                >
                   {e.linkTitle}
                 </a>
               </div>

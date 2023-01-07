@@ -33,7 +33,11 @@ const Info = () => {
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div ref={container} id="info" className=" relative bg-gray-100 py-16 lg:py-32">
+    <div
+      ref={container}
+      id="info"
+      className=" relative bg-gray-100 py-16 lg:py-32"
+    >
       <div className="z-10 relative flex flex-col max-w-screen-xl mx-auto h-full">
         <div className="relative z-10 px-4 lg:px-6 h-full flex gap-32 lg:gap-10 flex-col lg:flex-row">
           <div className="flex flex-col-reverse lg:flex-col gap-20  lg:flex-[1] ">
@@ -59,7 +63,7 @@ const Info = () => {
                 Provide exceptional service to our clients
               </h2>
               <p className="mt-5 text-lg text-gray-600 lg:leading-relaxed">
-                At our Finnish Interiors, our mission is to provide the highest
+                At Finnish Interiors, our mission is to provide the highest
                 level of service to our clients. We are dedicated to delivering
                 exceptional results and building long-lasting relationships with
                 each and every one of our customers. Our team of skilled
