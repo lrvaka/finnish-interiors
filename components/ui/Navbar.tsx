@@ -50,12 +50,16 @@ const MobileNav = () => {
             duration: 0.75,
             ease: "power4.inOut",
           })
-          .to("#nav-items > *", {
-            y: 0,
-            autoAlpha: 1,
-            stagger: 0.025,
-            ease: "power4.inOut",
-          }, "-=0.4");
+          .to(
+            "#nav-items > *",
+            {
+              y: 0,
+              autoAlpha: 1,
+              stagger: 0.025,
+              ease: "power4.inOut",
+            },
+            "-=0.4"
+          );
 
         gsap.to(leftX.current, {
           rotate: 45,
@@ -154,6 +158,7 @@ const MobileNav = () => {
               {socialMedia.map((e, i) => {
                 return (
                   <a
+                    aria-label={e.name}
                     href={e.link}
                     className="bg-theme-100 text-theme-200 p-2"
                     key={e.name + i}

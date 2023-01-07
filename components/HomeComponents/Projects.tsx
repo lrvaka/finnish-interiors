@@ -140,12 +140,14 @@ const Projects = ({
             </div>
             <div className="relative z-10 text-teal-900 flex gap-2 self-center mt-5 lg:mt-0 lg:self-end">
               <button
+                aria-label="Left button"
                 className="text-3xl p-2 bg-slate-50 "
                 onClick={() => swiperRef.current?.slidePrev()}
               >
                 <ChevronLeftIcon className="text-black h-5 w-5 lg:w-8 lg:h-8" />
               </button>
               <button
+                aria-label="Right button"
                 className="text-3xl p-2 bg-slate-50"
                 onClick={() => swiperRef.current?.slideNext()}
               >

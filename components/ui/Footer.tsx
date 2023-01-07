@@ -108,6 +108,7 @@ const Footer = () => {
               {socialMedia.map((e, i) => {
                 return (
                   <a
+                    aria-label={e.name}
                     href={e.link}
                     className="bg-theme-100 text-theme-200 p-2"
                     key={e.name + i}
