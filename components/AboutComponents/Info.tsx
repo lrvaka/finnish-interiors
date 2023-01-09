@@ -80,7 +80,7 @@ const Info = () => {
                 Our story
               </div>
               <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
-                What makes us who we are & why we are
+                What makes us Finnish Interiors
               </h2>
               <p className="mt-5 text-lg text-gray-600 lg:leading-relaxed">
                 Our company has a rich history dating back several years. From

@@ -32,7 +32,6 @@ export default function Home({ firstLoad }: { firstLoad: boolean }) {
   // pass a callback to child elements, this will add animations to the timeline
 
   useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     const ctx = gsap.context(() => {
       const tl = gsap.timeline();
       setTl(tl);

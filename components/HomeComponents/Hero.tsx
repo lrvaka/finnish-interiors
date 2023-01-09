@@ -56,6 +56,13 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
     let animation = gsap.timeline();
 
     let ctx = gsap.context(() => {
+      const bgOffsetHeight = gsap.getProperty(
+        "#background-img",
+        "offsetHeight"
+      );
+
+      let ratio = window.innerHeight / (window.innerHeight + +bgOffsetHeight);
+
       gsap.set("#background-img", {
         scale: 1.5,
         opacity: 0.5,
@@ -84,6 +91,35 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
           },
           "-=4"
         );
+
+      gsap.to("#background-img", {
+        yPercent: 75,
+        ease: "none",
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top top", // the default values
+          // end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      gsap.fromTo(
+        "#background-img",
+        {
+          backgroundPosition: () => "50% 0px",
+        },
+        {
+          backgroundPosition: () => `50% ${window.innerHeight * (1 - ratio)}px`,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#background-img",
+            start: () => "top top",
+            end: "bottom top",
+            scrub: true,
+            invalidateOnRefresh: true, // to make it responsive
+          },
+        }
+      );
     }, container); // <- IMPORTANT! Scopes selector text
 
     let ctx1 = gsap.context(() => {
@@ -136,8 +172,8 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
             className="mt-40 lg:mt-52 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
           >
             <h1 className="text-white text-3xl lg:text-5xl font-bold">
-              Finnish Interiors - New York City&apos;s Premier Interior
-              Contracting Company
+              Finnish Interiors &#8212; <br /> New York City&apos;s Premier
+              Interior Contracting Company
             </h1>
             <p className=" text-slate-300 text-lg leading-normal mt-5 lg:text-xl ">
               Enhance your New York City interior spaces with our expert
@@ -161,11 +197,11 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
             </div>
           </div>
         </div>
-        <div>
+        <div className="overflow-hidden">
           <Image
+            className="object-cover "
             id="background-img"
             src={heroBg}
-            className="object-cover"
             fill
             alt="beautiful background image of finnish interiors"
           />

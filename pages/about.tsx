@@ -9,8 +9,7 @@ import Info from "../components/AboutComponents/Info";
 import Values from "../components/AboutComponents/Values";
 
 const meta = {
-  title:
-    "About Us - Finnish Interiors",
+  title: "About Us - Finnish Interiors",
   description:
     "Learn more about New York City's leading interior contracting company",
   url: "https://www.finnishinteriors.com/about",
@@ -20,10 +19,6 @@ const meta = {
 };
 
 export default function About() {
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  }, []);
-
   return (
     <>
       <Head heading={meta} />

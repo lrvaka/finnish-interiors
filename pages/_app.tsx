@@ -3,12 +3,13 @@ import type { AppProps } from "next/app";
 import Loading from "../components/ui/Loading";
 import { Inter } from "@next/font/google";
 import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
-import gsap from "gsap/dist/gsap";
+import gsap from "gsap";
 import { useRouter } from "next/router";
 import { DrawSVGPlugin } from "gsap/dist/DrawSVGPlugin";
+import { ScrollSmoother } from "gsap/dist/ScrollSmoother";
 import { SplitText } from "gsap/dist/SplitText";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState, useRef } from "react";
 import InitialLoadContext from "../store/initialLoad-context";
 import Navbar from "../components/ui/Navbar";
 
@@ -20,6 +21,10 @@ if (typeof window !== "undefined") {
 
 export default function App({ Component, pageProps }: AppProps) {
   const [firstLoad, setFirstLoad] = useState(false);
+
+  useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+  }, []);
 
   return (
     <>
@@ -37,6 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <Navbar />
+
         <Component {...pageProps} firstLoad={firstLoad} />
       </InitialLoadContext.Provider>
     </>

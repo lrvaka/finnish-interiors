@@ -17,10 +17,6 @@ const meta = {
 };
 
 export default function Services() {
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  }, []);
-
   return (
     <>
       <Head heading={meta} />
