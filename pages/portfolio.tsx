@@ -17,9 +17,7 @@ const meta = {
 };
 
 export default function Portfolio() {
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  }, []);
+
 
   return (
     <>

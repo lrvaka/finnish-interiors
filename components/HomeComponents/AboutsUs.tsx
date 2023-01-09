@@ -10,6 +10,14 @@ const AboutUs = () => {
 
   useEffect(() => {
     let ctx = gsap.context(() => {
+      const imgContainerOffsetHeight = gsap.getProperty(
+        "#img-container",
+        "offsetHeight"
+      );
+
+      let ratio =
+        window.innerHeight / (window.innerHeight + +imgContainerOffsetHeight);
+
       gsap.set("#text-section > *", {
         y: -10,
         opacity: 0,
@@ -30,6 +38,24 @@ const AboutUs = () => {
         opacity: 1,
         ease: "power4.easeOut",
       });
+
+      gsap.fromTo(
+        "#inner-img",
+        {
+          backgroundPosition: () => `50% ${-window.innerHeight * ratio}px`,
+        },
+        {
+          backgroundPosition: () => `50% ${window.innerHeight * (1 - ratio)}px`,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#img-container",
+            start: () => "top bottom",
+            end: "bottom top",
+            scrub: true,
+            invalidateOnRefresh: true, // to make it responsive
+          },
+        }
+      );
     }, container); // <- IMPORTANT! Scopes selector text
 
     return () => {
@@ -64,14 +90,18 @@ const AboutUs = () => {
               Get a quote
             </NextLink>
           </div>
-          <div className="relative lg:w-[750px] h-[500px] lg:h-[700px] overflow-visible">
+          <div
+            id="img-container"
+            className="relative lg:w-[750px] h-[500px] lg:h-[700px] overflow-visible"
+          >
             <div
               id="main-img"
-              className="absolute z-10 w-[80%] lg:w-[85%] h-full right-3"
+              className="absolute z-10 w-[80%] lg:w-[85%] h-full right-3 overflow-hidden"
             >
               <Image
-                className="object-cover"
+                id="inner-img"
                 fill
+                className="object-cover"
                 src={img}
                 alt={"beautiful picture of about us"}
               />

@@ -16,13 +16,9 @@ const meta = {
 };
 
 export default function Contact() {
-  useIsomorphicLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-  }, []);
-
   return (
     <>
-      <Head heading={meta}/>
+      <Head heading={meta} />
 
       <main className="pt-[95px] lg:pt-[121px]">
         <Form />
