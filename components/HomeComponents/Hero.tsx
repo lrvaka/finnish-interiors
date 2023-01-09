@@ -56,13 +56,6 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
     let animation = gsap.timeline();
 
     let ctx = gsap.context(() => {
-      const bgOffsetHeight = gsap.getProperty(
-        "#background-img",
-        "offsetHeight"
-      );
-
-      let ratio = window.innerHeight / (window.innerHeight + +bgOffsetHeight);
-
       gsap.set("#background-img", {
         scale: 1.5,
         opacity: 0.5,
@@ -91,35 +84,6 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
           },
           "-=4"
         );
-
-      gsap.to("#background-img", {
-        yPercent: 75,
-        ease: "none",
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top top", // the default values
-          // end: "bottom top",
-          scrub: true,
-        },
-      });
-
-      gsap.fromTo(
-        "#background-img",
-        {
-          backgroundPosition: () => "50% 0px",
-        },
-        {
-          backgroundPosition: () => `50% ${window.innerHeight * (1 - ratio)}px`,
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#background-img",
-            start: () => "top top",
-            end: "bottom top",
-            scrub: true,
-            invalidateOnRefresh: true, // to make it responsive
-          },
-        }
-      );
     }, container); // <- IMPORTANT! Scopes selector text
 
     let ctx1 = gsap.context(() => {

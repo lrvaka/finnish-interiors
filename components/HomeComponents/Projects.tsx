@@ -85,11 +85,6 @@ const Projects = ({
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      const swiperOffsetHeight = gsap.getProperty("#swiper", "offsetHeight");
-      console.log(swiperOffsetHeight);
-      let ratio =
-        window.innerHeight / (window.innerHeight + +swiperOffsetHeight);
-
       gsap.set("#inner > *", {
         y: -10,
         opacity: 0,
@@ -105,24 +100,6 @@ const Projects = ({
         opacity: 1,
         ease: "power4.easeOut",
       });
-
-      gsap.fromTo(
-        "#inner-img",
-        {
-          backgroundPosition: () => `50% ${-window.innerHeight * ratio}px`,
-        },
-        {
-          backgroundPosition: () => `50% ${window.innerHeight * (1 - ratio)}px`,
-          ease: "none",
-          scrollTrigger: {
-            trigger: "#swiper",
-            start: () => "top bottom",
-            end: "bottom top",
-            scrub: true,
-            invalidateOnRefresh: true, // to make it responsive
-          },
-        }
-      );
     }, container); // <- IMPORTANT! Scopes selector text
 
     return () => {
@@ -179,7 +156,6 @@ const Projects = ({
             </div>
           </div>
           <Swiper
-            id="swiper"
             slidesPerView="auto"
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
@@ -202,7 +178,11 @@ const Projects = ({
           >
             {projectList.map((e, i) => {
               return (
-                <SwiperSlide key={"project-item " + i} className="bg-white">
+                <SwiperSlide
+                  id="swiper"
+                  key={"project-item " + i}
+                  className="bg-white"
+                >
                   <Modal
                     onMouseEnter={onEnter}
                     onMouseLeave={onLeave}
@@ -214,8 +194,8 @@ const Projects = ({
                   >
                     <div className="relative w-full h-[75%] overflow-hidden">
                       <Image
-                        id="inner-img"
                         className="object-cover"
+                        id="inner-img"
                         fill
                         src={e.img}
                         alt={"beautiful picture of " + e.name}
