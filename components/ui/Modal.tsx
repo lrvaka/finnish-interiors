@@ -6,15 +6,9 @@ import Image from "next/image";
 function Modal({
   children,
   inner,
-  name,
-  location,
-  projectImages,
 }: {
   children: JSX.Element | JSX.Element[];
   inner: JSX.Element | JSX.Element[];
-  name: string;
-  location: string;
-  projectImages: Array<any>;
 }) {
   let [isOpen, setIsOpen] = useState(false);
 
@@ -58,7 +52,12 @@ function Modal({
           </Dialog.Panel>
         </Dialog>
       </Transition>
-      <div onClick={() => setIsOpen(true)}>{children}</div>
+      <div
+        onClick={() => setIsOpen(true)}
+        className="h-full w-full cursor-pointer"
+      >
+        {children}
+      </div>
     </>
   );
 }
