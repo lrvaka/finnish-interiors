@@ -4,7 +4,7 @@ import gsap from "gsap";
 import img from "../../public/images/about/about-us.jpeg";
 import backdrop from "../../public/images/about/backdrop.png";
 
-const Hero = () => {
+const Header = () => {
   const container = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -49,4 +49,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Header;
