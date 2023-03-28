@@ -4,7 +4,7 @@ import helloTendImg from "../../public/images/projects/HelloTend/mask-studio.web
 import jenFishImg from "../../public/images/projects/Michilli - Jennifer Fisher SoHo/96be.jpg";
 import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci at Fuller Building/AM-05_04.jpg";
 import mulberryImg from "../../public/images/projects/Michilli - mulberryengland on Wooster Street/STORE_GALLERY_00.webp";
-import projectListImages from "../../helpers/projectImages";
+import projectListImages from "../../helpers/project_images";
 import Modal from "../ui/Modal";
 
 import React, { useRef, useEffect } from "react";

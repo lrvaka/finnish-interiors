@@ -3,14 +3,16 @@ import carpentryImg from "../../public/images/home/about-us/img.jpg";
 import framingImg from "../../public/images/services/framing.jpeg";
 import drywallImg from "../../public/images/services/drywall.jpeg";
 import projectImg from "../../public/images/services/project-manage.jpeg";
+import restorationImg from "../../public/images/services/restoration.jpg";
 import Image from "next/image";
 import NextLink from "next/link";
 import gsap from "gsap";
 
 import { FcFrame } from "react-icons/fc";
 import { IoHammerOutline } from "react-icons/io5";
-import { FaHardHat } from "react-icons/fa";
+
 import { BiCog } from "react-icons/bi";
+import { MdOutlineCleaningServices } from "react-icons/md";
 
 const features = [
   {
@@ -29,20 +31,29 @@ const features = [
     icon: FcFrame,
   },
   {
-    name: "Drywall installation and repair",
+    name: "Drywall",
     img: drywallImg,
     description:
       "Installing new drywall, repairing damaged drywall, and finishing drywall surfaces with tape, joint compound, and texture.",
-    icon: FaHardHat,
+    icon: BiCog,
   },
   {
-    name: "Project management",
-    img: projectImg,
+    name: "Repair and Restoration",
+    img: restorationImg,
     description:
-      "Managing budgets and schedules to ensure that projects are completed on time and within budget, as well as obtaining necessary permits and ensuring that projects are completed in compliance with local building codes and regulations.",
-    icon: BiCog,
+      "We work with remediation companies to restore hospitality, commercial and residential spaces after damages caused by fire, flood and environmental issues.",
+    icon: MdOutlineCleaningServices,
     last: true,
   },
+  // {
+  //   name: "Project management",
+  //   img: projectImg,
+  //   description:
+  //     "Managing budgets and schedules to ensure that projects are completed on time and within budget, as well as obtaining necessary permits and ensuring that projects are completed in compliance with local building codes and regulations.",
+
+  //   icon: FaHardHat,
+  //   last: true,
+  // },
 ];
 
 const regularClass =
@@ -151,7 +162,7 @@ export default function ServicesItems() {
                     className="object-cover"
                     fill
                     src={feature.img}
-                    alt={"beautiful picture of about us"}
+                    alt={"beautiful picture of " + feature.name}
                   />
                 </div>
                 <div className="p-10">
@@ -169,7 +180,7 @@ export default function ServicesItems() {
                       {feature.description}
                     </p>
                     <div className="mt-5 text-theme-200 font-semibold text-lg underline">
-                     Learn more
+                      Learn more
                     </div>
                   </div>
                 </div>

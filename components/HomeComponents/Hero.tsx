@@ -15,17 +15,17 @@ type CallbackType = (animation: GSAPTimeline, index: number | string) => void;
 const contact = [
   {
     name: "Call us",
-    detail: "(323) 238-0682",
+    detail: "(914)-237-3417",
     linkTitle: "Give us a call",
-    link: "tel:(323)238-0682",
+    link: "tel:(914)-237-3417",
     icon: PhoneIcon,
     border: true,
   },
   {
     name: "Email us",
-    detail: "info@constructor.com",
+    detail: "info@finnishinteriors.com",
     linkTitle: "Send us an email",
-    link: "mailto:info@constructor.com",
+    link: "mailto:info@finnishinteriors.com",
     icon: EnvelopeIcon,
     border: true,
   },
