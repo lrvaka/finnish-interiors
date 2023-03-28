@@ -6,6 +6,8 @@ import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci 
 import mulberryImg from "../../public/images/projects/Michilli - mulberryengland on Wooster Street/STORE_GALLERY_00.webp";
 import projectListImages from "../../helpers/project_images";
 import Modal from "../ui/Modal";
+import PortfolioItem from "../PortfolioComponents/PortfolioItem";
+import { PortfolioItemModalInner } from "../PortfolioComponents/PortfolioItem";
 
 import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -25,25 +27,25 @@ const projectList = [
   {
     name: "HelloTend",
     location: "Williamsburg, Brooklyn",
-    projectList: projectListImages.helloTend,
+    projectImages: projectListImages.helloTend,
     img: helloTendImg,
   },
   {
     name: "Jennifer Fisher",
     location: "Soho, Manhattan",
-    projectList: projectListImages.jenniferFisher,
+    projectImages: projectListImages.jenniferFisher,
     img: jenFishImg,
   },
   {
     name: "Stefano Ricci",
     location: "Madison Ave, New York",
-    projectList: projectListImages.stefanoRicci,
+    projectImages: projectListImages.stefanoRicci,
     img: stefRicciImg,
   },
   {
     name: "Mulberry England",
     location: "Wooster St, New York",
-    projectList: projectListImages.mulberryEngland,
+    projectImages: projectListImages.mulberryEngland,
     img: mulberryImg,
   },
 ];
@@ -184,15 +186,19 @@ const Projects = ({
                   className="bg-white"
                 >
                   <Modal
-                    onMouseEnter={onEnter}
-                    onMouseLeave={onLeave}
-                    projectImages={e.projectList}
-                    key={e.name}
-                    name={e.name}
-                    location={e.location}
-                    className="h-full cursor-pointer"
+                    inner={
+                      <PortfolioItemModalInner
+                        projectImages={e.projectImages}
+                        name={e.name}
+                        location={e.location}
+                      />
+                    }
                   >
-                    <div className="relative w-full h-[75%] overflow-hidden">
+                    <div
+                      onMouseEnter={onEnter}
+                      onMouseLeave={onLeave}
+                      className="relative w-full h-[75%] overflow-hidden"
+                    >
                       <Image
                         className="object-cover"
                         id="inner-img"

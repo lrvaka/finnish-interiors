@@ -146,9 +146,6 @@ const PortfolioItem = ({
 
   return (
     <Modal
-      projectImages={projectImages}
-      name={name}
-      location={location}
       inner={
         <PortfolioItemModalInner
           projectImages={projectImages}
@@ -191,3 +188,5 @@ const PortfolioItem = ({
 };
 
 export default PortfolioItem;
+
+export { PortfolioItemModalInner };
