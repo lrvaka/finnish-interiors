@@ -11,15 +11,15 @@ const ServiceItemInfo = ({
   aboutTheService: string;
 }) => {
   return (
-    <div className="my-20 z-10 relative gap-20 flex flex-col md:flex-row  max-w-screen-xl mx-auto  px-4 lg:px-6 ">
-      <div className="flex flex-col gap-20 relative ">
-        <div className="max-w-prose">
+    <div className="my-20 z-10 relative gap-20 flex flex-col lg:flex-row  max-w-screen-xl mx-auto  px-4 lg:px-6">
+      <div className="flex flex-col gap-20 relative max-w-prose">
+        <div>
           <h2 className="text-black text-3xl lg:text-4xl font-bold">
             About the service
           </h2>
           <p className="text-lg text-gray-600 mt-5">{aboutTheService}</p>
         </div>
-        <div className="max-w-prose">
+        <div>
           <h3 className="text-black text-2xl lg:text-3xl font-bold">
             What&apos;s included
           </h3>
@@ -32,7 +32,7 @@ const ServiceItemInfo = ({
             ))}
           </ul>
         </div>
-        <div className="max-w-prose">
+        <div>
           <h3 className="text-black text-2xl lg:text-3xl font-bold">Why us</h3>
           <ul className="flex flex-col gap-7 mt-5">
             {whyUs.map((e, i) => (
@@ -44,7 +44,8 @@ const ServiceItemInfo = ({
           </ul>
         </div>
       </div>
-      <div className="border-t-theme-100 border sticky top-0 border-slate-200   px-4 py-10 border-t-[5px] self-start">
+
+      <div className=" lg:sticky lg:top-36  border-t-theme-100 border  border-slate-200 self-start   px-4 py-10 border-t-[5px] ">
         <h4 className="text-black text-xl lg:text-2xl font-bold">
           Fill out the form to hear from us
         </h4>
