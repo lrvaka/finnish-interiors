@@ -1,19 +1,17 @@
-import { useRef, useEffect } from "react";
+import NextLink from "next/link";
+import Image from "next/image";
+import gsap from "gsap";
+
 import carpentryImg from "../../public/images/home/about-us/img.jpg";
 import framingImg from "../../public/images/services/framing.jpeg";
 import drywallImg from "../../public/images/services/drywall.jpeg";
 import projectImg from "../../public/images/services/project-manage.jpeg";
 import restorationImg from "../../public/images/services/restoration.jpg";
-import Image from "next/image";
-import NextLink from "next/link";
-import gsap from "gsap";
 
 import { FcFrame } from "react-icons/fc";
 import { IoHammerOutline } from "react-icons/io5";
-
 import { BiCog } from "react-icons/bi";
 import { MdOutlineCleaningServices } from "react-icons/md";
-import Modal from "../ui/Modal";
 
 const services = [
   {
@@ -23,7 +21,6 @@ const services = [
     description:
       "Installing trim, molding, and other woodwork; building custom cabinets, shelving, and other storage solutions; and repairing or replacing damaged woodwork.",
     icon: IoHammerOutline,
-    first: true,
   },
   {
     name: "Framing",
@@ -43,13 +40,12 @@ const services = [
     icon: BiCog,
   },
   {
-    name: "Repair and restoration",
+    name: "Repair and Restoration",
     href: "/services/repair-restoration",
     img: restorationImg,
     description:
       "We work with remediation companies to restore hospitality, commercial and residential spaces after damages caused by fire, flood and environmental issues.",
     icon: MdOutlineCleaningServices,
-    last: true,
   },
   // {
   //   name: "Project management",
@@ -62,16 +58,7 @@ const services = [
   // },
 ];
 
-const regularClass =
-  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max";
-const firstClass =
-  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:-mt-20 border-b-theme-100  border-b-[5px] h-max";
-const lastClass =
-  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:mt-20 border-b-theme-100  border-b-[5px] h-max";
-
-export default function ServicesItems() {
-  const container = useRef<HTMLDivElement | null>(null);
-
+const MoreServices = ({ service }: { service: string }) => {
   const onEnter = ({ currentTarget }: { currentTarget: any }) => {
     gsap.context(() => {
       gsap.to("#inner-img", {
@@ -108,54 +95,30 @@ export default function ServicesItems() {
     }, currentTarget); // <- IMPORTANT! Scopes selector text
   };
 
-  useEffect(() => {
-    let ctx = gsap.context(() => {
-      gsap.set("#header > *", {
-        y: -10,
-        opacity: 0,
-      });
-
-      gsap.set("#items > *", {
-        y: -10,
-        opacity: 0,
-      });
-
-      gsap.to("#header > *, #items > *", {
-        scrollTrigger: {
-          trigger: container.current,
-          start: "top bottom", // when the top of the trigger hits the top of the viewport
-        },
-        stagger: 0.2,
-        y: 0,
-        opacity: 1,
-        ease: "power4.easeOut",
-      });
-    }, container); // <- IMPORTANT! Scopes selector text
-
-    return () => {
-      ctx.revert();
-    }; // cleanup
-  }, []); // <- empty dependency Array so it doesn't re-run on every render
-
   return (
-    <div ref={container} className="bg-white my-28 lg:my-60">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mt-20 max-w-lg sm:mx-auto md:max-w-none">
-          <div
-            id="items"
-            className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16"
+    <div className="bg-gray-100 ">
+      <div className=" px-4 lg:px-6 py-20 z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
+        <div className=" relative z-20 flex flex-col lg:flex-row justify-between lg:items-end gap-5">
+          {" "}
+          <h2 className="text-black text-3xl lg:text-4xl font-bold">
+            More of our services
+          </h2>
+          <NextLink
+            href="/services"
+            className=" max-w-max  border-theme-100 border-2 py-4 px-7 h-fit font-semibold text-theme-200 lg:text-lg transition-all hover:text-theme-200 hover:bg-theme-100 hover:scale-95"
           >
-            {services.map((service) => (
+            All services
+          </NextLink>
+        </div>
+        <div className="grid grid-cols-1 py-10 gap-10 flex-col lg:grid-cols-2">
+          {services
+            .filter((e, i) => e.name !== service)
+            .slice(0, 2)
+            .map((e, i) => (
               <NextLink
-                href={service.href}
-                key={service.name}
-                className={
-                  service.first
-                    ? firstClass
-                    : service.last
-                    ? lastClass
-                    : regularClass
-                }
+                href={e.href}
+                key={e.name}
+                className="cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-full"
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
               >
@@ -167,34 +130,37 @@ export default function ServicesItems() {
                     id="inner-img"
                     className="object-cover"
                     fill
-                    src={service.img}
-                    alt={"beautiful picture of " + service.name}
+                    src={e.img}
+                    alt={"beautiful picture of " + e.name}
                   />
                 </div>
-                <div className="p-10">
+                <div className="p-10 h-[275px]">
                   <div className="flex h-20 w-20 items-center justify-center bg-theme-200 text-white sm:shrink-0 -mt-28 relative z-10 mb-5">
-                    <service.icon className="h-16 w-16" aria-hidden="true" />
+                    <e.icon className="h-16 w-16" aria-hidden="true" />
                   </div>
-                  <div className="sm:min-w-0 sm:flex-1">
-                    <h2
-                      id="heading"
-                      className="text-2xl font-semibold leading-8 text-gray-900"
-                    >
-                      {service.name}
-                    </h2>
-                    <p className="mt-2 text-base leading-7 text-gray-600">
-                      {service.description}
-                    </p>
+                  <div className="flex h-full flex-col justify-between sm:min-w-0 sm:flex-1">
+                    <div>
+                      <h2
+                        id="heading"
+                        className="text-2xl font-semibold leading-8 text-gray-900"
+                      >
+                        {e.name}
+                      </h2>
+                      <p className="mt-2 text-base leading-7 text-gray-600">
+                        {e.description}
+                      </p>
+                    </div>
                     <div className="mt-5 text-theme-200 font-semibold text-lg underline">
                       Learn more
                     </div>
                   </div>
                 </div>
               </NextLink>
-            ))}
-          </div>
+            ))}{" "}
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default MoreServices;

@@ -1,10 +1,10 @@
-import Head from "../helpers/Head";
-import Footer from "../components/ui/Footer";
+import Head from "../../helpers/Head";
+import Footer from "../../components/ui/Footer";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Header from "../components/ServicesComponents/Header";
+import Header from "../../components/ServicesComponents/Header";
 import gsap from "gsap";
-import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
-import ServicesItems from "../components/ServicesComponents/ServicesItems";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import ServicesItems from "../../components/ServicesComponents/ServicesItems";
 
 const meta = {
   title: "Services - Finnish Interiors",
