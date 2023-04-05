@@ -1,13 +1,13 @@
 import { StaticImageData } from "next/image";
 
 type ProjectType = {
-  title: string;
-  location: string;
+  title?: string;
+  location?: string;
   pos?: string;
   img: StaticImageData;
-  projectImages: Array<StaticImageData>;
+  projectImages?: Array<StaticImageData>;
   gc?: string;
-  slug: string;
+  slug?: string;
 };
 
 const PortfolioItemInfo = ({ project }: { project: ProjectType }) => {

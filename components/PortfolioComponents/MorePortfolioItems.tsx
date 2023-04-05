@@ -104,7 +104,6 @@ const MorePortfolioItems = ({
               <NextLink
                 key={e.slug}
                 href={`/portfolio/${e.slug}`}
-                passHref
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
                 className="cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max"
