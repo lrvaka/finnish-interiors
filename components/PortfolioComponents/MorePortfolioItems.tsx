@@ -8,7 +8,20 @@ import { IoHammerOutline } from "react-icons/io5";
 import { BiCog } from "react-icons/bi";
 import { MdOutlineCleaningServices } from "react-icons/md";
 
-const getRandomProjects = (projectList, portfolioItemName, count) => {
+type Project = {
+  name: string;
+  location: string;
+  projectImages: string[];
+  img: string;
+  gc?: string;
+  slug?: string;
+};
+
+const getRandomProjects = (
+  projectList: Project[], // <- add type for projectList
+  portfolioItemName: string, // <- add type for portfolioItemName
+  count: number // <- add type for count
+): Project[] => {
   const filteredList = projectList.filter((e) => e.name !== portfolioItemName);
   const randomProjects = [];
 
