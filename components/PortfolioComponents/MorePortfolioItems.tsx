@@ -12,7 +12,7 @@ type Project = {
   name: string;
   location: string;
   projectImages: StaticImageData[];
-  img: string;
+  img: StaticImageData;
   gc?: string;
   slug?: string;
 };
