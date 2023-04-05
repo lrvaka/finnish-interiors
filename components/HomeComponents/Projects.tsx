@@ -1,19 +1,14 @@
 import Image from "next/image";
 import pattern from "../../public/images/pattern.png";
-import helloTendImg from "../../public/images/projects/HelloTend/mask-studio.webp";
-import jenFishImg from "../../public/images/projects/Michilli - Jennifer Fisher SoHo/96be.jpg";
-import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci at Fuller Building/AM-05_04.jpg";
-import mulberryImg from "../../public/images/projects/Michilli - mulberryengland on Wooster Street/STORE_GALLERY_00.webp";
-import projectListImages from "../../helpers/project_images";
 import Modal from "../ui/Modal";
-import PortfolioItem from "../PortfolioComponents/PortfolioItem";
 import { PortfolioItemModalInner } from "../PortfolioComponents/PortfolioItem";
-
+import { projectList } from "../PortfolioComponents/PortfolioItems";
 import React, { useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/navigation";
 import { Swiper as SwiperType, Navigation } from "swiper";
 import gsap from "gsap";
+import NextLink from 'next/link'
 
 // Import Swiper styles
 import "swiper/css";
@@ -22,33 +17,6 @@ import { SwiperModule } from "swiper/types";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 type CallbackType = (animation: GSAPTimeline, index: number | string) => void;
-
-const projectList = [
-  {
-    name: "HelloTend",
-    location: "Williamsburg, Brooklyn",
-    projectImages: projectListImages.helloTend,
-    img: helloTendImg,
-  },
-  {
-    name: "Jennifer Fisher",
-    location: "Soho, Manhattan",
-    projectImages: projectListImages.jenniferFisher,
-    img: jenFishImg,
-  },
-  {
-    name: "Stefano Ricci",
-    location: "Madison Ave, New York",
-    projectImages: projectListImages.stefanoRicci,
-    img: stefRicciImg,
-  },
-  {
-    name: "Mulberry England",
-    location: "Wooster St, New York",
-    projectImages: projectListImages.mulberryEngland,
-    img: mulberryImg,
-  },
-];
 
 const Projects = ({
   addAnimation,
@@ -185,18 +153,14 @@ const Projects = ({
                   key={"project-item " + i}
                   className="bg-white"
                 >
-                  <Modal
-                    inner={
-                      <PortfolioItemModalInner
-                        projectImages={e.projectImages}
-                        name={e.name}
-                        location={e.location}
-                      />
-                    }
+                  <NextLink
+                   href={`/portfolio/${e.slug}`}
+                   passHref
+                   onMouseEnter={onEnter}
+                   onMouseLeave={onLeave}
                   >
                     <div
-                      onMouseEnter={onEnter}
-                      onMouseLeave={onLeave}
+                 
                       className="relative w-full h-[75%] overflow-hidden"
                     >
                       <Image
@@ -213,7 +177,7 @@ const Projects = ({
                       </h3>
                       <p className="text-slate-500">{e.location}</p>
                     </div>
-                  </Modal>
+                  </NextLink>
                 </SwiperSlide>
               );
             })}
