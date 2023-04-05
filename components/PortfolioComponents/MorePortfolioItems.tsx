@@ -8,13 +8,26 @@ import { IoHammerOutline } from "react-icons/io5";
 import { BiCog } from "react-icons/bi";
 import { MdOutlineCleaningServices } from "react-icons/md";
 
+const getRandomProjects = (projectList, portfolioItemName, count) => {
+  const filteredList = projectList.filter((e) => e.name !== portfolioItemName);
+  const randomProjects = [];
+
+  for (let i = 0; i < count; i++) {
+    const randomIndex = Math.floor(Math.random() * filteredList.length);
+    randomProjects.push(filteredList[randomIndex]);
+    filteredList.splice(randomIndex, 1);
+  }
+
+  return randomProjects;
+};
+
 const MorePortfolioItems = ({
   portfolioItemName,
 }: {
   portfolioItemName: string;
 }) => {
   const container = useRef<HTMLDivElement | null>(null);
-
+  const randomProjects = getRandomProjects(projectList, portfolioItemName, 2);
   useEffect(() => {
     let ctx = gsap.context(() => {
       gsap.set("#header > *, #projects > *", {
@@ -97,42 +110,39 @@ const MorePortfolioItems = ({
           id="projects"
           className="grid grid-cols-1 py-10 gap-10 flex-col lg:grid-cols-2"
         >
-          {projectList
-            .filter((e, i) => e.name !== portfolioItemName)
-            .slice(0, 2)
-            .map((e, i) => (
-              <NextLink
-                key={e.slug}
-                href={`/portfolio/${e.slug}`}
-                onMouseEnter={onEnter}
-                onMouseLeave={onLeave}
-                className="cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max"
+          {randomProjects.map((e, i) => (
+            <NextLink
+              key={e.slug}
+              href={`/portfolio/${e.slug}`}
+              onMouseEnter={onEnter}
+              onMouseLeave={onLeave}
+              className="cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max"
+            >
+              <div
+                id="main-img"
+                className="relative w-full  z-10  h-[400px] overflow-hidden"
               >
-                <div
-                  id="main-img"
-                  className="relative w-full  z-10  h-[400px] overflow-hidden"
-                >
-                  <Image
-                    id="inner-img"
-                    className="object-cover"
-                    fill
-                    src={e.img}
-                    alt={"beautiful picture of about us"}
-                  />
+                <Image
+                  id="inner-img"
+                  className="object-cover"
+                  fill
+                  src={e.img}
+                  alt={"beautiful picture of about us"}
+                />
+              </div>
+              <div className="p-10 pt-5">
+                <div className="sm:min-w-0 sm:flex-1">
+                  <h2
+                    id="heading"
+                    className="text-2xl font-semibold leading-8 text-gray-900"
+                  >
+                    {e.name}
+                  </h2>
+                  <p className="text-base  text-slate-500">{e.location}</p>
                 </div>
-                <div className="p-10 pt-5">
-                  <div className="sm:min-w-0 sm:flex-1">
-                    <h2
-                      id="heading"
-                      className="text-2xl font-semibold leading-8 text-gray-900"
-                    >
-                      {e.name}
-                    </h2>
-                    <p className="text-base  text-slate-500">{e.location}</p>
-                  </div>
-                </div>
-              </NextLink>
-            ))}
+              </div>
+            </NextLink>
+          ))}
         </div>
       </div>
     </div>
