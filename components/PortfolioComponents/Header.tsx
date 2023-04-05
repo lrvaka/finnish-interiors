@@ -63,7 +63,7 @@ const PortfolioItemHeader = ({
               {location}
             </p>
           </div>
-          <div className="h-[300px] md:h-[600px] lg:h-[900px] relative mb-8">
+          <div className="h-full relative mb-8">
             <Swiper
               id="inner-img"
               slidesPerView="auto"
@@ -80,16 +80,18 @@ const PortfolioItemHeader = ({
                 },
               }}
               className="h-full w-full"
+              style={{ height: "100%" }}
             >
               {projectImages.map((e, i) => {
                 return (
                   <SwiperSlide
-                    className="relative  w-full h-full"
+                    className="relative w-full h-0"
+                    style={{ paddingTop: "100%" }}
                     key={"project-item " + i}
                   >
                     <Image
                       className="object-contain"
-                      fill
+                      layout="fill"
                       src={e}
                       alt={"beautiful picture of " + name}
                     />
