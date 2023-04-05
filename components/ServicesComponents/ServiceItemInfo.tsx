@@ -1,3 +1,6 @@
+import { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+
 type WhatsIncludedType = Array<{ name: string; desc: string }>;
 type WhyUsType = Array<{ name: string; desc: string }>;
 
@@ -10,20 +13,69 @@ const ServiceItemInfo = ({
   whyUs: WhyUsType;
   aboutTheService: string;
 }) => {
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set(
+        "#about-the-service > *, #whats-included, #whats-included-items > *, #why-us, #why-us-items > *, #form > *",
+        {
+          y: -10,
+          opacity: 0,
+        }
+      );
+
+      gsap.to(
+        "#about-the-service > *, #whats-included, #whats-included-items > *, #why-us, #why-us-items > *, #form > *",
+        {
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top bottom", // when the top of the trigger hits the top of the viewport
+          },
+          stagger: 0.2,
+          y: 0,
+          opacity: 1,
+          ease: "power4.easeOut",
+        }
+      );
+
+      gsap.to("#form > *", {
+        scrollTrigger: {
+          trigger: "#form",
+          start: "top bottom", // when the top of the trigger hits the top of the viewport
+        },
+        stagger: 0.2,
+        y: 0,
+        opacity: 1,
+        ease: "power4.easeOut",
+      });
+    }, container); // <- IMPORTANT! Scopes selector text
+
+    return () => {
+      ctx.revert();
+    }; // cleanup
+  }, []); // <- empty dependency Array so it doesn't re-run on every render
+
   return (
-    <div className="my-20 z-10 relative gap-20 flex flex-col lg:flex-row  max-w-screen-xl mx-auto  px-4 lg:px-6">
+    <div
+      ref={container}
+      className="my-20 z-10 relative gap-20 flex flex-col lg:flex-row  max-w-screen-xl mx-auto  px-4 lg:px-6"
+    >
       <div className="flex flex-col gap-20 relative max-w-prose">
-        <div>
+        <div id="about-the-service">
           <h2 className="text-black text-3xl lg:text-4xl font-bold">
             About the service
           </h2>
           <p className="text-lg text-gray-600 mt-5">{aboutTheService}</p>
         </div>
         <div>
-          <h3 className="text-black text-2xl lg:text-3xl font-bold">
+          <h3
+            id="whats-included"
+            className="text-black text-2xl lg:text-3xl font-bold"
+          >
             What&apos;s included
           </h3>
-          <ul className="flex flex-col gap-7 mt-5">
+          <ul id="whats-included-items" className="flex flex-col gap-7 mt-5">
             {whatsIncluded.map((e, i) => (
               <li key={e.name}>
                 <h4 className="text-xl text-gray-900">{e.name}</h4>
@@ -33,8 +85,10 @@ const ServiceItemInfo = ({
           </ul>
         </div>
         <div>
-          <h3 className="text-black text-2xl lg:text-3xl font-bold">Why us</h3>
-          <ul className="flex flex-col gap-7 mt-5">
+          <h3 id="why-us" className="text-black text-2xl lg:text-3xl font-bold">
+            Why us
+          </h3>
+          <ul id="why-us-items" className="flex flex-col gap-7 mt-5">
             {whyUs.map((e, i) => (
               <li key={e.name}>
                 <h4 className="text-xl text-gray-900">{e.name}</h4>
@@ -45,7 +99,10 @@ const ServiceItemInfo = ({
         </div>
       </div>
 
-      <div className=" lg:sticky lg:top-36  border-t-theme-100 border  border-slate-200 self-start   px-4 py-10 border-t-[5px] ">
+      <div
+        id="form"
+        className=" lg:sticky lg:top-36  border-t-theme-100 border  border-slate-200 self-start   px-4 py-10 border-t-[5px] "
+      >
         <h4 className="text-black text-xl lg:text-2xl font-bold">
           Fill out the form to hear from us
         </h4>

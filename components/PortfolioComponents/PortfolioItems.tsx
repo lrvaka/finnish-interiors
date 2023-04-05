@@ -7,6 +7,13 @@ import mulberryImg from "../../public/images/projects/Michilli - mulberryengland
 import PortfolioItem from "./PortfolioItem";
 import gsap from "gsap";
 
+function createSlug(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 const projectList = [
   {
     name: "HelloTend",
@@ -20,12 +27,14 @@ const projectList = [
     location: "Soho, Manhattan",
     projectImages: projectListImages.jenniferFisher,
     img: jenFishImg,
+    gc: "Michilli",
   },
   {
     name: "Stefano Ricci",
     location: "Madison Ave, New York",
     projectImages: projectListImages.stefanoRicci,
     img: stefRicciImg,
+    gc: "Michilli",
   },
   {
     name: "Mulberry England",
@@ -33,8 +42,9 @@ const projectList = [
     projectImages: projectListImages.mulberryEngland,
     img: mulberryImg,
     pos: "last",
+    gc: "Michilli",
   },
-];
+].map((project) => ({ ...project, slug: createSlug(project.name) }));
 
 export default function PortfolioItems() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -79,6 +89,7 @@ export default function PortfolioItems() {
                 location={item.location}
                 pos={item.pos}
                 img={item.img}
+                slug={item.slug}
               />
             ))}
           </div>
@@ -87,3 +98,5 @@ export default function PortfolioItems() {
     </div>
   );
 }
+
+export { projectList };

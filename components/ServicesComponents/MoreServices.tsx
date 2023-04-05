@@ -2,6 +2,8 @@ import NextLink from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 
+import { useRef, useEffect } from "react";
+
 import carpentryImg from "../../public/images/home/about-us/img.jpg";
 import framingImg from "../../public/images/services/framing.jpeg";
 import drywallImg from "../../public/images/services/drywall.jpeg";
@@ -59,6 +61,32 @@ const services = [
 ];
 
 const MoreServices = ({ service }: { service: string }) => {
+  const container = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.set("#header > *, #services > *", {
+        y: -10,
+        opacity: 0,
+      });
+
+      gsap.to("#header > *, #services > *", {
+        scrollTrigger: {
+          trigger: container.current,
+          start: "top bottom", // when the top of the trigger hits the top of the viewport
+        },
+        stagger: 0.2,
+        y: 0,
+        opacity: 1,
+        ease: "power4.easeOut",
+      });
+    }, container); // <- IMPORTANT! Scopes selector text
+
+    return () => {
+      ctx.revert();
+    }; // cleanup
+  }, []); // <- empty dependency Array so it doesn't re-run on every render
+
   const onEnter = ({ currentTarget }: { currentTarget: any }) => {
     gsap.context(() => {
       gsap.to("#inner-img", {
@@ -96,9 +124,12 @@ const MoreServices = ({ service }: { service: string }) => {
   };
 
   return (
-    <div className="bg-gray-100 ">
+    <div ref={container} className="bg-gray-100 ">
       <div className=" px-4 lg:px-6 py-20 z-10 relative flex flex-col max-w-screen-xl mx-auto overflow-hidden h-full">
-        <div className=" relative z-20 flex flex-col lg:flex-row justify-between lg:items-end gap-5">
+        <div
+          id="header"
+          className=" relative z-20 flex flex-col lg:flex-row justify-between lg:items-end gap-5"
+        >
           {" "}
           <h2 className="text-black text-3xl lg:text-4xl font-bold">
             More of our services
@@ -110,7 +141,10 @@ const MoreServices = ({ service }: { service: string }) => {
             All services
           </NextLink>
         </div>
-        <div className="grid grid-cols-1 py-10 gap-10 flex-col lg:grid-cols-2">
+        <div
+          id="services"
+          className="grid grid-cols-1 py-10 gap-10 flex-col lg:grid-cols-2"
+        >
           {services
             .filter((e, i) => e.name !== service)
             .slice(0, 2)
@@ -118,7 +152,7 @@ const MoreServices = ({ service }: { service: string }) => {
               <NextLink
                 href={e.href}
                 key={e.name}
-                className="cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-full"
+                className="cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-full bg-white"
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
               >

@@ -1,10 +1,10 @@
-import Head from "../helpers/Head";
-import Footer from "../components/ui/Footer";
+import Head from "../../helpers/Head";
+import Footer from "../../components/ui/Footer";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import Header from "../components/PortfolioComponents/Header";
+import Header from "../../components/PortfolioComponents/Header";
 import gsap from "gsap";
-import useIsomorphicLayoutEffect from "../hooks/useIsomorphicLayoutEffect";
-import PortfolioItems from "../components/PortfolioComponents/PortfolioItems";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
+import PortfolioItems from "../../components/PortfolioComponents/PortfolioItems";
 
 const meta = {
   title: "Portfolio - Finnish Interiors",
@@ -17,8 +17,6 @@ const meta = {
 };
 
 export default function Portfolio() {
-
-
   return (
     <>
       <Head heading={meta} />

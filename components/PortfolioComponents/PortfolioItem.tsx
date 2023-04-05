@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 import { useRef } from "react";
-import Modal from "../ui/Modal";
+import NextLink from "next/link";
 import gsap from "gsap";
 import Image from "next/image";
 import { Dialog, Transition } from "@headlessui/react";
@@ -101,14 +101,16 @@ const PortfolioItem = ({
   location,
   pos,
   img,
+  slug,
 }: {
   name: string;
   location: string;
   pos?: string;
   img: StaticImageData;
   projectImages: Array<StaticImageData>;
+  slug: string;
 }) => {
-  const onEnter = ({ currentTarget }: { currentTarget: HTMLDivElement }) => {
+  const onEnter = ({ currentTarget }: { currentTarget: HTMLAnchorElement }) => {
     gsap.context(() => {
       gsap.to("#inner-img", {
         scale: 1.05,
@@ -126,7 +128,7 @@ const PortfolioItem = ({
     }, currentTarget); // <- IMPORTANT! Scopes selector text
   };
 
-  const onLeave = ({ currentTarget }: { currentTarget: HTMLDivElement }) => {
+  const onLeave = ({ currentTarget }: { currentTarget: HTMLAnchorElement }) => {
     gsap.context(() => {
       gsap.to("#inner-img", {
         scale: 1,
@@ -145,45 +147,37 @@ const PortfolioItem = ({
   };
 
   return (
-    <Modal
-      inner={
-        <PortfolioItemModalInner
-          projectImages={projectImages}
-          name={name}
-          location={location}
-        />
-      }
+    <NextLink
+      href={`/portfolio/${slug}`}
+      passHref
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+      className={conditionalClassName(pos)}
     >
       <div
-        onMouseEnter={onEnter}
-        onMouseLeave={onLeave}
-        className={conditionalClassName(pos)}
+        id="main-img"
+        className="relative w-full  z-10  h-[400px] overflow-hidden"
       >
-        <div
-          id="main-img"
-          className="relative w-full  z-10  h-[400px] overflow-hidden"
-        >
-          <Image
-            id="inner-img"
-            className="object-cover"
-            fill
-            src={img}
-            alt={"beautiful picture of about us"}
-          />
-        </div>
-        <div className="p-10 pt-5">
-          <div className="sm:min-w-0 sm:flex-1">
-            <h2
-              id="heading"
-              className="text-2xl font-semibold leading-8 text-gray-900"
-            >
-              {name}
-            </h2>
-            <p className="text-base  text-slate-500">{location}</p>
-          </div>
+        <Image
+          id="inner-img"
+          className="object-cover"
+          fill
+          src={img}
+          alt={"beautiful picture of about us"}
+        />
+      </div>
+      <div className="p-10 pt-5">
+        <div className="sm:min-w-0 sm:flex-1">
+          <h2
+            id="heading"
+            className="text-2xl font-semibold leading-8 text-gray-900"
+          >
+            {name}
+          </h2>
+          <p className="text-base  text-slate-500">{location}</p>
         </div>
       </div>
-    </Modal>
+    </NextLink>
   );
 };
 
