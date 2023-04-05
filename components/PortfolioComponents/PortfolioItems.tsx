@@ -1,9 +1,5 @@
 import { useRef, useEffect } from "react";
 import projectListImages from "../../helpers/project_images";
-import helloTendImg from "../../public/images/projects/HelloTend/mask-studio.webp";
-import jenFishImg from "../../public/images/projects/Michilli - Jennifer Fisher SoHo/96be.jpg";
-import stefRicciImg from "../../public/images/projects/Michilli - Stefano Ricci at Fuller Building/AM-05_04.jpg";
-import mulberryImg from "../../public/images/projects/Michilli - mulberryengland on Wooster Street/STORE_GALLERY_00.webp";
 import PortfolioItem from "./PortfolioItem";
 import gsap from "gsap";
 
@@ -19,30 +15,104 @@ const projectList = [
     name: "HelloTend",
     location: "Williamsburg, Brooklyn",
     projectImages: projectListImages.helloTend,
-    img: helloTendImg,
-    pos: "first",
+    img: projectListImages.helloTend[0],
   },
   {
     name: "Jennifer Fisher",
     location: "Soho, Manhattan",
     projectImages: projectListImages.jenniferFisher,
-    img: jenFishImg,
+    img: projectListImages.jenniferFisher[0],
     gc: "Michilli",
   },
   {
     name: "Stefano Ricci",
     location: "Madison Ave, New York",
     projectImages: projectListImages.stefanoRicci,
-    img: stefRicciImg,
+    img: projectListImages.stefanoRicci[0],
     gc: "Michilli",
   },
   {
     name: "Mulberry England",
     location: "Wooster St, New York",
     projectImages: projectListImages.mulberryEngland,
-    img: mulberryImg,
-    pos: "last",
+    img: projectListImages.mulberryEngland[0],
     gc: "Michilli",
+  },
+  {
+    name: "Gentle Monster",
+    location: "70 Wooster St, New York",
+    projectImages: projectListImages.gentleMonster,
+    img: projectListImages.gentleMonster[0],
+
+    gc: "Michilli",
+  },
+  {
+    name: "Khaite",
+    location: "165 Mercer St, New York",
+    projectImages: projectListImages.khaite,
+    img: projectListImages.khaite[0],
+    gc: "Michilli",
+  },
+  {
+    name: "Lacoste",
+    location: "541 Broadway, New York",
+    projectImages: projectListImages.lacoste,
+    img: projectListImages.lacoste[0],
+    gc: "Michilli",
+  },
+  {
+    name: "Zadig & Voltaire",
+    location: "845 madison Ave, New York",
+    projectImages: projectListImages.zadig,
+    img: projectListImages.zadig[0],
+    gc: "Michilli",
+  },
+  {
+    name: "Assouline",
+    location: "3 Park Ave, New York",
+    projectImages: projectListImages.assouline,
+    img: projectListImages.assouline[0],
+    gc: "JRM",
+  },
+  {
+    name: "The Olivia",
+    location: "315 West 33rd St, New York",
+    projectImages: projectListImages.olivia,
+    img: projectListImages.olivia[0],
+    gc: "JRM",
+  },
+  {
+    name: "Brooklyn Nets",
+    location: "Brooklyn, New York",
+    projectImages: projectListImages.bse,
+    img: projectListImages.bse[0],
+    gc: "Reidy Contracting Group",
+  },
+  {
+    name: "Moncler",
+    location: "Woodbury Common, New York",
+    projectImages: projectListImages.moncler,
+    img: projectListImages.moncler[0],
+    gc: "SAJO",
+  },
+  {
+    name: "Moose Knuckle",
+    location: "57 Green St., New York",
+    projectImages: projectListImages.mooseKnuckle,
+    img: projectListImages.mooseKnuckle[0],
+    gc: "SAJO",
+  },
+  {
+    name: "CitizenM Hotel Bowery",
+    location: "189 Bowery, New York",
+    projectImages: projectListImages.citizenMBowery,
+    img: projectListImages.citizenMBowery[0],
+  },
+  {
+    name: "CitizenM Hotel",
+    location: "218 W 50th St, New York",
+    projectImages: projectListImages.citizenM,
+    img: projectListImages.citizenM[0],
   },
 ].map((project) => ({ ...project, slug: createSlug(project.name) }));
 
@@ -87,7 +157,6 @@ export default function PortfolioItems() {
                 projectImages={item.projectImages}
                 name={item.name}
                 location={item.location}
-                pos={item.pos}
                 img={item.img}
                 slug={item.slug}
               />
