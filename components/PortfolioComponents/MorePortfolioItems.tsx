@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 import { projectList } from "./PortfolioItems";
@@ -11,7 +11,7 @@ import { MdOutlineCleaningServices } from "react-icons/md";
 type Project = {
   name: string;
   location: string;
-  projectImages: string[];
+  projectImages: StaticImageData[];
   img: string;
   gc?: string;
   slug?: string;
