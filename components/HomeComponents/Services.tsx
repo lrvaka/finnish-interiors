@@ -26,9 +26,9 @@ const features = [
     icon: FaHardHat,
   },
   {
-    name: "Project management",
+    name: "Repair and restoration",
     description:
-      "Managing budgets and schedules to ensure that projects are completed on time and within budget, as well as obtaining necessary permits and ensuring that projects are completed in compliance with local building codes and regulations.",
+      "We work with remediation companies to restore hospitality, commercial and residential spaces after damages caused by fire, flood and environmental issues.",
     icon: BiCog,
   },
 ];
