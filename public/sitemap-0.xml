@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://www.finnishinteriors.com</loc><lastmod>2023-01-07T11:20:48.261Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.finnishinteriors.com/about</loc><lastmod>2023-01-07T11:20:48.262Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.finnishinteriors.com/contact</loc><lastmod>2023-01-07T11:20:48.262Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.finnishinteriors.com/portfolio</loc><lastmod>2023-01-07T11:20:48.262Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://www.finnishinteriors.com/services</loc><lastmod>2023-01-07T11:20:48.262Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/about</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/contact</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/services</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/services/drywall</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/services/framing</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/services/general-carpentry</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/services/restoration-rescue</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/hellotend</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/jennifer-fisher</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/stefano-ricci</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/mulberry-england</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/gentle-monster</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/khaite</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/lacoste</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/zadig-voltaire</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/assouline</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/the-olivia</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/brooklyn-nets</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/moncler</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/moose-knuckle</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/citizenm-hotel-bowery</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/citizenm-hotel</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/wall-street-hotel</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/181-e-65th-st</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/455-e-86th-st</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.finnishinteriors.com/portfolio/475-greenwich-st</loc><lastmod>2023-04-26T16:48:30.204Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>
