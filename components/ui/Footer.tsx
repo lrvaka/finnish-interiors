@@ -63,7 +63,7 @@ const Footer = () => {
   return (
     <footer className="bg-theme-200 text-white">
       <div className="relative z-10 max-w-screen-xl mx-auto px-4 lg:px-6">
-        <div className=" flex flex-col lg:flex-row lg:h-52">
+        <div className=" flex flex-col lg:flex-row lg:h-40">
           {" "}
           {contact.map((e, i) => {
             return (
@@ -75,20 +75,17 @@ const Footer = () => {
                   <div className="flex gap-4 flex-1">
                     <e.icon className=" h-16 w-16 p-3 bg-theme-100 text-theme-200 " />
                     <div className="flex flex-col gap-2">
-                      <h3 className="text-2xl font-bold text-white">
+                      <a
+                        href={e.link}
+                        className="hover:text-theme-100 text-2xl font-bold text-white"
+                      >
                         {e.name}
-                      </h3>
+                      </a>
                       <div className=" text-gray-300 max-w-[200px] sm:text-sm xl:text-base">
                         {e.detail}
                       </div>
                     </div>
                   </div>
-                  <a
-                    href={e.link}
-                    className="hover:text-theme-100 transition-all text-center underline text-lg text-white"
-                  >
-                    {e.linkTitle}
-                  </a>
                 </div>
                 {e.border ? <Border /> : null}
               </>
