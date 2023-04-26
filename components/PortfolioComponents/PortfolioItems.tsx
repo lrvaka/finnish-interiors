@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import projectListImages from "../../helpers/project_images";
 import PortfolioItem from "./PortfolioItem";
 import gsap from "gsap";
@@ -10,7 +10,32 @@ function createSlug(name: string) {
     .replace(/^-+|-+$/g, "");
 }
 
-const projectList = [
+// Separate the projects into residential and commercial lists
+const residentialProjects = [
+  {
+    name: "181 E 65th St.",
+    location: "181 E 65th, New York",
+    projectImages: projectListImages.apt181East65th,
+    img: projectListImages.apt181East65th[0],
+  },
+  {
+    name: "455 E 86th St.",
+    location: "455 E 86th St, New York",
+    projectImages: projectListImages.apt455East86th,
+    img: projectListImages.apt455East86th[0],
+  },
+  {
+    name: "475 Greenwich St.",
+    location: "475 Greenwich St, New York",
+    projectImages: projectListImages.apt475Greenwich,
+    img: projectListImages.apt475Greenwich[0],
+  },
+].map((project) => ({
+  ...project,
+  slug: createSlug(project.name),
+}));
+
+const commercialProjects = [
   {
     name: "HelloTend",
     location: "Williamsburg, Brooklyn",
@@ -120,37 +145,25 @@ const projectList = [
     projectImages: projectListImages.wallStreetHotel,
     img: projectListImages.wallStreetHotel[0],
   },
-  {
-    name: "181 E 65th St. Apartment",
-    location: "181 E 65th, New York",
-    projectImages: projectListImages.apt181East65th,
-    img: projectListImages.apt181East65th[0],
-  },
-  {
-    name: "455 E 86th St. Apartment",
-    location: "455 E 86th St, New York",
-    projectImages: projectListImages.apt455East86th,
-    img: projectListImages.apt455East86th[0],
-  },
-  {
-    name: "475 Greenwich St. Apartment",
-    location: "475 Greenwich St, New York",
-    projectImages: projectListImages.apt475Greenwich,
-    img: projectListImages.apt475Greenwich[0],
-  },
-].map((project) => ({ ...project, slug: createSlug(project.name) }));
+].map((project) => ({
+  ...project,
+  slug: createSlug(project.name),
+}));
+
+const projectList = [...commercialProjects, ...residentialProjects];
 
 export default function PortfolioItems() {
   const container = useRef<HTMLDivElement | null>(null);
+  const [currentTab, setCurrentTab] = useState("commercial");
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.set("#items > *", {
+      gsap.set("#buttons > *, #items > *", {
         y: -10,
         opacity: 0,
       });
 
-      gsap.to("#items > *", {
+      gsap.to("#buttons > *, #items > *", {
         scrollTrigger: {
           trigger: container.current,
           start: "top bottom", // when the top of the trigger hits the top of the viewport
@@ -167,15 +180,47 @@ export default function PortfolioItems() {
     }; // cleanup
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
+  const switchTab = (tabName: string) => {
+    setCurrentTab(tabName);
+  };
+
   return (
-    <div ref={container} className="bg-white my-28 lg:mt-40 mb-60">
+    <div ref={container} className="bg-white my-28 lg:mt-32 mb-60">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mt-20 max-w-lg sm:mx-auto md:max-w-none">
+        {/* Add tabs */}
+        <div id="buttons" className="flex justify-center space-x-4 mb-6">
+          <button
+            className={`text-lg font-semibold px-4 py-2 ${
+              currentTab === "commercial"
+                ? "bg-theme-200 text-white"
+                : "text-theme-200 hover:bg-slate-200 "
+            }`}
+            onClick={() => switchTab("commercial")}
+          >
+            Commercial
+          </button>
+          <button
+            className={`text-lg font-semibold px-4 py-2 ${
+              currentTab === "residential"
+                ? "bg-theme-200 text-white"
+                : "text-theme-200 hover:bg-slate-200 "
+            }`}
+            onClick={() => switchTab("residential")}
+          >
+            Residential
+          </button>
+        </div>
+
+        <div className="mt-10 max-w-lg sm:mx-auto md:max-w-none">
           <div
             id="items"
             className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16"
           >
-            {projectList.map((item) => (
+            {/* Conditionally render projects based on the currentTab state */}
+            {(currentTab === "residential"
+              ? residentialProjects
+              : commercialProjects
+            ).map((item) => (
               <PortfolioItem
                 key={item.name}
                 projectImages={item.projectImages}

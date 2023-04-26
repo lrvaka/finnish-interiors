@@ -42,10 +42,8 @@ const Form = () => {
 
     try {
       await axios.post("/api/zapier/contact", formData);
-      alert("Form submitted successfully!");
       setFormStatus("success");
     } catch (error) {
-      alert("Error submitting the form. Please try again.");
       setFormStatus("error");
     }
   };
