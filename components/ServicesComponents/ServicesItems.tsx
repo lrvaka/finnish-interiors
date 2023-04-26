@@ -21,7 +21,7 @@ const services = [
     href: "/services/general-carpentry",
     img: carpentryImg,
     description:
-      "Installing trim, molding, and other woodwork; building custom cabinets, shelving, and other storage solutions; and repairing or replacing damaged woodwork.",
+      "Custom millwork including specialty moldings, trim work and custom doors and frames.",
     icon: IoHammerOutline,
     first: true,
   },
@@ -30,7 +30,7 @@ const services = [
     href: "/services/framing",
     img: framingImg,
     description:
-      "Constructing the framework for new interior spaces, such as walls and ceilings, as well as repairing or replacing damaged framing.",
+      "Construction of framework for new interior spaces such as wall, ceilings, custom soffits, light coves and curved ceilings.",
     icon: FcFrame,
   },
   {
@@ -39,15 +39,15 @@ const services = [
     img: drywallImg,
 
     description:
-      "Installing new drywall, repairing damaged drywall, and finishing drywall surfaces with tape, joint compound, and texture.",
+      "Installation of all classifications of drywall assemblies and high level finishes for paint, wallpaper and specialty plaster finishes.",
     icon: BiCog,
   },
   {
-    name: "Repair and restoration",
-    href: "/services/repair-restoration",
+    name: "Restoration and rescue",
+    href: "/services/restoration-rescue",
     img: restorationImg,
     description:
-      "We work with remediation companies to restore hospitality, commercial and residential spaces after damages caused by fire, flood and environmental issues.",
+      "We provide restoration and rescue services for damaged spaces and take on rescue projects, collaborating with contractors and architects to deliver high-end finished spaces.",
     icon: MdOutlineCleaningServices,
     last: true,
   },

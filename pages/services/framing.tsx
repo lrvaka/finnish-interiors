@@ -19,14 +19,14 @@ const headerInfo = {
   name: "Framing",
   img: framingImg,
   description:
-    "Constructing the framework for new interior spaces, such as walls and ceilings, as well as repairing or replacing damaged framing.",
+    "Construction of framework for new interior spaces such as wall, ceilings, custom soffits, light coves and curved ceilings.",
   icon: FcFrame,
 };
 
 const whatsIncluded = [
   {
     name: "Interior Metal Stud Framing",
-    desc: "Experience the strength and versatility of metal stud framing for your interior walls and partitions. Our expert team can design and install non-load-bearing metal stud walls, including 1-4hr fire rated partitions, elevator and MEP shafts, free-standing and knee-wall partitions, tailored to your specific requirements.",
+    desc: "Experience the strength and versatility of metal stud framing for your interior walls and partitions. Our expert team can design and install all classifications of UL compliant partition assemblies, including 1-4hr fire rated partitions, elevator and MEP shafts, free-standing and knee-wall partitions, tailored to your specific requirements.",
   },
 
   {
@@ -78,7 +78,7 @@ const whyUs = [
 ];
 
 const aboutTheService =
-  "Your Trusted Partner for Exceptional Metal Framing Solutions in New York City! At Finnish Interiors, we specialize in providing high-quality metal framing services for both residential and commercial clients. Our team of skilled professionals is dedicated to delivering superior workmanship, exceptional customer satisfaction, and tailored solutions that cater to your unique needs.";
+  "Your Trusted Partner for Exceptional Metal Framing Solutions in the New York Metropolitan area! At Finnish Interiors, we specialize in providing high-quality metal framing services for both residential and commercial clients. Our team of skilled professionals is dedicated to delivering superior workmanship, exceptional customer satisfaction, and tailored solutions that cater to your unique needs.";
 
 const Framing = () => {
   return (

@@ -17,6 +17,7 @@
     "@types/node": "18.11.17",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.9",
+    "axios": "^1.3.6",
     "eslint-config-next": "^12.0.4",
     "fs": "^0.0.1-security",
     "gsap": "npm:@gsap/business@^3.11.4",

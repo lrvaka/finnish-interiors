@@ -89,10 +89,42 @@ import mooseKnuckle1 from "../public/images/projects/SAJO/Moose Knuckle- 57 Gree
 import citizenM from "../public/images/projects/Citizenm hotel – 218 W 50th St/1.jpg";
 import citizenM1 from "../public/images/projects/Citizenm hotel – 218 W 50th St/2.jpg";
 
-import citizenMBowery from '../public/images/projects/Citizenm hotel – 189 Bowery/1.webp';
-import citizenMBowery1 from '../public/images/projects/Citizenm hotel – 189 Bowery/2.jpg';
+import citizenMBowery from "../public/images/projects/Citizenm hotel – 189 Bowery/1.webp";
+import citizenMBowery1 from "../public/images/projects/Citizenm hotel – 189 Bowery/2.jpg";
 
+import wallStreetHotel from "../public/images/projects/Wall Street Hotel/1.jpg";
+import wallStreetHotel1 from "../public/images/projects/Wall Street Hotel/2.jpg";
+import wallStreetHotel2 from "../public/images/projects/Wall Street Hotel/3.jpg";
+import wallStreetHotel3 from "../public/images/projects/Wall Street Hotel/4.jpg";
 
+import apt181East65th from "../public/images/projects/181 E 65th - New York, NY/1.webp";
+import apt181East65th1 from "../public/images/projects/181 E 65th - New York, NY/2.webp";
+import apt181East65th2 from "../public/images/projects/181 E 65th - New York, NY/3.webp";
+import apt181East65th3 from "../public/images/projects/181 E 65th - New York, NY/4.webp";
+import apt181East65th4 from "../public/images/projects/181 E 65th - New York, NY/5.webp";
+import apt181East65th5 from "../public/images/projects/181 E 65th - New York, NY/6.webp";
+import apt181East65th6 from "../public/images/projects/181 E 65th - New York, NY/7.webp";
+import apt181East65th7 from "../public/images/projects/181 E 65th - New York, NY/8.webp";
+import apt181East65th8 from "../public/images/projects/181 E 65th - New York, NY/9.webp";
+import apt181East65th9 from "../public/images/projects/181 E 65th - New York, NY/10.webp";
+import apt181East65th10 from "../public/images/projects/181 E 65th - New York, NY/11.webp";
+import apt181East65th11 from "../public/images/projects/181 E 65th - New York, NY/12.webp";
+
+import apt455East86th from "../public/images/projects/455 E 86th St - New York, NY/1.webp";
+import apt455East86th1 from "../public/images/projects/455 E 86th St - New York, NY/2.webp";
+import apt455East86th2 from "../public/images/projects/455 E 86th St - New York, NY/3.webp";
+import apt455East86th3 from "../public/images/projects/455 E 86th St - New York, NY/4.webp";
+import apt455East86th4 from "../public/images/projects/455 E 86th St - New York, NY/5.webp";
+import apt455East86th5 from "../public/images/projects/455 E 86th St - New York, NY/6.webp";
+import apt455East86th6 from "../public/images/projects/455 E 86th St - New York, NY/7.webp";
+import apt455East86th7 from "../public/images/projects/455 E 86th St - New York, NY/8.webp";
+import apt455East86th8 from "../public/images/projects/455 E 86th St - New York, NY/9.webp";
+import apt455East86th9 from "../public/images/projects/455 E 86th St - New York, NY/10.webp";
+
+import apt475Greenwich from "../public/images/projects/475 Greenwich St - New York, NY/1.webp";
+import apt475Greenwich1 from "../public/images/projects/475 Greenwich St - New York, NY/2.webp";
+import apt475Greenwich2 from "../public/images/projects/475 Greenwich St - New York, NY/3.webp";
+import apt475Greenwich3 from "../public/images/projects/475 Greenwich St - New York, NY/4.webp";
 
 const projectList = {
   helloTend: [helloTend, helloTend1, helloTend2, helloTend3],
@@ -154,6 +186,45 @@ const projectList = {
   mooseKnuckle: [mooseKnuckle, mooseKnuckle1],
   citizenM: [citizenM, citizenM1],
   citizenMBowery: [citizenMBowery, citizenMBowery1],
+  wallStreetHotel: [
+    wallStreetHotel,
+    wallStreetHotel1,
+    wallStreetHotel2,
+    wallStreetHotel3,
+  ],
+  apt181East65th: [
+    apt181East65th,
+    apt181East65th1,
+    apt181East65th2,
+    apt181East65th3,
+    apt181East65th4,
+    apt181East65th5,
+    apt181East65th6,
+    apt181East65th7,
+    apt181East65th8,
+    apt181East65th9,
+    apt181East65th10,
+    apt181East65th11,
+
+  ],
+  apt455East86th: [
+    apt455East86th,
+    apt455East86th1,
+    apt455East86th2,
+    apt455East86th3,
+    apt455East86th4,
+    apt455East86th5,
+    apt455East86th6,
+    apt455East86th7,
+    apt455East86th8,
+    apt455East86th9,
+  ],
+  apt475Greenwich: [
+    apt475Greenwich,
+    apt475Greenwich1,
+    apt475Greenwich2,
+    apt475Greenwich3,
+  ],
 };
 
 export default projectList;

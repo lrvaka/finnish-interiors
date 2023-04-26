@@ -7,19 +7,19 @@ import MoreServices from "../../components/ServicesComponents/MoreServices";
 import Footer from "../../components/ui/Footer";
 
 const meta = {
-  title: "Repair And Restoration - Services - Finnish Interiors",
+  title: "Restoration And Rescue - Services - Finnish Interiors",
   description: "Experience premier drywall servicing!",
-  url: "https://www.finnishinteriors.com/services/drywall",
+  url: "https://www.finnishinteriors.com/services/restoration-rescue",
   twitter: "https://twitter.com/finnishinteriors",
   imageUrl: "https://www.finnishinteriors.com/twitter.png",
   imageAlt: "Finnish Interiors",
 };
 
 const headerInfo = {
-  name: "Repair and restoration",
+  name: "Restoration and rescue",
   img: restorationImg,
   description:
-    "We work with remediation companies to restore hospitality, commercial and residential spaces after damages caused by fire, flood and environmental issues.",
+    "We provide restoration and rescue services for damaged spaces and take on rescue projects, collaborating with contractors and architects to deliver high-end finished spaces.",
   icon: MdOutlineCleaningServices,
 };
 
@@ -45,8 +45,8 @@ const whatsIncluded = [
   },
 
   {
-    name: "Flooring Repair and Restoration",
-    desc: "Restore the beauty and functionality of your floors with our expert repair and restoration services, including hardwood refinishing, tile regrouting, and carpet repair.",
+    name: "Flooring Restoration and Rescue",
+    desc: "Restore the beauty and functionality of your floors with our expert restoration and rescue services, including hardwood refinishing, tile regrouting, and carpet repair.",
   },
 
   {
@@ -63,17 +63,17 @@ const whatsIncluded = [
 const whyUs = [
   {
     name: "Experienced Professionals",
-    desc: "Our team of repair and restoration experts brings years of experience and extensive knowledge, ensuring that each project meets the highest standards of quality and precision.",
+    desc: "Our team of restoration and rescue experts brings years of experience and extensive knowledge, ensuring that each project meets the highest standards of quality and precision.",
   },
 
   {
     name: "Comprehensive Solutions",
-    desc: "We offer a wide range of repair and restoration services tailored to your specific needs, providing bespoke solutions for both residential and commercial spaces.",
+    desc: "We offer a wide range of restoration and rescue services tailored to your specific needs, providing bespoke solutions for both residential and commercial spaces.",
   },
 
   {
     name: "Quality Materials",
-    desc: "We utilize only the best materials in our repair and restoration projects, ensuring optimal performance, durability, and long-lasting results.",
+    desc: "We utilize only the best materials in our restoration and rescue projects, ensuring optimal performance, durability, and long-lasting results.",
   },
 
   {
@@ -88,7 +88,7 @@ const whyUs = [
 ];
 
 const aboutTheService =
-  "Your Expert Solution for Interior Repair and Restoration Services in New York City! At Finnish Interiors, we are committed to providing exceptional repair and restoration services for both residential and commercial clients. Our team of skilled professionals takes pride in breathing new life into your interior spaces, combining outstanding craftsmanship and unparalleled customer satisfaction to ensure that your project is completed with precision, efficiency, and the highest quality standards.";
+  "Your Expert Solution for Interior Restoration and Rescue Services in the New York Metropolitan area! At Finnish Interiors, we are committed to providing exceptional restoration and rescue services for both residential and commercial clients. Our team of skilled professionals takes pride in breathing new life into your interior spaces, combining outstanding craftsmanship and unparalleled customer satisfaction to ensure that your project is completed with precision, efficiency, and the highest quality standards.";
 
 const RepairAndRestoration = () => {
   return (

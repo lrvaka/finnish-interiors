@@ -101,7 +101,7 @@ const Footer = () => {
               <Image src={logo} alt="finnish interiors contracting llc" />
             </div>
             <p className="mt-5">
-              Transform your space with NYC&apos;s <br /> expert interior
+              Transform your space with NY Metro&apos;s <br /> expert interior
               contracting services.
             </p>
             <div className="flex gap-3 mt-5">

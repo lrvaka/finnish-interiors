@@ -1,9 +1,21 @@
+import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
-import { gsap } from "gsap";
+import formImg from "../../public/images/contact/form-img.jpeg";
+import gsap from "gsap";
 import axios from "axios";
 
-type WhatsIncludedType = Array<{ name: string; desc: string }>;
-type WhyUsType = Array<{ name: string; desc: string }>;
+const Backdrop = () => (
+  <div className="lg:absolute lg:inset-0">
+    <div className="overflow-hidden lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <Image
+        id="inner-img"
+        className="h-56 w-full object-cover lg:absolute lg:h-full"
+        src={formImg}
+        alt=""
+      />
+    </div>
+  </div>
+);
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +24,7 @@ const Form = () => {
     email: "",
     phone: "",
     company: "",
+    howCanWeHelp: "",
   });
 
   const [formStatus, setFormStatus] = useState("idle");
@@ -28,7 +41,7 @@ const Form = () => {
     e.preventDefault();
 
     try {
-      await axios.post("/api/zapier/services", formData);
+      await axios.post("/api/zapier/contact", formData);
       alert("Form submitted successfully!");
       setFormStatus("success");
     } catch (error) {
@@ -62,8 +75,8 @@ const Form = () => {
 
   return (
     <form
-      id="form-items"
       onSubmit={handleSubmit}
+      id="form-items"
       action="#"
       method="POST"
       className="mt-9 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8"
@@ -77,8 +90,8 @@ const Form = () => {
         </label>
         <div className="mt-1">
           <input
-            onChange={handleChange}
             required
+            onChange={handleChange}
             type="text"
             name="firstName"
             id="firstName"
@@ -122,7 +135,6 @@ const Form = () => {
           />
         </div>
       </div>
-
       <div className="sm:col-span-2">
         <div className="flex justify-between">
           <label
@@ -168,6 +180,31 @@ const Form = () => {
         </div>
       </div>
 
+      <div className="sm:col-span-2">
+        <div className="flex justify-between">
+          <label
+            htmlFor="howCanWeHelp"
+            className="block text-sm font-medium text-gray-700"
+          >
+            How can we help you?
+          </label>
+          <span id="howCanWeHelp-description" className="text-sm text-gray-500">
+            Max. 500 characters
+          </span>
+        </div>
+        <div className="mt-1">
+          <textarea
+            onChange={handleChange}
+            id="howCanWeHelp"
+            name="howCanWeHelp"
+            aria-describedby="howCanWeHelp-description"
+            rows={4}
+            className="block w-full  border-gray-300 shadow-sm focus:border-theme-100 focus:ring-theme-200 sm:text-sm"
+            defaultValue={""}
+          />
+        </div>
+      </div>
+
       <div className="text-right sm:col-span-2">
         <button
           type="submit"
@@ -180,49 +217,22 @@ const Form = () => {
   );
 };
 
-const ServiceItemInfo = ({
-  whatsIncluded,
-  whyUs,
-  aboutTheService,
-}: {
-  whatsIncluded: WhatsIncludedType;
-  whyUs: WhyUsType;
-  aboutTheService: string;
-}) => {
+export default function ContactForm() {
   const container = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.set(
-        "#about-the-service > *, #whats-included, #whats-included-items > *, #why-us, #why-us-items > *, #form > *",
-        {
-          y: -10,
-          opacity: 0,
-        }
-      );
+      gsap.from("#inner-img", {
+        scale: 1.1,
+        opacity: 0.5,
+        duration: 5,
+        ease: "power4.easeOut",
+      });
 
-      gsap.to(
-        "#about-the-service > *, #whats-included, #whats-included-items > *, #why-us, #why-us-items > *, #form > *",
-        {
-          scrollTrigger: {
-            trigger: container.current,
-            start: "top bottom", // when the top of the trigger hits the top of the viewport
-          },
-          stagger: 0.2,
-          y: 0,
-          opacity: 1,
-          ease: "power4.easeOut",
-        }
-      );
-
-      gsap.to("#form > *", {
-        scrollTrigger: {
-          trigger: "#form",
-          start: "top bottom", // when the top of the trigger hits the top of the viewport
-        },
+      gsap.from("#items > *, #form-items > *", {
         stagger: 0.2,
-        y: 0,
-        opacity: 1,
+        y: -10,
+        opacity: 0,
         ease: "power4.easeOut",
       });
     }, container); // <- IMPORTANT! Scopes selector text
@@ -233,62 +243,23 @@ const ServiceItemInfo = ({
   }, []); // <- empty dependency Array so it doesn't re-run on every render
 
   return (
-    <div
-      ref={container}
-      className="my-20 z-10 relative gap-20 flex flex-col lg:flex-row  max-w-screen-xl mx-auto  px-4 lg:px-6"
-    >
-      <div className="flex flex-col gap-20 relative max-w-prose">
-        <div id="about-the-service">
-          <h2 className="text-black text-3xl lg:text-4xl font-bold">
-            About the service
-          </h2>
-          <p className="text-lg text-gray-600 mt-5">{aboutTheService}</p>
+    <div ref={container} className="relative bg-white">
+      <Backdrop />
+      <div className="relative py-16 px-6 sm:py-24 lg:mx-auto lg:grid lg:max-w-7xl lg:grid-cols-2 lg:px-8 lg:py-32">
+        <div className="lg:pr-8">
+          <div id="items" className="mx-auto max-w-md sm:max-w-lg lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Let&apos;s work together
+            </h2>
+            <p className="mt-4 text-lg text-gray-500 sm:mt-3">
+              We&apos;d love to hear from you! Send us a message using the form
+              or email us about your project and some information about
+              yourself!
+            </p>
+            <Form />
+          </div>
         </div>
-        <div>
-          <h3
-            id="whats-included"
-            className="text-black text-2xl lg:text-3xl font-bold"
-          >
-            What&apos;s included
-          </h3>
-          <ul id="whats-included-items" className="flex flex-col gap-7 mt-5">
-            {whatsIncluded.map((e, i) => (
-              <li key={e.name}>
-                <h4 className="text-xl text-gray-900">{e.name}</h4>
-                <p className="text-lg text-gray-600">{e.desc}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h3 id="why-us" className="text-black text-2xl lg:text-3xl font-bold">
-            Why us
-          </h3>
-          <ul id="why-us-items" className="flex flex-col gap-7 mt-5">
-            {whyUs.map((e, i) => (
-              <li key={e.name}>
-                <h4 className="text-xl text-gray-900">{e.name}</h4>
-                <p className="text-lg text-gray-600">{e.desc}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-
-      <div
-        id="form"
-        className=" lg:sticky lg:top-36  border-t-theme-100 border  border-slate-200 self-start   px-4 py-10 border-t-[5px] "
-      >
-        <h4 className="text-black text-xl lg:text-2xl font-bold">
-          Fill out the form to hear from us
-        </h4>
-        <p className="text-lg text-gray-600">
-          Experience premiere interior contracting services today!
-        </p>
-        <Form />
       </div>
     </div>
   );
-};
-
-export default ServiceItemInfo;
+}

@@ -29,7 +29,7 @@ export default function PortfolioItem({
           location={project.location}
           projectImages={project.projectImages}
         />
-        <PortfolioItemInfo project={project} />
+        {/* <PortfolioItemInfo project={project} /> */}
         <MorePortfolioItems portfolioItemName={project.name} />
       </main>
       <Footer />
