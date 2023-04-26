@@ -173,15 +173,16 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
       </div>
       <div
         ref={contactSection}
-        className="relative z-10 -mt-28 max-w-screen-xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-52"
+        className="relative z-10 -mt-28 max-w-screen-xl flex flex-col lg:flex-row mx-auto px-4 lg:px-6 lg:h-40"
       >
         {contact.map((e, i) => {
           return (
             <>
-              <div
+              <a
+                href={e.link}
                 id="contact-info"
                 key={i + "contact-info"}
-                className=" gap-10 lg:gap-0 bg-slate-50 flex-1 flex flex-col py-9 px-12 lg:py-10 lg:px-14 "
+                className="hover:bg-yellow-100 hover:cursor-pointer gap-10 lg:gap-0 bg-slate-50 flex-1 flex flex-col py-9 px-12 lg:py-10 lg:px-14 "
               >
                 <div className="flex gap-4 flex-1">
                   <e.icon className=" h-16 w-16 p-3 bg-theme-200 text-white " />
@@ -192,13 +193,7 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
                     </div>
                   </div>
                 </div>
-                <a
-                  href={e.link}
-                  className="hover:text-theme-100 transition-all text-center underline text-lg"
-                >
-                  {e.linkTitle}
-                </a>
-              </div>
+              </a>
               {e.border ? <Border /> : null}
             </>
           );
