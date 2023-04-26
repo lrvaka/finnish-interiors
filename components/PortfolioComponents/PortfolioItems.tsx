@@ -114,6 +114,30 @@ const projectList = [
     projectImages: projectListImages.citizenM,
     img: projectListImages.citizenM[0],
   },
+  {
+    name: "Wall Street Hotel",
+    location: "88 Wall St, New York",
+    projectImages: projectListImages.wallStreetHotel,
+    img: projectListImages.wallStreetHotel[0],
+  },
+  {
+    name: "181 E 65th St. Apartment",
+    location: "181 E 65th, New York",
+    projectImages: projectListImages.apt181East65th,
+    img: projectListImages.apt181East65th[0],
+  },
+  {
+    name: "455 E 86th St. Apartment",
+    location: "455 E 86th St, New York",
+    projectImages: projectListImages.apt455East86th,
+    img: projectListImages.apt455East86th[0],
+  },
+  {
+    name: "475 Greenwich St. Apartment",
+    location: "475 Greenwich St, New York",
+    projectImages: projectListImages.apt475Greenwich,
+    img: projectListImages.apt475Greenwich[0],
+  },
 ].map((project) => ({ ...project, slug: createSlug(project.name) }));
 
 export default function PortfolioItems() {

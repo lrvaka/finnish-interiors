@@ -19,7 +19,7 @@ const headerInfo = {
   name: "General carpentry",
   img: carpentryImg,
   description:
-    "Installing trim, molding, and other woodwork; building custom cabinets, shelving, and other storage solutions; and repairing or replacing damaged woodwork.",
+    "Custom millwork including specialty moldings, trim work and custom doors and frames.",
   icon: IoHammerOutline,
 };
 
@@ -35,8 +35,8 @@ const whatsIncluded = [
   },
 
   {
-    name: "Doors and Window Frames",
-    desc: "Upgrade your home or office with our perfectly crafted doors and window frames, designed to enhance aesthetics and improve energy efficiency.",
+    name: "Doors, Frames and Hardware",
+    desc: "Upgrade your home or office with our perfectly crafted doors, frames, and hardware, designed to enhance aesthetics and improve security and energy efficiency.",
   },
 
   {
@@ -78,7 +78,7 @@ const whyUs = [
 ];
 
 const aboutTheService =
-  "Your One-Stop Solution for Outstanding Interior Carpentry Services in New York City! At Finnish Interiors, we are committed to delivering top-notch interior carpentry solutions for both residential and commercial clients. Our team of skilled and experienced carpenters is dedicated to transforming your space with meticulous craftsmanship and attention to detail.";
+  "Your One-Stop Solution for Outstanding Interior Carpentry Services in the New York Metropolitan area! At Finnish Interiors, we are committed to delivering top-notch interior carpentry solutions for both residential and commercial clients. Our team of skilled and experienced carpenters is dedicated to transforming your space with meticulous craftsmanship and attention to detail.";
 
 const GeneralCarpentry = () => {
   return (

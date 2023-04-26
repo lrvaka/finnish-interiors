@@ -70,13 +70,13 @@ const AboutUs = () => {
           <div id="text-section" className="self-center max-w-prose">
             <div className="text-lg font-semibold text-theme-200">About us</div>
             <h2 className="text-black text-3xl lg:text-4xl font-bold leading-tight">
-              New York City&apos;s expert interior contractors
+              New York Metropolitan&apos;s expert interior contractors
             </h2>
             <p className="mt-5 text-lg text-gray-600  mb-10">
               At Finnish Interiors, we specialize in providing high-quality
-              services in the areas of general carpentry, framing, and drywall
-              in the New York City Metropolitan area. Our team of experienced
-              professionals has the skills and expertise to handle any project,
+              services in general carpentry, framing, and drywall
+              in the New York Metropolitan area. Our team of experienced
+              professionals have the skills and expertise to handle any project,
               big or small, and ensure that the final result is flawless. We
               pride ourselves on delivering exceptional workmanship and
               attention to detail, and we strive to exceed our clients&apos;

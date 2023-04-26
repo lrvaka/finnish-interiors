@@ -136,11 +136,11 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
             className="mt-40 lg:mt-52 px-4 lg:px-6 max-w-screen-sm  lg:max-w-screen-md relative z-20"
           >
             <h1 className="text-white text-3xl lg:text-5xl font-bold">
-              Finnish Interiors &#8212; <br /> New York City&apos;s Premier
+              Finnish Interiors &#8212; <br /> New York Metro&apos;s Premier
               Interior Contracting Company
             </h1>
             <p className=" text-slate-300 text-lg leading-normal mt-5 lg:text-xl ">
-              Enhance your New York City interior spaces with our expert
+              Enhance your New York Metropolitan interior spaces with our expert
               contracting services, including specializations in general
               carpentry, framing, and drywall.
             </p>
