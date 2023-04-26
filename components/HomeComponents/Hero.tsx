@@ -178,22 +178,26 @@ const Hero = ({ addAnimation, ...props }: { addAnimation: CallbackType }) => {
         {contact.map((e, i) => {
           return (
             <>
-              <a
-                href={e.link}
+              <div
                 id="contact-info"
                 key={i + "contact-info"}
-                className="hover:bg-yellow-100 hover:cursor-pointer gap-10 lg:gap-0 bg-slate-50 flex-1 flex flex-col py-9 px-12 lg:py-10 lg:px-14 "
+                className="  gap-10 lg:gap-0 bg-slate-50 flex-1 flex flex-col py-9 px-12 lg:py-10 lg:px-14 "
               >
                 <div className="flex gap-4 flex-1">
                   <e.icon className=" h-16 w-16 p-3 bg-theme-200 text-white " />
                   <div className="flex flex-col gap-2">
-                    <h2 className="text-2xl font-bold">{e.name}</h2>
+                    <a
+                      href={e.link}
+                      className="hover:text-theme-200 text-2xl font-bold"
+                    >
+                      {e.name}
+                    </a>
                     <div className=" text-gray-400 max-w-[200px] sm:text-sm xl:text-base">
                       {e.detail}
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
               {e.border ? <Border /> : null}
             </>
           );
