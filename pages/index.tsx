@@ -17,9 +17,9 @@ type CallbackType = (animation: GSAPTimeline, index: number | string) => void;
 
 const meta = {
   title:
-    "Finnish Interiors: New York City's Premier Interior Contracting Company",
+    "Finnish Interiors: New York Metropolitan's Premier Interior Contracting Company",
   description:
-    "Looking for professional and reliable interior contracting services in New York City? Look no further than Finnish Interiors. Our team of experienced contractors is dedicated to providing top-quality workmanship and attention to detail on every project. Contact us today for a consultation.",
+    "Looking for professional and reliable interior contracting services in the New York Metropolitan area? Look no further than Finnish Interiors. Our team of experienced contractors is dedicated to providing top-quality workmanship and attention to detail on every project. Contact us today for a consultation.",
   url: "https://www.finnishinteriors.com",
   twitter: "https://twitter.com/finnishinteriors",
   imageUrl: "https://www.finnishinteriors.com/twitter.jpeg",
