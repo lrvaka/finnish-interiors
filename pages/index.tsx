@@ -22,7 +22,7 @@ const meta = {
     "Looking for professional and reliable interior contracting services in the New York Metropolitan area? Look no further than Finnish Interiors. Our team of experienced contractors is dedicated to providing top-quality workmanship and attention to detail on every project. Contact us today for a consultation.",
   url: "https://www.finnishinteriors.com",
   twitter: "https://twitter.com/finnishinteriors",
-  imageUrl: "https://www.finnishinteriors.com/twitter.jpeg",
+  imageUrl: "https://www.finnishinteriors.com/twitter.png",
   imageAlt: "Finnish Interiors",
 };
 
