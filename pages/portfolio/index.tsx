@@ -12,7 +12,7 @@ const meta = {
     "Check out what New York City's leading interior contracting company has been working on over the past few years!",
   url: "https://www.finnishinteriors.com/portfolio",
   twitter: "https://twitter.com/finnishinteriors",
-  imageUrl: "https://www.finnishinteriors.com/twitter.jpeg",
+  imageUrl: "https://www.finnishinteriors.com/twitter.png",
   imageAlt: "Finnish Interiors",
 };
 
