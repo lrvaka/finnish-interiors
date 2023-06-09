@@ -70,7 +70,6 @@ import olivia4 from "../public/images/projects/JRM/The Olivia, 36 floor - amen
 import olivia5 from "../public/images/projects/JRM/The Olivia, 36 floor - amenities space/6.jpg";
 import olivia6 from "../public/images/projects/JRM/The Olivia, 36 floor - amenities space/7.jpg";
 import olivia7 from "../public/images/projects/JRM/The Olivia, 36 floor - amenities space/8.jpg";
-import olivia8 from "../public/images/projects/JRM/The Olivia, 36 floor - amenities space/9.jpg";
 
 import bse from "../public/images/projects/Reidy/BSE locker room & restrooms (Brooklyn Nets)/1.jpg";
 import bse1 from "../public/images/projects/Reidy/BSE locker room & restrooms (Brooklyn Nets)/2.jpg";
@@ -179,7 +178,6 @@ const projectList = {
     olivia5,
     olivia6,
     olivia7,
-    olivia8,
   ],
   bse: [bse, bse1, bse2, bse3, bse4],
   moncler: [moncler, moncler1, moncler2, moncler3],
@@ -205,7 +203,6 @@ const projectList = {
     apt181East65th9,
     apt181East65th10,
     apt181East65th11,
-
   ],
   apt455East86th: [
     apt455East86th,
