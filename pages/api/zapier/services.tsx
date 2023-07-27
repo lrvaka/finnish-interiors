@@ -8,7 +8,7 @@ const handler = async (
   if (req.method === "POST") {
     try {
       const response = await axios.post(
-        "https://hooks.zapier.com/hooks/catch***REMOVED***",
+        process.env.NEXT_PUBLIC_ZAPIER_SERVICES!,
         req.body
       );
       res.status(200).json(response.data);
