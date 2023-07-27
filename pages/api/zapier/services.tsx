@@ -8,7 +8,7 @@ const handler = async (
   if (req.method === "POST") {
     try {
       const response = await axios.post(
-        "https://hooks.zapier.com/hooks/catch***REMOVED***",
+        "https://hooks.zapier.com/hooks/catch/12288612/3unk7t3/",
         req.body
       );
       res.status(200).json(response.data);
