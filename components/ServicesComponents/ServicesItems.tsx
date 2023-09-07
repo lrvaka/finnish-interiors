@@ -149,13 +149,7 @@ export default function ServicesItems() {
               <NextLink
                 href={service.href}
                 key={service.name}
-                className={
-                  service.first
-                    ? firstClass
-                    : service.last
-                    ? lastClass
-                    : regularClass
-                }
+                className={regularClass}
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
               >
