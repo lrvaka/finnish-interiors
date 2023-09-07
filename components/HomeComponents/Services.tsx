@@ -25,12 +25,12 @@ const features = [
       "Installation of all classifications of drywall assemblies and high level finishes for paint, wallpaper and specialty plaster finishes.",
     icon: FaHardHat,
   },
-  {
-    name: "Restoration and rescue",
-    description:
-      "We provide restoration and rescue services for damaged spaces and take on rescue projects, collaborating with contractors and architects to deliver high-end finished spaces.",
-    icon: BiCog,
-  },
+  // {
+  //   name: "Restoration and rescue",
+  //   description:
+  //     "We provide restoration and rescue services for damaged spaces and take on rescue projects, collaborating with contractors and architects to deliver high-end finished spaces.",
+  //   icon: BiCog,
+  // },
 ];
 
 export default function Services() {

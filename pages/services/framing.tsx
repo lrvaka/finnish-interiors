@@ -34,10 +34,10 @@ const whatsIncluded = [
     desc: "Transform your space with our expertly installed custom curved ceilings, soffits, light coves, and window pocket details, designed to enhance aesthetics and create a truly distinctive interior design.",
   },
 
-  {
-    name: "Load-Bearing Metal Framing",
-    desc: "For projects that require additional structural support, our team is equipped to design and install load-bearing metal framing systems, providing the strength and durability you need without sacrificing design flexibility.",
-  },
+  // {
+  //   name: "Load-Bearing Metal Framing",
+  //   desc: "For projects that require additional structural support, our team is equipped to design and install load-bearing metal framing systems, providing the strength and durability you need without sacrificing design flexibility.",
+  // },
 
   {
     name: "Blocking for All Trades",
