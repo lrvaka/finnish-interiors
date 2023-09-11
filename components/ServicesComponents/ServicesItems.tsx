@@ -41,6 +41,7 @@ const services = [
     description:
       "Installation of all classifications of drywall assemblies and high level finishes for paint, wallpaper and specialty plaster finishes.",
     icon: BiCog,
+    middle: true,
   },
   // {
   //   name: "Restoration and rescue",
@@ -63,11 +64,10 @@ const services = [
 ];
 
 const regularClass =
-  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max";
-const firstClass =
-  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:-mt-20 border-b-theme-100  border-b-[5px] h-max";
-const lastClass =
-  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 lg:mt-20 border-b-theme-100  border-b-[5px] h-max";
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max md:col-span-2";
+
+const middleClass =
+  "cursor-pointer relative flex flex-col gap-6 border border-slate-200 border-b-theme-100 border-b-[5px] h-max md:col-start-2 md:col-end-4";
 
 export default function ServicesItems() {
   const container = useRef<HTMLDivElement | null>(null);
@@ -143,13 +143,13 @@ export default function ServicesItems() {
         <div className="mt-20 max-w-lg sm:mx-auto md:max-w-none">
           <div
             id="items"
-            className="grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 md:gap-y-16"
+            className="grid grid-cols-1 gap-y-16 md:grid-cols-4 md:gap-x-12 md:gap-y-16"
           >
             {services.map((service) => (
               <NextLink
                 href={service.href}
                 key={service.name}
-                className={regularClass}
+                className={service.middle ? middleClass : regularClass}
                 onMouseEnter={onEnter}
                 onMouseLeave={onLeave}
               >

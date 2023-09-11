@@ -125,6 +125,17 @@ import apt475Greenwich1 from "../public/images/projects/475 Greenwich St - New Y
 import apt475Greenwich2 from "../public/images/projects/475 Greenwich St - New York, NY/3.webp";
 import apt475Greenwich3 from "../public/images/projects/475 Greenwich St - New York, NY/4.webp";
 
+import moshava from "../public/images/projects/JRM/Moshava Coffee Shop, 47 W 8th St/1.jpeg";
+import moshava1 from "../public/images/projects/JRM/Moshava Coffee Shop, 47 W 8th St/2.jpeg";
+import moshava2 from "../public/images/projects/JRM/Moshava Coffee Shop, 47 W 8th St/3.jpeg";
+import moshava3 from "../public/images/projects/JRM/Moshava Coffee Shop, 47 W 8th St/4.jpeg";
+
+import chanel from "../public/images/projects/Hirsch/Chanel - Williamsburg/1.jpeg";
+import chanel1 from "../public/images/projects/Hirsch/Chanel - Williamsburg/2.jpeg";
+import chanel2 from "../public/images/projects/Hirsch/Chanel - Williamsburg/3.jpeg";
+import chanel3 from "../public/images/projects/Hirsch/Chanel - Williamsburg/4.jpeg";
+import chanel4 from "../public/images/projects/Hirsch/Chanel - Williamsburg/5.jpeg";
+
 const projectList = {
   helloTend: [helloTend, helloTend1, helloTend2, helloTend3],
   mulberryEngland: [
@@ -222,6 +233,8 @@ const projectList = {
     apt475Greenwich2,
     apt475Greenwich3,
   ],
+  moshava: [moshava, moshava1, moshava2, moshava3],
+  chanel: [chanel, chanel1, chanel2, chanel3, chanel4],
 };
 
 export default projectList;

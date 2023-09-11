@@ -145,6 +145,18 @@ const commercialProjects = [
     projectImages: projectListImages.wallStreetHotel,
     img: projectListImages.wallStreetHotel[0],
   },
+  {
+    name: "Moshava Coffee Shop",
+    location: "47 W 8th St. New York, NY",
+    projectImages: projectListImages.moshava,
+    img: projectListImages.moshava[0],
+  },
+  {
+    name: "Chanel",
+    location: "Williamsburg, New York",
+    projectImages: projectListImages.chanel,
+    img: projectListImages.chanel[0],
+  }
 ].map((project) => ({
   ...project,
   slug: createSlug(project.name),
