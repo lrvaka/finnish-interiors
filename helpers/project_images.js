@@ -30,16 +30,16 @@ import gentleMonster4 from "../public/images/projects/Michilli/Gentle Monster �
 import gentleMonster5 from "../public/images/projects/Michilli/Gentle Monster – 70 Wooster St/gentle-monster-nyc-06.png";
 import gentleMonster6 from "../public/images/projects/Michilli/Gentle Monster – 70 Wooster St/gentle-monster-nyc-07.png";
 
-import khaite from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2188.jpg";
-import khaite1 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2189.jpg";
-import khaite2 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2190.jpg";
-import khaite3 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2191.jpg";
-import khaite4 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2192.jpg";
-import khaite5 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2193.jpg";
-import khaite8 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2196.jpg";
-import khaite9 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2197.jpg";
-import khaite10 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2198.jpg";
-import khaite11 from "../public/images/projects/Michilli/Khaite- 165 Mercer St./user_project_images-image-2199.jpg";
+import khaite from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2188.jpg";
+import khaite1 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2189.jpg";
+import khaite2 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2190.jpg";
+import khaite3 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2191.jpg";
+import khaite4 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2192.jpg";
+import khaite5 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2193.jpg";
+import khaite8 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2196.jpg";
+import khaite9 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2197.jpg";
+import khaite10 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2198.jpg";
+import khaite11 from "../public/images/projects/Michilli/Khaite - 165MercerSt/user_project_images-image-2199.jpg";
 
 import lacoste from "../public/images/projects/Michilli/Lacoste – 541 Broadway/Lacoste-JBascom2.jpg";
 import lacoste1 from "../public/images/projects/Michilli/Lacoste – 541 Broadway/Lacoste-JBascom3.jpg";
@@ -82,8 +82,8 @@ import moncler1 from "../public/images/projects/SAJO/Moncler- woodbury common/2.
 import moncler2 from "../public/images/projects/SAJO/Moncler- woodbury common/3.jpg";
 import moncler3 from "../public/images/projects/SAJO/Moncler- woodbury common/4.jpg";
 
-import mooseKnuckle from "../public/images/projects/SAJO/Moose Knuckle- 57 Green St./1.jpg";
-import mooseKnuckle1 from "../public/images/projects/SAJO/Moose Knuckle- 57 Green St./2.jpeg";
+import mooseKnuckle from "../public/images/projects/SAJO/Moose Knuckle- 57 Green St/1.jpg";
+import mooseKnuckle1 from "../public/images/projects/SAJO/Moose Knuckle- 57 Green St/2.jpeg";
 
 import citizenM from "../public/images/projects/Citizenm hotel – 218 W 50th St/1.jpg";
 import citizenM1 from "../public/images/projects/Citizenm hotel – 218 W 50th St/2.jpg";
