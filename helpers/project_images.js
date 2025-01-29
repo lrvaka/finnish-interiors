@@ -136,7 +136,166 @@ import chanel2 from "../public/images/projects/Hirsch/Chanel - Williamsburg/3.jp
 import chanel3 from "../public/images/projects/Hirsch/Chanel - Williamsburg/4.jpeg";
 import chanel4 from "../public/images/projects/Hirsch/Chanel - Williamsburg/5.jpeg";
 
+import carharttWIP from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (1).jpeg";
+import carharttWIP1 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (2).jpeg";
+import carharttWIP2 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (3).jpeg";
+import carharttWIP3 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (4).jpeg";
+import carharttWIP4 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (5).jpeg";
+import carharttWIP5 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (6).jpeg";
+import carharttWIP6 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (7).jpeg";
+import carharttWIP7 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (8).jpeg";
+import carharttWIP8 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (9).jpeg";
+import carharttWIP9 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (10).jpeg";
+import carharttWIP10 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (11).jpeg";
+import carharttWIP11 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (12).jpeg";
+import carharttWIP12 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (13).jpeg";
+import carharttWIP13 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (14).jpeg";
+import carharttWIP14 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (15).jpeg";
+import carharttWIP15 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (16).jpeg";
+import carharttWIP16 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (17).jpeg";
+import carharttWIP17 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (18).jpeg";
+import carharttWIP18 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (19).jpeg";
+import carharttWIP19 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (20).jpeg";
+import carharttWIP20 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (21).jpeg";
+import carharttWIP21 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (22).jpeg";
+import carharttWIP22 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (23).jpeg";
+import carharttWIP23 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (24).jpeg";
+import carharttWIP24 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (25).jpeg";
+import carharttWIP25 from "../public/images/projects/Unity/Carhartt Work In Progress - 599 Broadway - 4th Floor/work-image (26).jpeg";
+
+import visualComfort from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (1).jpeg";
+import visualComfort1 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (2).jpeg";
+import visualComfort2 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (3).jpeg";
+import visualComfort3 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (4).jpeg";
+import visualComfort4 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (5).jpeg";
+import visualComfort5 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (6).jpeg";
+import visualComfort6 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (7).jpeg";
+import visualComfort7 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (8).jpeg";
+import visualComfort8 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (9).jpeg";
+import visualComfort9 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (10).jpeg";
+import visualComfort10 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (11).jpeg";
+import visualComfort11 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (12).jpeg";
+import visualComfort12 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (13).jpeg";
+import visualComfort13 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (14).jpeg";
+import visualComfort14 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (15).jpeg";
+import visualComfort15 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (16).jpeg";
+import visualComfort16 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (17).jpeg";
+import visualComfort17 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (18).jpeg";
+import visualComfort18 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (19).jpeg";
+import visualComfort19 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (20).jpeg";
+import visualComfort20 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (21).jpeg";
+import visualComfort21 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (22).jpeg";
+import visualComfort22 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (23).jpeg";
+import visualComfort23 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (24).jpeg";
+import visualComfort24 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (25).jpeg";
+import visualComfort25 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (26).jpeg";
+import visualComfort26 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (27).jpeg";
+import visualComfort27 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (28).jpeg";
+import visualComfort28 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (29).jpeg";
+import visualComfort29 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (30).jpeg";
+import visualComfort30 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (31).jpeg";
+import visualComfort31 from "../public/images/projects/Hirsch/Visual Comfort - SoHo/work-image (32).jpeg";
+
+import HHBagels from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (1).jpeg";
+import HHBagels1 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (2).jpeg";
+import HHBagels2 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (3).jpeg";
+import HHBagels3 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (4).jpeg";
+import HHBagels4 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (5).jpeg";
+import HHBagels5 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (6).jpeg";
+import HHBagels6 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (7).jpeg";
+import HHBagels7 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (8).jpeg";
+import HHBagels8 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (9).jpeg";
+import HHBagels9 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (10).jpeg";
+import HHBagels10 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (11).jpeg";
+import HHBagels11 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (12).jpeg";
+import HHBagels12 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (13).jpeg";
+import HHBagels13 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (14).jpeg";
+import HHBagels14 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (15).jpeg";
+import HHBagels15 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (16).jpeg";
+import HHBagels16 from "../public/images/projects/JRM/H&H Bagels - Penn Station/image (17).jpeg";
+
 const projectList = {
+  visualComfort: [
+    visualComfort,
+    visualComfort1,
+    visualComfort2,
+    visualComfort3,
+    visualComfort4,
+    visualComfort5,
+    visualComfort6,
+    visualComfort7,
+    visualComfort8,
+    visualComfort9,
+    visualComfort10,
+    visualComfort11,
+    visualComfort12,
+    visualComfort13,
+    visualComfort14,
+    visualComfort15,
+    visualComfort16,
+    visualComfort17,
+    visualComfort18,
+    visualComfort19,
+    visualComfort20,
+    visualComfort21,
+    visualComfort22,
+    visualComfort23,
+    visualComfort24,
+    visualComfort25,
+    visualComfort26,
+    visualComfort27,
+    visualComfort28,
+    visualComfort29,
+    visualComfort30,
+    visualComfort31,
+  ],
+  carharttWIP: [
+    carharttWIP,
+    carharttWIP1,
+    carharttWIP2,
+    carharttWIP3,
+    carharttWIP4,
+    carharttWIP5,
+    carharttWIP6,
+    carharttWIP7,
+    carharttWIP8,
+    carharttWIP9,
+    carharttWIP10,
+    carharttWIP11,
+    carharttWIP12,
+    carharttWIP13,
+    carharttWIP14,
+    carharttWIP15,
+    carharttWIP16,
+    carharttWIP17,
+    carharttWIP18,
+    carharttWIP19,
+    carharttWIP20,
+    carharttWIP21,
+    carharttWIP22,
+    carharttWIP23,
+    carharttWIP24,
+    carharttWIP25,
+  ],
+  HHBagels: [
+    HHBagels,
+    HHBagels1,
+    HHBagels2,
+    HHBagels3,
+    HHBagels4,
+    HHBagels5,
+    HHBagels6,
+    HHBagels7,
+    HHBagels8,
+    HHBagels9,
+    HHBagels10,
+    HHBagels11,
+    HHBagels12,
+    HHBagels13,
+    HHBagels14,
+    HHBagels15,
+    HHBagels16,
+  ],
   helloTend: [helloTend, helloTend1, helloTend2, helloTend3],
   mulberryEngland: [
     mulberryEngland,

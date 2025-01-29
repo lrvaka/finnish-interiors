@@ -37,6 +37,24 @@ const residentialProjects = [
 
 const commercialProjects = [
   {
+    name: "Visual Comfort",
+    location: "SoHo, Manhattan",
+    projectImages: projectListImages.visualComfort,
+    img: projectListImages.visualComfort[10],
+  },
+  {
+    name: "Carhartt WIP",
+    location: "SoHo, Manhattan",
+    projectImages: projectListImages.carharttWIP,
+    img: projectListImages.carharttWIP[1],
+  },
+  {
+    name: "H&H Bagels",
+    location: "Penn Station, Manhattan",
+    projectImages: projectListImages.HHBagels,
+    img: projectListImages.HHBagels[8],
+  },
+  {
     name: "HelloTend",
     location: "Williamsburg, Brooklyn",
     projectImages: projectListImages.helloTend,
@@ -156,7 +174,7 @@ const commercialProjects = [
     location: "Williamsburg, New York",
     projectImages: projectListImages.chanel,
     img: projectListImages.chanel[0],
-  }
+  },
 ].map((project) => ({
   ...project,
   slug: createSlug(project.name),
